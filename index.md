@@ -59,3 +59,9 @@ Scientific transparency is valued above sensationalism.
 © Steve Antoine  
 Founder & Editor  
 The Earth's Pharmacy
+
+
+---
+
+**Website Status:** Founder's Edition — Active Development
+
