@@ -32,14 +32,74 @@
       height: auto;
       margin: 0 auto;
     }
+    .homepage-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1536px;
+  margin: 0 auto;
+}
+
+.pathway {
+  position: absolute;
+  display: block;
+  z-index: 10;
+}
+
+.pathway-library {
+  left: 3%;
+  top: 35%;
+  width: 30%;
+  height: 32%;
+}
+
+.pathway-monographs {
+  left: 35%;
+  top: 35%;
+  width: 30%;
+  height: 32%;
+}
+
+.pathway-founders {
+  left: 67%;
+  top: 35%;
+  width: 30%;
+  height: 32%;
+}
+
+.pathway:focus {
+  outline: 3px solid #d4a84f;
+  outline-offset: 3px;
+}
   </style>
 </head>
 
 <body>
-  <img
-    class="homepage-design"
-    src="earths-pharmacy-homepage.png"
-    alt="The Earth’s Pharmacy homepage"
-  >
+  <main class="homepage">
+    <div class="homepage-wrapper">
+      <img
+        class="homepage-design"
+        src="earths-pharmacy-homepage.png"
+        alt="The Earth’s Pharmacy homepage"
+      >
+
+      <a
+        class="pathway pathway-library"
+        href="/living-library/"
+        aria-label="Enter the Living Evidence Library"
+      ></a>
+
+      <a
+        class="pathway pathway-monographs"
+        href="/monographs/"
+        aria-label="Explore the medicinal plant monographs"
+      ></a>
+
+      <a
+        class="pathway pathway-founders"
+        href="/founders-edition/"
+        aria-label="View the Founder’s Edition"
+      ></a>
+    </div>
+  </main>
 </body>
 </html>
