@@ -1,54 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Medicinal Plant Monographs | The Earth’s Pharmacy</title>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Earth’s Pharmacy — Botanical Monographs</title>
+  <meta name="description" content="Master botanical encyclopedia for The Earth’s Pharmacy — authoritative monographs, evidence tiers, safety notices, and practitioner resources." />
+  <link rel="stylesheet" href="/assets/styles.css">
   <style>
-    body {
-      margin: 0;
-      padding: 40px 20px;
-      background: #06140d;
-      color: #f3e4bd;
-      font-family: Georgia, "Times New Roman", serif;
-      text-align: center;
-    }
+    /* Page-specific small adjustments */
+    .search-bar { display:flex; gap:8px; margin-top:12px; }
+    .search-bar input[type="search"] { flex:1; padding:10px 12px; border-radius:6px; border:1px solid rgba(255,255,255,0.04); background:rgba(255,255,255,0.01); color:inherit; }
+    .az-index { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+    .az-index a { display:inline-block; padding:8px 10px; border-radius:6px; background:rgba(255,255,255,0.02); color:inherit; text-decoration:none; border:1px solid rgba(212,168,79,0.03); }
 
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-    }
+    .featured-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; margin-top:16px; }
+    .bot-card { background: linear-gradient(180deg, rgba(8,20,16,0.6), rgba(6,18,14,0.5)); padding:16px; border-radius:8px; border:1px solid rgba(212,168,79,0.04); box-shadow:0 8px 20px rgba(0,0,0,0.45); text-decoration:none; color:inherit; display:flex; flex-direction:column; }
+    .bot-card h3 { margin:0 0 8px 0; color:#d4a84f; }
+    .bot-card p { margin:0; font-size:14px; flex:1; }
 
-    h1 {
-      color: #d4a84f;
-      font-size: 42px;
-    }
+    .recent-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-top:12px; }
 
-    a {
-      color: #d4a84f;
-    }
+    .tier { margin-top:12px; padding:12px; border-radius:6px; background:rgba(212,168,79,0.03); border:1px solid rgba(212,168,79,0.04); }
+    .safety { margin-top:12px; padding:12px; border-radius:6px; background:rgba(255,80,80,0.03); border:1px solid rgba(255,80,80,0.08); color:#ffd6d6; }
+
+    /* Accessibility helper (hidden label) */
+    .visually-hidden { position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap; }
+
+    @media (max-width:1000px) { .featured-grid, .recent-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width:780px) { .hero { grid-template-columns: 1fr; text-align:center; } .featured-grid, .recent-grid { grid-template-columns: 1fr; } .search-bar { flex-direction:column; } }
   </style>
 </head>
-
 <body>
-  <main>
-    <h1>Medicinal Plant Monographs</h1>
+  <div class="site">
+    <header class="hero" role="banner" aria-labelledby="monographs-title">
+      <div class="hero-copy">
+        <h1 id="monographs-title">The Earth’s Pharmacy — Botanical Monographs</h1>
+        <p class="lead">The master botanical encyclopedia: comprehensive, evidence-based monographs, safety guidance, and practitioner resources for the plants referenced throughout The Earth’s Pharmacy.</p>
 
-    <p>
-      Explore evidence-based medicinal plant profiles, including traditional
-      uses, preparation methods, dosage guidance, safety information,
-      contraindications, and current research.
-    </p>
+        <div class="search-bar" role="search" aria-label="Search botanical monographs">
+          <label for="search-input" class="visually-hidden">Search botanicals</label>
+          <input id="search-input" type="search" placeholder="Search botanicals, common names, or scientific names" aria-label="Search botanical monographs" />
+          <a class="btn" href="#" id="search-button" aria-label="Search">Search</a>
+        </div>
 
-    <p>
-      The complete monograph collection is being organized for this section.
-    </p>
+        <div style="margin-top:12px;">
+          <span style="color:rgba(243,228,189,0.9);font-size:13px;">Browse A–Z</span>
+          <div class="az-index" aria-label="Alphabetical index">
+            <!-- Letters link to anchors within this page for future index grouping -->
+            <a href="#A">A</a><a href="#B">B</a><a href="#C">C</a><a href="#D">D</a><a href="#E">E</a><a href="#F">F</a>
+            <a href="#G">G</a><a href="#H">H</a><a href="#I">I</a><a href="#J">J</a><a href="#K">K</a><a href="#L">L</a>
+            <a href="#M">M</a><a href="#N">N</a><a href="#O">O</a><a href="#P">P</a><a href="#Q">Q</a><a href="#R">R</a>
+            <a href="#S">S</a><a href="#T">T</a><a href="#U">U</a><a href="#V">V</a><a href="#W">W</a><a href="#X">X</a>
+            <a href="#Y">Y</a><a href="#Z">Z</a>
+          </div>
+        </div>
 
-    <p>
-      <a href="/">Return to The Earth’s Pharmacy homepage</a>
-    </p>
-  </main>
+        <div class="cta-row">
+          <a class="btn secondary" href="/living-library/" aria-label="Return to Living Evidence Library">Return to Living Library</a>
+          <a class="btn ghost" href="/" aria-label="Return to Home">Return to Home</a>
+        </div>
+      </div>
+
+      <div class="cover" aria-hidden="true">
+        <img src="/Earths_Pharmacy_Homepage_Refined_Professional_Approved.png" alt="Botanical monographs — cover art" />
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="featured-title">
+        <h2 id="featured-title">Featured Botanicals</h2>
+        <p>Highlighted monographs and practitioner notes chosen for their clinical relevance and readership interest.</p>
+
+        <div class="featured-grid" role="list">
+          <a class="bot-card" href="#" role="listitem" aria-label="Soursop monograph">
+            <h3>Soursop (Annona muricata)</h3>
+            <p>Traditional uses, phytochemistry, and evidence summaries for clinical context.</p>
+          </a>
+
+          <a class="bot-card" href="#" role="listitem" aria-label="Ginger monograph">
+            <h3>Ginger (Zingiber officinale)</h3>
+            <p>Ginger's clinical indications, dosing, safety, and culinary preparations.</p>
+          </a>
+
+          <a class="bot-card" href="#" role="listitem" aria-label="Turmeric monograph">
+            <h3>Turmeric (Curcuma longa)</h3>
+            <p>Phytochemistry, traditional use, modern clinical research, and evidence synthesis.</p>
+          </a>
+
+          <a class="bot-card" href="#" role="listitem" aria-label="Cannabis monograph">
+            <h3>Cannabis (Cannabis sativa)</h3>
+            <p>Pharmacology, regulatory context, clinical guidance, and safety considerations.</p>
+          </a>
+
+          <a class="bot-card" href="#" role="listitem" aria-label="Garlic monograph">
+            <h3>Garlic (Allium sativum)</h3>
+            <p>Traditional cardiovascular uses, active constituents, and interaction notes.</p>
+          </a>
+
+          <a class="bot-card" href="#" role="listitem" aria-label="Moringa monograph">
+            <h3>Moringa (Moringa oleifera)</h3>
+            <p>Nutritional profile, applications, conservation notes, and evidence tiers.</p>
+          </a>
+        </div>
+      </section>
+
+      <section aria-labelledby="recent-bots">
+        <h2 id="recent-bots">Recently Updated Botanicals</h2>
+        <p>Recent revisions, new evidence, or safety notices are noted here.</p>
+
+        <div class="recent-grid" aria-live="polite">
+          <div class="update">
+            <h4>Garlic — Interaction update</h4>
+            <p>Placeholder: summary of a recent interaction or safety note.</p>
+          </div>
+
+          <div class="update">
+            <h4>Turmeric — New trial summary</h4>
+            <p>Placeholder: summary of newly reviewed clinical trial.</p>
+          </div>
+
+          <div class="update">
+            <h4>Ginger — Preparation revision</h4>
+            <p>Placeholder: improved preparation guidance for practitioner use.</p>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="evidence-tier">
+        <h2 id="evidence-tier">Evidence Tier Explanation</h2>
+        <p>The library classifies evidence by tier to help readers interpret clinical confidence: Tier 1 — strong human clinical data; Tier 2 — supportive clinical and mechanistic data; Tier 3 — preclinical or limited human data. Each monograph will display its assigned evidence tier and references.</p>
+
+        <div class="tier">
+          <strong>Tier 1</strong>: High-quality randomized controlled trials and meta-analyses.
+        </div>
+        <div class="tier">
+          <strong>Tier 2</strong>: Controlled clinical studies, observational data, and reproducible mechanistic research.
+        </div>
+        <div class="tier">
+          <strong>Tier 3</strong>: Preclinical studies, traditional use reports, and limited human data.
+        </div>
+      </section>
+
+      <section aria-labelledby="safety-notice">
+        <h2 id="safety-notice">Safety Notice</h2>
+        <div class="safety">
+          <p>Herbal medicines can interact with pharmaceuticals and may not be safe for everyone. Always consult a qualified clinician before using botanicals therapeutically. The editorial team maintains safety notices and errata; check this section regularly for updates.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="full-index">
+        <h2 id="full-index">A–Z Botanical Index</h2>
+        <p>The full alphabetical index will contain individual monograph links for every botanical referenced in the work. This index is prepared to scale for hundreds of entries.</p>
+
+        <!-- Placeholder index structure: groups will be populated dynamically in the future -->
+        <div style="margin-top:12px;">
+          <div id="A" style="margin-top:8px;"><strong>A</strong> — <a href="#">Allium sativum (Garlic)</a>, <a href="#">Annona muricata (Soursop)</a></div>
+          <div id="G" style="margin-top:8px;"><strong>G</strong> — <a href="#">Ginger (Zingiber officinale)</a>, <a href="#">Ginkgo biloba</a></div>
+          <div id="M" style="margin-top:8px;"><strong>M</strong> — <a href="#">Moringa oleifera</a></div>
+          <div id="T" style="margin-top:8px;"><strong>T</strong> — <a href="#">Turmeric (Curcuma longa)</a></div>
+          <div id="C" style="margin-top:8px;"><strong>C</strong> — <a href="#">Cannabis (Cannabis sativa)</a></div>
+          <!-- In future, entries will be generated and paginated for performance -->
+        </div>
+      </section>
+
+      <footer>
+        <p style="margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a class="btn" href="/living-library/" aria-label="Return to Living Library">Return to Living Library</a>
+          <a class="btn ghost" href="/" aria-label="Return to Home">Return to Home</a>
+        </p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Prepared for future JavaScript: search functionality will bind to #search-input and #search-button -->
 </body>
 </html>
