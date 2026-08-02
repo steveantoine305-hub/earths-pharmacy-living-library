@@ -1,0 +1,89 @@
+/* Shared site styles for The Earth's Pharmacy
+   Extracted to /assets/styles.css to be used across pages
+*/
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; }
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #06180f; /* homepage background */
+  color: #f3e4bd;     /* warm parchment */
+  line-height: 1.6;
+}
+
+/* Utility container */
+.container, .site { max-width: 1280px; width: 100%; margin: 0 auto; }
+
+/* Homepage image + pathways (kept for index.html) */
+.homepage-design { display: block; width: 100%; max-width: 1536px; height: auto; margin: 0 auto; }
+.homepage-wrapper { position: relative; width: 100%; max-width: 1536px; margin: 0 auto; }
+.pathway { position: absolute; display: block; z-index: 999; background: transparent; border: none; cursor: pointer; touch-action: manipulation; }
+.pathway-library { left: 4%; top: 43%; width: 29%; height: 33%; }
+.pathway-monographs { left: 35.5%; top: 43%; width: 29%; height: 33%; }
+.pathway-founders { left: 67%; top: 43%; width: 29%; height: 33%; }
+.pathway { -webkit-tap-highlight-color: transparent; }
+.pathway:focus { outline: none; }
+.pathway:focus-visible { outline: 3px solid #c9a34e; outline-offset: 4px; }
+
+/* Hero component shared by library and founders-edition */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 32px;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(6,24,15,0.9), rgba(6,20,15,0.95));
+  padding: 36px;
+  border-radius: 8px;
+  box-shadow: 0 18px 60px rgba(0,0,0,0.6);
+}
+
+.hero h1 { margin: 0 0 12px 0; color: #d4a84f; font-size: 44px; line-height: 1.02; }
+.hero p.lead { margin: 0 0 18px 0; font-size: 18px; color: #f3e4bd; max-width: 60ch; }
+
+.hero-copy { text-align: left; }
+@media (max-width:780px) { .hero-copy { text-align: center; } }
+
+.cover { width: 100%; max-width: 420px; margin: 0 auto; border-radius: 6px; overflow: hidden; background: #08140f; box-shadow: 0 12px 30px rgba(0,0,0,0.6), inset 0 -40px 80px rgba(0,0,0,0.25); border: 1px solid rgba(212,168,79,0.06); }
+.cover img { display:block; width:100%; height:auto; }
+
+/* Buttons */
+.cta-row { margin-top: 20px; display:flex; gap:12px; flex-wrap:wrap; }
+.btn { display:inline-block; background: #d4a84f; color: #06140d; text-decoration: none; padding: 12px 20px; border-radius: 6px; font-weight: 700; box-shadow: 0 6px 18px rgba(0,0,0,0.45); transition: transform .12s ease, box-shadow .12s ease; }
+.btn.secondary, .btn.ghost { background: transparent; color: #f3e4bd; border: 1px solid rgba(212,168,79,0.15); box-shadow: none; font-weight: 600; }
+.btn.large { padding:16px 26px; font-size:16px; }
+.btn:active { transform: translateY(1px); }
+
+/* Sections */
+main { margin-top: 28px; }
+section { margin-top: 34px; text-align: left; }
+section h2 { color: #d4a84f; font-size: 24px; margin-bottom: 10px; }
+section p { color: #f3e4bd; margin: 0 0 12px 0; line-height: 1.6; }
+.columns { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 18px; }
+.features ul, ul { margin: 0; padding-left: 1.15rem; color: #f3e4bd; }
+.highlight { background: rgba(212,168,79,0.06); padding: 12px 14px; border-radius: 6px; border: 1px solid rgba(212,168,79,0.06); }
+
+/* Library navigation cards */
+.nav-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; }
+.card { background: linear-gradient(180deg, rgba(8,20,16,0.6), rgba(6,18,14,0.5)); border: 1px solid rgba(212,168,79,0.04); padding:18px; border-radius:8px; min-height:120px; display:flex; flex-direction:column; justify-content:space-between; box-shadow: 0 8px 28px rgba(0,0,0,0.45); text-decoration:none; }
+.card h3 { margin:0 0 6px 0; color:#d4a84f; font-size:18px; }
+.card p { margin:0; color:#f3e4bd; font-size:14px; }
+.card:focus-visible { outline: 3px solid rgba(212,168,79,0.16); outline-offset: 4px; }
+
+/* Recently updated */
+.recent { margin-top:28px; }
+.recent-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-top:12px; }
+.update { background: rgba(255,255,255,0.02); padding:14px; border-radius:8px; min-height:100px; }
+.update h4 { margin:0 0 6px 0; color:#d4a84f; font-size:15px; }
+.update p { margin:0; font-size:13px; color:#f3e4bd; }
+
+/* QR explanation */
+.qr { margin-top:28px; background: rgba(212,168,79,0.04); padding:18px; border-radius:8px; border:1px solid rgba(212,168,79,0.04); }
+
+footer { margin-top:48px; text-align:center; }
+footer a { color:#f3e4bd; text-decoration:underline; }
+
+/* Homepage specific tweaks (pathway absolute layout maintains original values) */
+@media (max-width: 1000px) { .nav-grid, .recent-grid { grid-template-columns: repeat(2, 1fr); } .hero { grid-template-columns: 1fr 360px; } }
+@media (max-width: 780px) { .hero { grid-template-columns: 1fr; text-align:center; } .nav-grid, .recent-grid { grid-template-columns: 1fr; } }
+@media (max-width:420px) { .hero h1 { font-size:32px; } body { padding: 12px; } }
