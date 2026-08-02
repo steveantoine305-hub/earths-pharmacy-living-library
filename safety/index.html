@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Safety Center | The Earth’s Pharmacy</title>
+  <meta name="description" content="Safety Center — evidence-based guidance for safe herbal medicine practice, interactions, contraindications, and red flag symptoms." />
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    .safety-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; margin-top:18px; }
+    .safety-card { background: linear-gradient(180deg, rgba(8,20,16,0.6), rgba(6,18,14,0.5)); padding:18px; border-radius:8px; border:1px solid rgba(212,168,79,0.04); box-shadow:0 8px 28px rgba(0,0,0,0.45); color:inherit; }
+    .safety-card h3 { margin:0 0 8px 0; color:#d4a84f; }
+    .safety-card p { margin:0; font-size:14px; }
+
+    .tier-legend { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+    .tier-pill { padding:8px 12px; border-radius:999px; font-weight:700; }
+    .tier-1 { background:#2b5f36; color:#fff; }
+    .tier-2 { background:#7a5b2b; color:#fff; }
+    .tier-3 { background:#3b3b3b; color:#fff; }
+
+    .faq { margin-top:18px; }
+    .faq dt { font-weight:700; margin-top:10px; }
+    .faq dd { margin-left:0 0 12px 0; }
+
+    @media (max-width:1000px) { .safety-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width:780px) { .safety-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header class="hero" role="banner" aria-labelledby="safety-title">
+      <div class="hero-copy">
+        <h1 id="safety-title">Safety Center</h1>
+        <p class="lead">Evidence-based herbal medicine begins with safe practice. This Safety Center collects interactions, contraindications, population-specific guidance, and emergency signs so you can make informed decisions.</p>
+
+        <div class="cta-row">
+          <a class="btn" href="/living-library/" aria-label="Return to Living Library">Return to Living Library</a>
+          <a class="btn ghost" href="/" aria-label="Return to Home">Return to Home</a>
+        </div>
+      </div>
+
+      <div class="cover" aria-hidden="true">
+        <img src="/Earths_Pharmacy_Homepage_Refined_Professional_Approved.png" alt="Safety Center" />
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="topics-title">
+        <h2 id="topics-title">Safety Topics</h2>
+        <p>Explore curated guidance on common safety concerns and population-specific notes.</p>
+
+        <div class="safety-grid">
+          <article class="safety-card" aria-labelledby="interactions-title">
+            <h3 id="interactions-title">Drug Interactions</h3>
+            <p>Known interactions between botanicals and pharmaceuticals, risk mitigation, and monitoring recommendations.</p>
+          </article>
+
+          <article class="safety-card" aria-labelledby="contra-title">
+            <h3 id="contra-title">Contraindications</h3>
+            <p>Conditions where specific botanicals should be avoided or used with extreme caution.</p>
+          </article>
+
+          <article class="safety-card" aria-labelledby="pregnancy-title">
+            <h3 id="pregnancy-title">Pregnancy & Breastfeeding</h3>
+            <p>Evidence-based guidance for pregnancy and lactation, including known teratogens and recommendations.</p>
+          </article>
+
+          <article class="safety-card" aria-labelledby="children-title">
+            <h3 id="children-title">Children</h3>
+            <p>Age-appropriate dosing, safety concerns, and formulations to avoid in pediatric populations.</p>
+          </article>
+
+          <article class="safety-card" aria-labelledby="older-title">
+            <h3 id="older-title">Older Adults</h3>
+            <p>Considerations for polypharmacy, altered pharmacokinetics, and frailty-related risks.</p>
+          </article>
+
+          <article class="safety-card" aria-labelledby="organ-title">
+            <h3 id="organ-title">Liver & Kidney Conditions</h3>
+            <p>Notes on hepatotoxicity, nephrotoxicity, and dose adjustments for impaired organ function.</p>
+          </article>
+
+          <article class="safety-card" aria-labelledby="allergy-title">
+            <h3 id="allergy-title">Allergies</h3>
+            <p>Allergen cross-reactivity, common sources of botanical allergy, and testing recommendations.</p>
+          </article>
+
+          <article class="safety-card" aria-labelledby="emergency-title">
+            <h3 id="emergency-title">Emergency Warning Signs</h3>
+            <p>When to seek urgent care — anaphylaxis, severe hepatotoxicity signs, bleeding, and other red flags.</p>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="evidence-title">
+        <h2 id="evidence-title">Evidence Tier (Color Key)</h2>
+        <p>Our tiered evidence system helps readers quickly appraise the confidence behind recommendations.</p>
+        <div class="tier-legend">
+          <span class="tier-pill tier-1">Tier 1 — Strong human clinical evidence</span>
+          <span class="tier-pill tier-2">Tier 2 — Supportive clinical or mechanistic data</span>
+          <span class="tier-pill tier-3">Tier 3 — Preclinical or limited human data</span>
+        </div>
+      </section>
+
+      <section aria-labelledby="how-to-read">
+        <h2 id="how-to-read">How to Read a Monograph</h2>
+        <p>Monographs are structured to present identification, constituents, traditional uses, dosing, safety notes, evidence tier, and references. Use the Evidence Tier and Safety sections to guide clinical decisions and cross-check with primary literature when necessary.</p>
+      </section>
+
+      <section aria-labelledby="red-flags">
+        <h2 id="red-flags">Red Flag Symptoms</h2>
+        <p>Any of the following require urgent evaluation: difficulty breathing, facial swelling, severe abdominal pain, jaundice, persistent vomiting, uncontrolled bleeding, sudden severe headache, confusion, or loss of consciousness.</p>
+      </section>
+
+      <section aria-labelledby="faq">
+        <h2 id="faq">Frequently Asked Safety Questions</h2>
+        <dl class="faq">
+          <dt>Can herbs interact with prescription medications?</dt>
+          <dd>Yes. Many botanicals impact metabolic enzymes or platelet function — always check interactions before recommending herbal therapies alongside prescriptions.</dd>
+
+          <dt>Are natural products always safe in pregnancy?</dt>
+          <dd>No. Pregnancy changes risking teratogenicity or altered pharmacokinetics; consult obstetric guidance and avoid known contraindicated botanicals.</dd>
+
+          <dt>How do you report a safety concern?</dt>
+          <dd>Contact the editorial team via the contact details in the book or the Living Evidence Library with citation details and any supporting evidence; the editorial team will review and update entries as appropriate.</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="disclaimer">
+        <h2 id="disclaimer">Disclaimer</h2>
+        <p>This Living Evidence Library supports clinical decision-making but does not replace professional medical care. Always consult a licensed clinician for diagnosis and treatment. The editors are not liable for misuse of information contained in this resource.</p>
+      </section>
+
+      <footer style="margin-top:28px;">
+        <p style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a class="btn" href="/living-library/">Return to Living Evidence Library</a>
+          <a class="btn ghost" href="/">Return to Homepage</a>
+        </p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
