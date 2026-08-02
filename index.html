@@ -71,8 +71,7 @@
   width: 29%;
   height: 33%;
 }
-    
-  .pathway {
+    .pathway {
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -90,6 +89,22 @@
 <body>
   <main class="homepage">
     <div class="homepage-wrapper">
+
+      <!-- Site Navigation -->
+      <nav class="site-nav" role="navigation" aria-label="Main navigation" style="position:absolute;left:20px;top:18px;z-index:1000;">
+        <ul style="list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0;">
+          <li><a class="btn ghost" href="/">Home</a></li>
+          <li><a class="btn ghost" href="/about/">About</a></li>
+          <li><a class="btn ghost" href="/living-library/">Living Evidence Library</a></li>
+          <li><a class="btn ghost" href="/monographs/">Botanical Monographs</a></li>
+          <li><a class="btn ghost" href="/safety/">Safety Center</a></li>
+          <li><a class="btn ghost" href="/resources/">Resources Center</a></li>
+          <li><a class="btn ghost" href="/founders-edition/">Founder’s Edition</a></li>
+          <li><a class="btn ghost" href="/contact/">Contact</a></li>
+          <li><a class="btn ghost" href="/qr-center/">Digital Access Center</a></li>
+        </ul>
+      </nav>
+
       <img
         class="homepage-design"
         src="Earths_Pharmacy_Homepage_Refined_Professional_Approved.png"
@@ -115,5 +130,20 @@
       ></a>
     </div>
   </main>
+
+  <!-- Consistent footer -->
+  <footer style="position:fixed;left:0;right:0;bottom:10px;display:flex;justify-content:center;z-index:1000;">
+    <p style="display:flex;gap:8px;align-items:center;">
+      <a class="btn ghost" href="/">Home</a>
+      <a class="btn ghost" href="/about/">About</a>
+      <a class="btn ghost" href="/living-library/">Living Evidence Library</a>
+      <a class="btn ghost" href="/monographs/">Botanical Monographs</a>
+      <a class="btn ghost" href="/safety/">Safety Center</a>
+      <a class="btn ghost" href="/resources/">Resources Center</a>
+      <a class="btn ghost" href="/founders-edition/">Founder’s Edition</a>
+      <a class="btn ghost" href="/contact/">Contact</a>
+      <a class="btn ghost" href="/qr-center/">Digital Access Center</a>
+    </p>
+  </footer>
 </body>
 </html>
