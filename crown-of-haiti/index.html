@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Crown of Haiti | The Earth’s Pharmacy</title>
+  <meta name="description" content="Crown of Haiti — series landing page hosted at earthspharmacy.org/crown-of-haiti/" />
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    .hero { display:grid; grid-template-columns:1fr 380px; gap:28px; align-items:center; }
+    .hero h1 { color:#b98e2f; font-size:40px; margin:0 0 8px 0; }
+    .lead { font-size:16px; max-width:68ch; }
+    .links { margin-top:12px; display:flex; gap:12px; flex-wrap:wrap; }
+    .book-grid { display:grid; grid-template-columns: repeat(2,1fr); gap:18px; margin-top:18px; }
+    .book-card { background: linear-gradient(180deg, rgba(8,20,16,0.6), rgba(6,18,14,0.5)); padding:14px; border-radius:8px; border:1px solid rgba(212,168,79,0.04); }
+    .book-card h3 { margin:0 0 8px 0; color:#d4a84f; }
+    .book-card p { margin:0 0 8px 0; }
+    @media (max-width:900px) { .hero { grid-template-columns:1fr; } .book-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div class="site container">
+    <header class="hero" role="banner" aria-labelledby="crown-title">
+      <div class="hero-copy">
+        <h1 id="crown-title">Crown of Haiti</h1>
+        <p class="lead">A companion series presented by The Earth’s Pharmacy. Find novellas and novels set in the Caribbean — editions, formats, and verified purchase links are provided below.</p>
+        <div class="links">
+          <a class="btn" href="/founders-edition/">Founder’s Edition</a>
+          <a class="btn ghost" href="/">Return Home</a>
+        </div>
+      </div>
+
+      <div class="cover" aria-hidden="true">
+        <!-- Use existing Crown of Haiti artwork if present in assets; do not modify the artwork file -->
+        <!-- If author name is embedded in the image, it will not be altered. Reported separately. -->
+        <img src="/assets/crown-of-haiti-cover.png" alt="Crown of Haiti cover artwork" />
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="series-links">
+        <h2 id="series-links">Series & Books</h2>
+        <div class="book-grid">
+          <div class="book-card">
+            <h3>Official series page</h3>
+            <p><a href="https://earthspharmacy.org/crown-of-haiti/">https://earthspharmacy.org/crown-of-haiti/</a></p>
+          </div>
+
+          <div class="book-card">
+            <h3>Book One — Novella</h3>
+            <p><a href="https://payhip.com/b/book-one-novella">https://payhip.com/b/book-one-novella</a></p>
+          </div>
+
+          <div class="book-card">
+            <h3>Book One — Novel</h3>
+            <p><a href="https://payhip.com/b/book-one-novel">https://payhip.com/b/book-one-novel</a></p>
+          </div>
+
+          <div class="book-card">
+            <h3>Pearl of the Antilles — Novella</h3>
+            <p><a href="https://payhip.com/b/pearl-novella">https://payhip.com/b/pearl-novella</a></p>
+          </div>
+
+          <div class="book-card">
+            <h3>Pearl of the Antilles — Novel</h3>
+            <p><a href="https://payhip.com/b/pearl-novel">https://payhip.com/b/pearl-novel</a></p>
+          </div>
+
+          <div class="book-card">
+            <h3>Master Index — Landing Page Link Pending</h3>
+            <p>Landing page link will be added when ready.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer style="margin-top:28px;">
+        <p style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a class="btn" href="/">Return Home</a>
+        </p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
