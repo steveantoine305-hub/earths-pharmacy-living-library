@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact | The Earth’s Pharmacy</title>
+  <meta name="description" content="Contact The Earth's Pharmacy — professional inquiries, media, research partnerships, corrections, and contributions." />
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    /* Page-specific refinements */
+    .contact-grid { display:grid; grid-template-columns: 1fr 420px; gap:28px; align-items:start; }
+    .card-grid { display:grid; grid-template-columns: repeat(2,1fr); gap:16px; margin-top:12px; }
+    .contact-card { background: linear-gradient(180deg, rgba(8,20,16,0.6), rgba(6,18,14,0.5)); padding:16px; border-radius:8px; border:1px solid rgba(212,168,79,0.04); box-shadow:0 8px 28px rgba(0,0,0,0.45); color:inherit; }
+    label { display:block; margin-bottom:6px; font-weight:700; }
+    input[type="text"], input[type="email"], textarea, input[type="url"] { width:100%; padding:10px 12px; border-radius:6px; background:rgba(255,255,255,0.01); border:1px solid rgba(255,255,255,0.04); color:inherit; }
+    textarea { min-height:140px; resize:vertical; }
+    .form-row { margin-bottom:12px; }
+    .form-actions { display:flex; gap:12px; align-items:center; }
+    .policy { font-size:13px; color:rgba(243,228,189,0.85); margin-top:8px; }
+
+    @media (max-width:980px) { .contact-grid { grid-template-columns: 1fr; } .card-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header class="hero" role="banner" aria-labelledby="contact-title">
+      <div class="hero-copy">
+        <h1 id="contact-title">Contact The Earth’s Pharmacy</h1>
+        <p class="lead">We welcome professional inquiries from clinicians, researchers, institutions, media, and readers. Use the contact form or the addresses below to reach the appropriate team.</p>
+
+        <div class="cta-row" style="margin-top:18px;">
+          <a class="btn" href="/resources/" aria-label="Resources">Resources</a>
+          <a class="btn ghost" href="/" aria-label="Return Home">Return Home</a>
+        </div>
+      </div>
+
+      <div class="cover" aria-hidden="true">
+        <img src="/Earths_Pharmacy_Homepage_Refined_Professional_Approved.png" alt="Contact The Earth's Pharmacy" />
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="intro">
+        <h2 id="intro">Get in Touch</h2>
+        <p>For professional inquiries, please use the form below or contact the listed teams for specialized requests. We aim to respond to professional emails within 5–7 business days.</p>
+      </section>
+
+      <section class="contact-grid" aria-labelledby="contact-grid-title">
+        <div>
+          <h3 id="general">General Inquiries</h3>
+          <p>Placeholder: general contact email will be listed here (e.g., contact@earthspharmacy.org). Use the form for inquiries or reach out to the specific teams below.</p>
+
+          <h3 id="media">Media &amp; Press</h3>
+          <p>Placeholder: media and press contact for interviews, podcasts, and speaking requests. Provide preferred dates and topic focus to expedite scheduling.</p>
+
+          <h3 id="research">Research &amp; Institutional Partnerships</h3>
+          <p>Universities, hospitals, researchers, and organizations may inquire about collaborations, data sharing, or institutional licensing. Please include a summary of the proposed collaboration and institutional affiliations.</p>
+
+          <h3 id="corrections">Corrections &amp; Scientific Contributions</h3>
+          <p>If you have citation corrections, new evidence, or safety updates, submit details including references, DOIs, and any supporting documents. The editorial board will review submissions for incorporation.</p>
+
+          <h3 id="faq-short">Frequently Requested Contacts</h3>
+          <div class="card-grid" role="list" aria-label="Frequently requested contacts">
+            <div class="contact-card contact-card" role="listitem">
+              <strong>General Support</strong>
+              <p class="policy">support@earthspharmacy.org (placeholder)</p>
+            </div>
+
+            <div class="contact-card contact-card" role="listitem">
+              <strong>Editorial Team</strong>
+              <p class="policy">editorial@earthspharmacy.org (placeholder)</p>
+            </div>
+
+            <div class="contact-card contact-card" role="listitem">
+              <strong>Research Partnerships</strong>
+              <p class="policy">research@earthspharmacy.org (placeholder)</p>
+            </div>
+
+            <div class="contact-card contact-card" role="listitem">
+              <strong>Licensing &amp; Permissions</strong>
+              <p class="policy">permissions@earthspharmacy.org (placeholder)</p>
+            </div>
+
+            <div class="contact-card contact-card" role="listitem">
+              <strong>Media Requests</strong>
+              <p class="policy">media@earthspharmacy.org (placeholder)</p>
+            </div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="contact-card" aria-labelledby="form-title">
+            <h3 id="form-title">Contact Form</h3>
+            <p class="policy">Use this form for professional inquiries. This UI is for demonstration only — submissions are not sent until a backend is connected.</p>
+
+            <form id="contact-form" aria-label="Contact form" onsubmit="return false;">
+              <div class="form-row">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required />
+              </div>
+
+              <div class="form-row">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required />
+              </div>
+
+              <div class="form-row">
+                <label for="org">Organization</label>
+                <input id="org" name="organization" type="text" />
+              </div>
+
+              <div class="form-row">
+                <label for="subject">Subject</label>
+                <input id="subject" name="subject" type="text" required />
+              </div>
+
+              <div class="form-row">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button class="btn" type="submit">Send Message</button>
+                <button class="btn ghost" type="reset">Reset</button>
+              </div>
+
+              <p class="policy">By contacting us you agree to our terms for reviewing submissions. Do not include personally identifiable health information in unencrypted messages.</p>
+            </form>
+          </div>
+        </aside>
+      </section>
+
+      <footer style="margin-top:28px;">
+        <p style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a class="btn" href="/" aria-label="Return Home">Return Home</a>
+        </p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // UI-only form behavior: show a confirmation overlay (no network)
+    document.getElementById('contact-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.getElementById('name').value || 'Contributor';
+      alert('Thank you, ' + name + '. This is a UI-only demo. Your message would be sent to the editorial team once a backend is connected.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
