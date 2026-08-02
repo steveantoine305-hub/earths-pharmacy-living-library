@@ -7,31 +7,186 @@
   <title>Founder’s Edition | The Earth’s Pharmacy</title>
 
   <style>
-    body {
-      margin: 0;
-      padding: 40px 20px;
-      background: #06140d;
+    /* Base / Homepage-consistent styles */
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #06180f; min-height: 100%; }
+    body { font-family: Georgia, "Times New Roman", serif; color: #f3e4bd; -webkit-font-smoothing:antialiased; }
+
+    .container {
+      max-width: 1150px;
+      margin: 40px auto;
+      padding: 40px 28px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 460px;
+      gap: 32px;
+      align-items: center;
+      background: linear-gradient(180deg, rgba(6,24,15,0.88) 0%, rgba(6,20,15,0.96) 100%);
+      border-radius: 8px;
+      padding: 36px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+
+    .hero h1 {
+      margin: 0 0 12px 0;
+      color: #d4a84f;
+      font-size: 44px;
+      line-height: 1.05;
+    }
+
+    .hero p.lead {
+      margin: 0 0 18px 0;
       color: #f3e4bd;
-      font-family: Georgia, "Times New Roman", serif;
-      text-align: center;
+      font-size: 18px;
+      max-width: 60ch;
     }
 
-    main {
-      max-width: 900px;
+    .cover {
+      width: 100%;
+      max-width: 420px;
       margin: 0 auto;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #08140f;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.6), inset 0 -40px 80px rgba(0,0,0,0.25);
     }
 
-    h1 {
-      color: #d4a84f;
-      font-size: 42px;
+    .cover img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
-    a {
-      color: #d4a84f;
+    .cta-row {
+      margin-top: 20px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #d4a84f;
+      color: #06140d;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: #f3e4bd;
+      border: 1px solid rgba(212,168,79,0.15);
+      box-shadow: none;
+      font-weight: 600;
+    }
+
+    .btn:active { transform: translateY(1px); }
+
+    section { margin-top: 34px; text-align: left; }
+    section h2 { color: #d4a84f; font-size: 24px; margin-bottom: 10px; }
+    section p { color: #f3e4bd; margin: 0 0 12px 0; line-height: 1.6; }
+
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 18px;
+    }
+
+    .features ul {
+      margin: 0; padding-left: 1.15rem; color: #f3e4bd;
+    }
+
+    .highlight {
+      background: rgba(212,168,79,0.06);
+      padding: 12px 14px; border-radius: 6px; border: 1px solid rgba(212,168,79,0.06);
+    }
+
+    footer { margin-top: 48px; text-align: center; }
+    footer a { color: #f3e4bd; text-decoration: underline; }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .hero p.lead { margin: 0 auto; }
+      .columns { grid-template-columns: 1fr; }
+      .container { padding: 28px 20px; }
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 { font-size: 32px; }
+      .cover { max-width: 320px; }
     }
   </style>
 </head>
 
 <body>
-  <main>
-    <h1
+  <main class="container" role="main">
+    <article class="hero" aria-labelledby="founder-title">
+      <div class="hero-copy">
+        <h1 id="founder-title">The Earth’s Pharmacy — Founder’s Edition</h1>
+        <p class="lead">A limited Founder’s Edition of the illustrated Founder’s Companion: an exquisite, archival-quality presentation of the original artwork, extended essays, provenance notes, and curated materials preserved for collectors and practitioners.</p>
+
+        <div class="cta-row">
+          <a class="btn" href="#" aria-label="Purchase the Founder’s Edition">Purchase the Founder’s Edition</a>
+          <a class="btn secondary" href="/" aria-label="Return to home">Return to Home</a>
+        </div>
+
+        <p style="margin-top:16px;color:rgba(243,228,189,0.9);font-size:13px;">Ships worldwide. Limited run. Collector’s plate and certificate included.</p>
+      </div>
+
+      <div class="cover" aria-hidden="false">
+        <!-- Use existing artwork from the homepage if available; fallback to a placeholder alt text -->
+        <img src="/Earths_Pharmacy_Homepage_Refined_Professional_Approved.png" alt="Founder’s Edition cover artwork — The Earth’s Pharmacy" />
+      </div>
+    </article>
+
+    <section aria-labelledby="about-title">
+      <h2 id="about-title">About the Founder’s Edition</h2>
+      <p class="highlight">The Founder’s Edition is a thoughtfully produced volume celebrating the original vision behind The Earth’s Pharmacy. Each copy is printed on archival paper, bound by hand, and includes a numbered certificate of authenticity and a signed collectors plate from the editorial team.</p>
+
+      <p>The edition contains restored high-resolution plates of the original botanical art, expanded historical commentary, corrected errata from earlier printings, and a specially commissioned foreword explaining the project's philosophy and conservation notes.</p>
+    </section>
+
+    <section aria-labelledby="whats-included">
+      <h2 id="whats-included">What’s Included</h2>
+      <div class="columns features">
+        <div>
+          <ul>
+            <li>Hardbound volume with foil-stamped cover</li>
+            <li>Full-color archival art plates (high-resolution)</li>
+            <li>Expanded monographs and practitioner notes</li>
+            <li>Certificate of authenticity (numbered)</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>Signed collectors plate</li>
+            <li>Limited edition packaging and protective sleeve</li>
+            <li>Access to a digital companion in the Living Evidence Library</li>
+            <li>Priority shipping options</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="why-different">
+      <h2 id="why-different">Why This Edition Is Different</h2>
+      <p>The Founder’s Edition was produced with conservation-grade materials and a commitment to historical accuracy. Corrections to botanical attributions, improved color grading, and newly discovered archival notes make this edition the definitive reference for collectors and practitioners alike.</p>
+
+      <p>Beyond the physical enhancements, purchasers receive early access to Living Evidence Library updates, exclusive curator annotations, and invitations to limited events hosted by the editorial collective.</p>
+    </section>
+
+    <footer>
+      <p><a class="btn" href="#" style="padding:10px 16px;">Purchase the Founder’s Edition</a></p>
+      <p style="margin-top:14px;"><a href="/">Return to The Earth’s Pharmacy homepage</a></p>
+    </footer>
+  </main>
+</body>
+</html>
