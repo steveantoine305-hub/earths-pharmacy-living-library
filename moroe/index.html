@@ -69,4 +69,167 @@
     }
 
     header {
-      padding: 76px
+      padding: 76px 0 42px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.82rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+    }
+
+    h1 {
+      margin: 0.2em 0;
+      color: var(--light-gold);
+      font-size: clamp(3rem, 9vw, 6rem);
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-shadow: 0 8px 30px rgba(0, 0, 0, 0.65);
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 24px auto 0;
+      color: var(--muted);
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 26px;
+      padding: 35px 0 65px;
+    }
+
+    .card {
+      padding: 28px;
+      border: 1px solid rgba(216, 180, 90, 0.48);
+      border-radius: 18px;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(125, 17, 23, 0.12),
+          rgba(255, 255, 255, 0.03)
+        );
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.3);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: var(--gold);
+      font-size: 1.8rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 13px 24px;
+      color: var(--gold);
+      text-decoration: none;
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+    }
+
+    .button:hover,
+    .button:focus {
+      background: rgba(216, 180, 90, 0.12);
+    }
+
+    footer {
+      padding: 30px 0 50px;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid rgba(216, 180, 90, 0.25);
+    }
+  </style>
+</head>
+
+<body>
+  <nav aria-label="Main navigation">
+    <a href="../">Home</a>
+    <a href="../crown-of-haiti/">Crown of Haiti</a>
+    <a href="../pearl-of-the-antilles/">Pearl of the Antilles</a>
+    <a href="../grenadiers-a-lassaut/">Grenadiers à l’Assaut</a>
+    <a href="../moroe/">Moroë</a>
+  </nav>
+
+  <header>
+    <p class="eyebrow">Strategy • Sales • Leadership</p>
+    <h1>Moroë</h1>
+
+    <p class="lead">
+      A dedicated home for Moroë’s work, services, partnerships,
+      professional training, strategic business development, and
+      long-term growth initiatives.
+    </p>
+  </header>
+
+  <main>
+    <section class="grid" aria-label="Moroë services">
+
+      <article class="card">
+        <h2>Business Development</h2>
+
+        <p>
+          Strategic support for revenue growth, client acquisition,
+          market expansion, brand positioning, and long-term commercial
+          development.
+        </p>
+
+        <span class="button">Details Coming Soon</span>
+      </article>
+
+      <article class="card">
+        <h2>Sales Training</h2>
+
+        <p>
+          Practical sales education centered on trust, leadership,
+          communication, discipline, accountability, and professional
+          performance.
+        </p>
+
+        <span class="button">Details Coming Soon</span>
+      </article>
+
+      <article class="card">
+        <h2>Strategic Partnerships</h2>
+
+        <p>
+          A landing point for clients, consultants, collaborators,
+          institutions, and future strategic partners.
+        </p>
+
+        <span class="button">Details Coming Soon</span>
+      </article>
+
+      <article class="card">
+        <h2>Leadership Development</h2>
+
+        <p>
+          Professional development focused on team building, operational
+          readiness, leadership structure, and sustainable growth.
+        </p>
+
+        <span class="button">Details Coming Soon</span>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    Official Moroë landing page
+  </footer>
+</body>
+</html>
