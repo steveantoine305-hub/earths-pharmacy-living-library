@@ -2,27 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
 
   <title>The Earth’s Pharmacy</title>
 
+  <meta
+    name="description"
+    content="The Earth’s Pharmacy Living Evidence Library — evidence-based botanical knowledge, safety information, monographs, and educational resources."
+  >
+
   <style>
-    * {
+    /*
+      EARTH'S PHARMACY HOMEPAGE
+      The approved homepage artwork contains the visible navigation
+      and homepage design. Transparent links are placed over the
+      appropriate areas of the artwork.
+
+      This prevents duplicate blue links from appearing over the image.
+    */
+
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
     }
 
-    html,
-    body {
+    html {
+      width: 100%;
+      min-height: 100%;
       margin: 0;
       padding: 0;
       background: #06180f;
-      min-height: 100%;
+      -webkit-text-size-adjust: 100%;
     }
 
     body {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
+      width: 100%;
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: #06180f;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .homepage {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .homepage-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1536px;
+      margin: 0 auto;
+      padding: 0;
+      background: #06180f;
     }
 
     .homepage-design {
@@ -30,59 +70,205 @@
       width: 100%;
       max-width: 1536px;
       height: auto;
-      margin: 0 auto;
+      margin: 0;
+      padding: 0;
+      border: 0;
     }
-    .homepage-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 1536px;
-  margin: 0 auto;
-}
 
-.pathway {
-  position: absolute;
-  display: block;
-  z-index: 999;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  touch-action: manipulation;
-}
+    /*
+      Transparent clickable areas.
+      They remain invisible but make the navigation shown inside
+      the approved homepage image functional.
+    */
 
-.pathway-library {
-  left: 4%;
-  top: 43%;
-  width: 29%;
-  height: 33%;
-}
+    .hotspot {
+      position: absolute;
+      display: block;
+      z-index: 20;
+      background: transparent;
+      border: 0;
+      color: transparent;
+      text-decoration: none;
+      cursor: pointer;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
 
-.pathway-monographs {
-  left: 35.5%;
-  top: 43%;
-  width: 29%;
-  height: 33%;
-}
- 
-/* Ensure the Founder’s Edition anchor has a clickable overlay.
-   Values mirror the other pathway boxes so the visual design is unchanged. */
-.pathway-founders {
-  left: 67%;
-  top: 43%;
-  width: 29%;
-  height: 33%;
-}
-    .pathway {
-  -webkit-tap-highlight-color: transparent;
-}
+    .hotspot:focus {
+      outline: none;
+    }
 
-.pathway:focus {
-  outline: none;
-}
+    .hotspot:focus-visible {
+      outline: 3px solid #d6b45f;
+      outline-offset: 2px;
+      background: rgba(214, 180, 95, 0.12);
+    }
 
-.pathway:focus-visible {
-  outline: 3px solid #c9a34e;
-  outline-offset: 4px;
-}
+    /*
+      TOP NAVIGATION HOTSPOTS
+
+      These links sit over the navigation that is already printed
+      inside the approved homepage artwork.
+    */
+
+    .nav-home {
+      top: 2.1%;
+      left: 28.1%;
+      width: 5.5%;
+      height: 4.6%;
+    }
+
+    .nav-about {
+      top: 2.1%;
+      left: 34%;
+      width: 5.7%;
+      height: 4.6%;
+    }
+
+    .nav-library {
+      top: 2.1%;
+      left: 40%;
+      width: 11.1%;
+      height: 4.6%;
+    }
+
+    .nav-monographs {
+      top: 2.1%;
+      left: 51.3%;
+      width: 9.7%;
+      height: 4.6%;
+    }
+
+    .nav-safety {
+      top: 2.1%;
+      left: 61.2%;
+      width: 6.2%;
+      height: 4.6%;
+    }
+
+    .nav-resources {
+      top: 2.1%;
+      left: 67.6%;
+      width: 7.7%;
+      height: 4.6%;
+    }
+
+    .nav-contact {
+      top: 2.1%;
+      left: 75.6%;
+      width: 6.3%;
+      height: 4.6%;
+    }
+
+    .nav-book {
+      top: 1.6%;
+      left: 83%;
+      width: 10.5%;
+      height: 5.5%;
+    }
+
+    /*
+      THREE MAIN HOMEPAGE PATHWAYS
+    */
+
+    .pathway-library {
+      top: 43%;
+      left: 4%;
+      width: 29%;
+      height: 33%;
+    }
+
+    .pathway-monographs {
+      top: 43%;
+      left: 35.5%;
+      width: 29%;
+      height: 33%;
+    }
+
+    .pathway-founders {
+      top: 43%;
+      left: 67%;
+      width: 29%;
+      height: 33%;
+    }
+
+    /*
+      Additional lower navigation icons shown in the artwork.
+    */
+
+    .lower-resources {
+      top: 78%;
+      left: 4%;
+      width: 21%;
+      height: 12%;
+    }
+
+    .lower-safety {
+      top: 78%;
+      left: 27%;
+      width: 21%;
+      height: 12%;
+    }
+
+    .lower-practice {
+      top: 78%;
+      left: 51%;
+      width: 21%;
+      height: 12%;
+    }
+
+    .lower-wellness {
+      top: 78%;
+      left: 75%;
+      width: 21%;
+      height: 12%;
+    }
+
+    /*
+      Prevent an unwanted blank page below the artwork.
+    */
+
+    footer,
+    .site-nav,
+    .duplicate-navigation,
+    .mobile-navigation {
+      display: none !important;
+    }
+
+    /*
+      Mobile adjustments.
+    */
+
+    @media (max-width: 768px) {
+      html,
+      body {
+        min-height: 100%;
+      }
+
+      .homepage-wrapper,
+      .homepage-design {
+        width: 100%;
+        max-width: none;
+      }
+
+      .hotspot:focus-visible {
+        outline-width: 2px;
+      }
+    }
+
+    /*
+      Respect accessibility preferences.
+    */
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+      }
+    }
   </style>
 </head>
 
@@ -90,60 +276,109 @@
   <main class="homepage">
     <div class="homepage-wrapper">
 
-      <!-- Site Navigation -->
-      <nav class="site-nav" role="navigation" aria-label="Main navigation" style="position:absolute;left:20px;top:18px;z-index:1000;">
-        <ul style="list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0;">
-          <li><a class="btn ghost" href="/">Home</a></li>
-          <li><a class="btn ghost" href="/about/">About</a></li>
-          <li><a class="btn ghost" href="/living-library/">Living Evidence Library</a></li>
-          <li><a class="btn ghost" href="/monographs/">Botanical Monographs</a></li>
-          <li><a class="btn ghost" href="/safety/">Safety Center</a></li>
-          <li><a class="btn ghost" href="/resources/">Resources Center</a></li>
-          <li><a class="btn ghost" href="/founders-edition/">Founder’s Edition</a></li>
-          <li><a class="btn ghost" href="/contact/">Contact</a></li>
-          <li><a class="btn ghost" href="/qr-center/">Digital Access Center</a></li>
-        </ul>
-      </nav>
-
       <img
         class="homepage-design"
-        src="Earths_Pharmacy_Homepage_Refined_Professional_Approved.png"
-        alt="The Earth’s Pharmacy homepage"
+        src="./Earths_Pharmacy_Homepage_Refined_Professional_Approved.png"
+        alt="The Earth’s Pharmacy Living Evidence Library homepage"
       >
 
+      <!-- Navigation shown inside the approved artwork -->
+
       <a
-        class="pathway pathway-library"
+        class="hotspot nav-home"
+        href="/"
+        aria-label="Home"
+      ></a>
+
+      <a
+        class="hotspot nav-about"
+        href="/about/"
+        aria-label="About The Earth’s Pharmacy"
+      ></a>
+
+      <a
+        class="hotspot nav-library"
+        href="/living-library/"
+        aria-label="Living Evidence Library"
+      ></a>
+
+      <a
+        class="hotspot nav-monographs"
+        href="/monographs/"
+        aria-label="Botanical Monographs"
+      ></a>
+
+      <a
+        class="hotspot nav-safety"
+        href="/safety/"
+        aria-label="Safety Center"
+      ></a>
+
+      <a
+        class="hotspot nav-resources"
+        href="/resources/"
+        aria-label="Resources Center"
+      ></a>
+
+      <a
+        class="hotspot nav-contact"
+        href="/contact/"
+        aria-label="Contact"
+      ></a>
+
+      <a
+        class="hotspot nav-book"
+        href="/founders-edition/"
+        aria-label="View the Founder’s Edition"
+      ></a>
+
+      <!-- Main homepage pathways -->
+
+      <a
+        class="hotspot pathway-library"
         href="/living-library/"
         aria-label="Enter the Living Evidence Library"
       ></a>
 
       <a
-        class="pathway pathway-monographs"
+        class="hotspot pathway-monographs"
         href="/monographs/"
-        aria-label="Explore the medicinal plant monographs"
+        aria-label="Explore the botanical monographs"
       ></a>
 
       <a
-        class="pathway pathway-founders"
+        class="hotspot pathway-founders"
         href="/founders-edition/"
         aria-label="View the Founder’s Edition"
       ></a>
+
+      <!-- Lower informational pathways -->
+
+      <a
+        class="hotspot lower-resources"
+        href="/resources/"
+        aria-label="Evidence-based resources"
+      ></a>
+
+      <a
+        class="hotspot lower-safety"
+        href="/safety/"
+        aria-label="Safety information"
+      ></a>
+
+      <a
+        class="hotspot lower-practice"
+        href="/monographs/"
+        aria-label="Practical botanical guidance"
+      ></a>
+
+      <a
+        class="hotspot lower-wellness"
+        href="/living-library/"
+        aria-label="Whole-person wellness information"
+      ></a>
+
     </div>
   </main>
-
-  <!-- Consistent footer -->
-  <footer style="position:fixed;left:0;right:0;bottom:10px;display:flex;justify-content:center;z-index:1000;">
-    <p style="display:flex;gap:8px;align-items:center;">
-      <a class="btn ghost" href="/">Home</a>
-      <a class="btn ghost" href="/about/">About</a>
-      <a class="btn ghost" href="/living-library/">Living Evidence Library</a>
-      <a class="btn ghost" href="/monographs/">Botanical Monographs</a>
-      <a class="btn ghost" href="/safety/">Safety Center</a>
-      <a class="btn ghost" href="/resources/">Resources Center</a>
-      <a class="btn ghost" href="/founders-edition/">Founder’s Edition</a>
-      <a class="btn ghost" href="/contact/">Contact</a>
-      <a class="btn ghost" href="/qr-center/">Digital Access Center</a>
-    </p>
-  </footer>
 </body>
 </html>
