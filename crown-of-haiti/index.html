@@ -61,6 +61,38 @@
       max-width: 100%;
     }
 
+    /* Cover image rules (ensure cover text is not cropped) */
+    .cover-hero {
+      display:block;
+      margin: 28px auto 0;
+      width: min(420px, 40%);
+      max-height: 500px;
+      object-fit: contain;
+      border-radius: 6px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    }
+
+    .book-cover {
+      width: 100%;
+      height: 320px;
+      object-fit: contain;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03));
+      border-radius: 6px;
+      display:block;
+    }
+
+    .cover-placeholder {
+      width:100%;
+      height:320px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,255,255,0.02);
+      color:var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      border-radius:6px;
+    }
+
     .container {
       width: min(1120px, calc(100% - 40px));
       margin-inline: auto;
@@ -256,3 +288,249 @@
       min-height: 280px;
       display: flex;
       flex-direction: column;
+    }
+
+    .book-actions { margin-top: auto; }
+
+    .history{
+      display:flex;
+      gap:1rem;
+      align-items:stretch;
+      background:linear-gradient(180deg,#fff,#fbfbfa);
+      border-radius:12px;
+      padding:1rem;
+      margin-bottom:1.25rem;
+    }
+
+    .history-body{flex:1}
+
+    .sister{
+      background:var(--brand, var(--black));
+    }
+
+    .about{ padding:1rem; border-radius:12px; }
+
+    footer{ margin-top:2rem; padding:1.5rem 0; border-top:1px solid #eef3ee; color:var(--muted); font-size:0.95rem }
+
+    @media(min-width:700px){ .book-grid { grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:1200px){ .book-grid { grid-template-columns:repeat(4,1fr); } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="/">The Earth's Pharmacy</a>
+      <ul class="nav-links" role="menubar">
+        <li role="none"><a role="menuitem" href="/">Home</a></li>
+        <li role="none"><a role="menuitem" href="/library/">Library</a></li>
+        <li role="none"><a role="menuitem" href="/about/">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <header class="hero" role="banner" aria-label="Crown of Haiti hero">
+      <div class="hero-content container">
+        <div class="eyebrow">Historical Fiction • Haitian Memory • Sovereignty</div>
+        <h1>Crown of Haiti</h1>
+        <p class="hero-subtitle">A sweeping historical fiction series exploring Haiti’s revolutionary legacy, sovereignty, memory, and unfinished promise.</p>
+        <p class="hero-copy">An illustrated companion and series portal that collects editions, contextual essays, and digital access to the Crown of Haiti narrative.</p>
+
+        <div class="button-row">
+          <a class="button" href="#digital-access">Digital Access</a>
+          <a class="button secondary" href="#series">Explore the Series</a>
+        </div>
+
+        <!-- Hero cover (clickable to Book One — Novel) -->
+        <p>
+          <a href="https://payhip.com/b/EQ5Ta" target="_blank" rel="noopener" aria-label="View Book One — Novel on Payhip">
+            <img src="./assets/crown-of-haiti-novel.jpg" alt="Crown of Haiti — Novel cover" class="cover-hero">
+          </a>
+        </p>
+      </div>
+    </header>
+
+    <!-- Series -->
+    <section id="series" class="series" aria-labelledby="series-heading">
+      <div class="container series-intro">
+        <div style="display:flex;align-items:flex-start;gap:1rem;flex-wrap:wrap">
+          <div class="series-desc">
+            <h2 id="series-heading">The Series</h2>
+            <p style="margin-top:0.25rem;color:var(--muted)">The Crown of Haiti series collects illustrated editions, companion essays, and archival notes that center Haitian history, memory, and cultural narratives. Each sister-site page documents editions, provides digital access, and surfaces historical sources and context.</p>
+          </div>
+          <div style="flex:1 1 280px; min-width:220px;">
+            <div class="series-list" aria-hidden="false">
+              <div style="background:#f1fbf8;padding:0.65rem;border-radius:8px;font-weight:700">Historical Novellas</div>
+              <div style="background:#fff7f0;padding:0.65rem;border-radius:8px">Full-Length Novels</div>
+              <div style="background:#f6f7ff;padding:0.65rem;border-radius:8px">The Crown of Haiti Series</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Books -->
+    <section aria-labelledby="featured-books-heading" style="margin-top:1rem;">
+      <div class="container">
+        <h2 id="featured-books-heading">Featured in this Edition</h2>
+        <p class="section-lead">Selected works related to Crown of Haiti and the broader series narrative.</p>
+
+        <div class="books" role="list" aria-label="Featured book cards">
+          <div class="book-grid" role="list">
+
+            <!-- Book One — Novella -->
+            <article class="book-card" role="listitem" aria-labelledby="book1-title">
+              <div class="cover-wrapper">
+                <a href="https://payhip.com/b/8SMOC" target="_blank" rel="noopener" aria-label="View Book One — Novella on Payhip">
+                  <img src="./assets/crown-of-haiti-novella.jpg" alt="Crown of Haiti — Novella cover" class="book-cover">
+                </a>
+              </div>
+              <h3 id="book1-title">Book One — Novella</h3>
+              <div class="book-meta">Novella edition</div>
+              <p style="margin:0;color:var(--muted)">A focused companion edition introducing Marie’s journey, Haiti’s revolutionary inheritance, and the events that shape the larger Crown of Haiti story.</p>
+              <div class="book-actions" style="margin-top:10px">
+                <a class="button" href="https://payhip.com/b/8SMOC" target="_blank" rel="noopener">View Book</a>
+              </div>
+            </article>
+
+            <!-- Book One — Novel -->
+            <article class="book-card" role="listitem" aria-labelledby="book1n-title">
+              <div class="cover-wrapper">
+                <a href="https://payhip.com/b/EQ5Ta" target="_blank" rel="noopener" aria-label="View Book One — Novel on Payhip">
+                  <img src="./assets/crown-of-haiti-novel.jpg" alt="Crown of Haiti — Novel cover" class="book-cover">
+                </a>
+              </div>
+              <h3 id="book1n-title">Book One — Novel</h3>
+              <div class="book-meta">Novel edition</div>
+              <p style="margin:0;color:var(--muted)">The expanded Book One novel follows Marie through ancestral memory, political struggle, leadership, and Haiti’s unfinished pursuit of sovereignty.</p>
+              <div class="book-actions" style="margin-top:10px">
+                <a class="button" href="https://payhip.com/b/EQ5Ta" target="_blank" rel="noopener">View Book</a>
+              </div>
+            </article>
+
+            <!-- Book Two — Novella -->
+            <article class="book-card" role="listitem" aria-labelledby="book2-title">
+              <div class="cover-wrapper">
+                <a href="https://payhip.com/b/yM4bj" target="_blank" rel="noopener" aria-label="View Pearl of the Antilles — Novella on Payhip">
+                  <img src="./assets/pearl-of-the-antilles-novella.jpg" alt="Pearl of the Antilles — Novella cover" class="book-cover">
+                </a>
+              </div>
+              <h3 id="book2-title">Pearl of the Antilles — Novella</h3>
+              <div class="book-meta">Novella edition</div>
+              <p style="margin:0;color:var(--muted)">A companion novella continuing Marie’s story through leadership, national identity, resistance, and the responsibilities of the Crown.</p>
+              <div class="book-actions" style="margin-top:10px">
+                <a class="button" href="https://payhip.com/b/yM4bj" target="_blank" rel="noopener">View Book</a>
+              </div>
+            </article>
+
+            <!-- Book Two — Novel (Cover Coming Soon) -->
+            <article class="book-card" role="listitem" aria-labelledby="book2n-title">
+              <div class="cover-wrapper">
+                <div class="cover-placeholder" aria-hidden="true">Cover Coming Soon</div>
+              </div>
+              <h3 id="book2n-title">Pearl of the Antilles — Novel</h3>
+              <div class="book-meta">Novel edition</div>
+              <p style="margin:0;color:var(--muted)">The complete Book Two novel expands the world of the series through diplomacy, regional history, sovereignty, and Marie’s growing responsibility as Queen.</p>
+              <div class="book-actions" style="margin-top:10px">
+                <a class="button" href="https://payhip.com/b/U5lwi" target="_blank" rel="noopener">View Book</a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- History Lives Here -->
+    <section id="history" class="history" aria-labelledby="history-heading" style="margin-top:1rem;">
+      <div class="history-body">
+        <h2 id="history-heading">History Lives Here</h2>
+        <p style="color:var(--muted)">The Crown of Haiti series draws from the Haitian Revolution, the reign of Henri Christophe, Sans-Souci Palace, the Citadelle, the Chasseurs-Volontaires de Saint-Domingue, Haiti’s support of liberation movements throughout the Americas, and the long struggle against foreign interference and historical erasure.</p>
+        <p style="color:var(--muted)">Through historical fiction, the series restores Haiti to the center of its own story—honoring its people, memory, sacrifice, sovereignty, and global influence.</p>
+        <p style="margin-top:0.6rem;"><a href="#featured-books" class="button secondary">Explore the Books</a></p>
+      </div>
+    </section>
+
+    <!-- Explore The Earth's Pharmacy sister-site -->
+    <section class="sister" aria-labelledby="sister-heading">
+      <div class="container">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+          <div>
+            <h2 id="sister-heading" style="margin:0;color:#fff">Explore The Earth's Pharmacy</h2>
+            <p style="margin:0.45rem 0 0 0; color:rgba(255,255,255,0.95)">Visit the primary site for news, projects, and the Living Evidence Library.</p>
+          </div>
+          <div style="display:flex;gap:0.6rem;align-items:center">
+            <a class="button" href="https://earthspharmacy.org/" target="_blank" rel="noopener">Visit earthspharmacy.org</a>
+            <a class="button secondary" href="https://earthspharmacy.org/" target="_blank" rel="noopener">Full Site</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Digital Access & QR -->
+    <section id="digital-access" style="margin-top:1rem;">
+      <div class="container">
+        <h2>Digital Access</h2>
+        <p style="color:var(--muted)">Scan or follow the link to access the Crown of Haiti digital edition and supplemental materials.</p>
+
+        <div style="display:flex;gap:1rem;align-items:center;background:linear-gradient(180deg,#ffffff,#fffaf0);padding:0.85rem;border-radius:10px;box-shadow:0 6px 16px rgba(12,24,18,0.04);">
+          <div style="width:120px;height:120px;display:flex;align-items:center;justify-content:center;border:1px dashed rgba(11,61,46,0.12);background:#fafafa;border-radius:6px;">
+            <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="QR code placeholder">
+              <rect width="100" height="100" fill="#fff"/>
+              <rect x="8" y="8" width="22" height="22" fill="#0b3d2e"/>
+              <rect x="70" y="8" width="22" height="22" fill="#0b3d2e"/>
+              <rect x="8" y="70" width="22" height="22" fill="#0b3d2e"/>
+              <rect x="40" y="40" width="10" height="10" fill="#0b3d2e"/>
+              <rect x="56" y="40" width="6" height="6" fill="#0b3d2e"/>
+              <rect x="40" y="56" width="6" height="6" fill="#0b3d2e"/>
+              <rect x="56" y="56" width="10" height="10" fill="#0b3d2e"/>
+              <text x="50" y="95" font-size="6" text-anchor="middle" fill="#6b6b6b">QR placeholder</text>
+            </svg>
+          </div>
+          <div>
+            <div style="font-weight:700">Crown of Haiti — Digital Access</div>
+            <div style="font-size:0.95rem;color:var(--muted)">Published URL: <a href="https://earthspharmacy.org/crown-of-haiti/" target="_blank" rel="noopener">https://earthspharmacy.org/crown-of-haiti/</a></div>
+            <p style="margin-top:0.5rem;color:var(--muted)">This is a placeholder for a QR code linking to the digital edition and downloadable materials. Replace with a generated QR image when available.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About the Author -->
+    <section id="about-author" style="margin-top:1rem;">
+      <div class="container">
+        <h2>About the Author</h2>
+        <div class="about" role="region" aria-labelledby="about-author">
+          <div>
+            <h3 style="margin:0">Steve Antoine</h3>
+            <p style="margin:0.25rem 0;color:var(--muted)">Steve Antoine is a Haitian American writer and creator of The Crown of Haiti series. His work centers Haiti’s revolutionary legacy, sovereignty, memory, leadership, and global influence through historical fiction grounded in research, cultural identity, and the lived inheritance of the Haitian people.</p>
+            <p style="margin-top:0.5rem"><a href="https://earthspharmacy.org/" target="_blank" rel="noopener">Visit The Earth's Pharmacy</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container" style="display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap;">
+      <div>
+        <strong>The Earth's Pharmacy — Living Evidence Library</strong>
+        <div style="color:var(--muted);">Crown of Haiti companion • Published online at <a href="https://earthspharmacy.org/crown-of-haiti/" target="_blank" rel="noopener">earthspharmacy.org/crown-of-haiti/</a></div>
+      </div>
+      <nav aria-label="Footer navigation" style="display:flex;gap:1rem;align-items:center">
+        <a href="https://earthspharmacy.org/" target="_blank" rel="noopener">earthspharmacy.org</a>
+        <a href="#series">Series</a>
+        <a href="#history">History</a>
+        <a href="#digital-access">Digital Access</a>
+      </nav>
+    </div>
+    <div class="container" style="margin-top:0.75rem;color:var(--muted);font-size:0.85rem">
+      <div>&copy; <span id="year"></span> The Earth's Pharmacy. All rights reserved.</div>
+    </div>
+    <script>
+      try{ document.getElementById('year').textContent = new Date().getFullYear(); }catch(e){}
+    </script>
+  </footer>
+</body>
+</html>
