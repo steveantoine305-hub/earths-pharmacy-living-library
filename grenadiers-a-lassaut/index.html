@@ -1,1 +1,179 @@
-grenadiers-a-lassaut/index.html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grenadiers à l’Assaut | Legacy Editions</title>
+
+  <style>
+    :root {
+      --navy: #07182c;
+      --black: #02050a;
+      --gold: #d8b45a;
+      --cream: #fff8e7;
+      --muted: #c8c2b5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at top, rgba(216, 180, 90, 0.12), transparent 35%),
+        linear-gradient(180deg, var(--black), var(--navy));
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      padding: 18px;
+      border-bottom: 1px solid rgba(216, 180, 90, 0.35);
+      background: rgba(0, 0, 0, 0.28);
+    }
+
+    nav a {
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    header,
+    main,
+    footer {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    header {
+      padding: 64px 0 30px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    h1 {
+      margin: 0.25em 0;
+      color: var(--gold);
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      padding: 34px 0 60px;
+    }
+
+    .card {
+      padding: 24px;
+      text-align: center;
+      border: 1px solid rgba(216, 180, 90, 0.5);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: var(--gold);
+      font-size: 2rem;
+    }
+
+    .cover {
+      width: min(100%, 340px);
+      aspect-ratio: 2 / 3;
+      margin: 18px auto;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      color: var(--muted);
+      border: 1px dashed rgba(216, 180, 90, 0.55);
+      background: rgba(0, 0, 0, 0.28);
+    }
+
+    .description {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 13px 24px;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+    }
+
+    footer {
+      padding: 28px 0 46px;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid rgba(216, 180, 90, 0.25);
+    }
+  </style>
+</head>
+
+<body>
+  <nav aria-label="Main navigation">
+    <a href="../">Home</a>
+    <a href="../crown-of-haiti/">Crown of Haiti</a>
+    <a href="../pearl-of-the-antilles/">Pearl of the Antilles</a>
+    <a href="../grenadiers-a-lassaut/">Grenadiers à l’Assaut</a>
+    <a href="../moroe/">Moroë</a>
+  </nav>
+
+  <header>
+    <p class="eyebrow">The Crown of Haiti Series</p>
+    <h1>Grenadiers à l’Assaut</h1>
+    <p class="subtitle">Legacy Editions</p>
+  </header>
+
+  <main>
+    <section class="grid" aria-label="Grenadiers à l’Assaut editions">
+      <article class="card">
+        <h2>Novella</h2>
+        <div class="cover">Novella cover coming next</div>
+        <p class="description">
+          The verified novella description, price, purchase link, and QR
+          destination will be added after final approval.
+        </p>
+        <span class="button">Coming Soon</span>
+      </article>
+
+      <article class="card">
+        <h2>Novel</h2>
+        <div class="cover">Novel cover coming next</div>
+        <p class="description">
+          The verified novel description, price, purchase link, and QR
+          destination will be added after final approval.
+        </p>
+        <span class="button">Coming Soon</span>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    Official Grenadiers à l’Assaut Legacy Editions landing page
+  </footer>
+</body>
+</html>
