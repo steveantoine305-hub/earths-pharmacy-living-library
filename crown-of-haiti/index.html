@@ -1,95 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Crown of Haiti | The Earth’s Pharmacy</title>
-  <meta name="description" content="Crown of Haiti — series landing page hosted at earthspharmacy.org/crown-of-haiti/" />
-  <link rel="stylesheet" href="/assets/styles.css">
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <title>The Crown of Haiti | Historical Fiction Series</title>
+
+  <meta
+    name="description"
+    content="The Crown of Haiti is a historical fiction series exploring Haiti’s revolutionary legacy, sovereignty, memory, culture, and unfinished promise."
+  >
+
   <style>
-    .hero { display:grid; grid-template-columns:1fr 380px; gap:28px; align-items:center; }
-    .hero h1 { color:#b98e2f; font-size:40px; margin:0 0 8px 0; }
-    .lead { font-size:16px; max-width:68ch; }
-    .links { margin-top:12px; display:flex; gap:12px; flex-wrap:wrap; }
-    .book-grid { display:grid; grid-template-columns: repeat(2,1fr); gap:18px; margin-top:18px; }
-    .book-card { background: linear-gradient(180deg, rgba(8,20,16,0.6), rgba(6,18,14,0.5)); padding:14px; border-radius:8px; border:1px solid rgba(212,168,79,0.04); }
-    .book-card h3 { margin:0 0 8px 0; color:#d4a84f; }
-    .book-card p { margin:0 0 8px 0; }
-    .coming { color:rgba(243,228,189,0.85); font-style:italic; }
-    @media (max-width:900px) { .hero { grid-template-columns:1fr; } .book-grid { grid-template-columns:1fr; } }
-  </style>
-</head>
-<body>
-  <div class="site container">
-    <header class="hero" role="banner" aria-labelledby="crown-title">
-      <div class="hero-copy">
-        <h1 id="crown-title">Crown of Haiti</h1>
-        <p class="lead">A companion series presented by The Earth’s Pharmacy. Find novellas and novels set in the Caribbean — editions, formats, and verified purchase links are provided below.</p>
-        <div class="links">
-          <a class="btn" href="/founders-edition/">Founder’s Edition</a>
-          <a class="btn ghost" href="/">Return Home</a>
-        </div>
-      </div>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
 
-      <div class="cover" aria-hidden="true">
-        <!-- Use existing Crown of Haiti artwork if present in assets; do not modify the artwork file -->
-        <!-- If author name is embedded in the image, it will not be altered. Reported separately. -->
-        <img src="/Earths_Pharmacy_Homepage_Refined_Professional_Approved.png" alt="Crown of Haiti cover artwork (using existing repository artwork)" />
-      </div>
-    </header>
+    :root {
+      --black: #080604;
+      --deep-black: #030201;
+      --red: #7d1117;
+      --dark-red: #3e090d;
+      --gold: #d2ad55;
+      --light-gold: #f0d48d;
+      --parchment: #eadbb7;
+      --cream: #f7efd9;
+      --muted: #c8b98f;
+      --border: rgba(210, 173, 85, 0.45);
+    }
 
-    <main>
-      <section aria-labelledby="series-links">
-        <h2 id="series-links">Series & Books</h2>
-        <div class="book-grid">
-          <div class="book-card">
-            <h3>Official series page</h3>
-            <p><a href="https://earthspharmacy.org/crown-of-haiti/">https://earthspharmacy.org/crown-of-haiti/</a></p>
-          </div>
+    html {
+      scroll-behavior: smooth;
+      background: var(--deep-black);
+    }
 
-          <div class="book-card">
-            <h3>Book One — Novella</h3>
-            <p><a href="https://payhip.com/b/8SMOC">https://payhip.com/b/8SMOC</a></p>
-          </div>
+    body {
+      margin: 0;
+      min-height: 100%;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at top, rgba(125, 17, 23, 0.28), transparent 38rem),
+        linear-gradient(180deg, #120705 0%, var(--black) 45%, #060302 100%);
+      color: var(--cream);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+    }
 
-          <div class="book-card">
-            <h3>Book One — Novel</h3>
-            <p><a href="https://payhip.com/b/EQ5Ta">https://payhip.com/b/EQ5Ta</a></p>
-          </div>
+    a {
+      color: inherit;
+    }
 
-          <div class="book-card">
-            <h3>Pearl of the Antilles — Novella</h3>
-            <p><a href="https://payhip.com/b/yM4bj">https://payhip.com/b/yM4bj</a></p>
-          </div>
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-          <div class="book-card">
-            <h3>Pearl of the Antilles — Novel</h3>
-            <p><a href="https://payhip.com/b/U5lwi">https://payhip.com/b/U5lwi</a></p>
-          </div>
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin-inline: auto;
+    }
 
-          <div class="book-card">
-            <h3>Book Three — Grenadiers à l’Assaut</h3>
-            <p class="coming">Status: Coming Soon</p>
-          </div>
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      background: rgba(3, 2, 1, 0.94);
+      backdrop-filter: blur(12px);
+    }
 
-          <div class="book-card">
-            <h3>Book Four</h3>
-            <p class="coming">Status: Coming Soon</p>
-          </div>
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
 
-          <div class="book-card">
-            <h3>Master Index — Landing Page Link Pending</h3>
-            <p>Landing page link will be added when ready.</p>
-          </div>
-        </div>
-      </section>
+    .brand {
+      color: var(--light-gold);
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
 
-      <footer style="margin-top:28px;">
-        <p style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-          <a class="btn" href="/">Return Home</a>
-        </p>
-      </footer>
-    </main>
-  </div>
-</body>
-</html>
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 18px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.86rem;
+    }
+
+    .nav-links a {
+      color: var(--parchment);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--light-gold);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 78vh;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+      background:
+        linear-gradient(rgba(3, 2, 1, 0.56), rgba(3, 2, 1, 0.92)),
+        radial-gradient(circle at 50% 28%, rgba(210, 173, 85, 0.18), transparent 28rem),
+        linear-gradient(135deg, #4a0b10, #080604 62%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1px solid rgba(210, 173, 85, 0.32);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 110px 0 90px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--light-gold);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.78rem;
+      font-weight: bold;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--light-gold);
+      font-size: clamp(3rem, 9vw, 7.2rem);
+      line-height: 0.95;
+      letter-spacing: 0.035em;
+      text-shadow: 0 5px 28px rgba(0, 0, 0, 0.76);
+    }
+
+    .hero-subtitle {
+      margin: 22px 0 0;
+      color: var(--parchment);
+      font-size: clamp(1.3rem, 3vw, 2.15rem);
+      font-style: italic;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin: 24px auto 0;
+      color: #eadfc4;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 22px;
+      border: 1px solid var(--gold);
+      color: #140b05;
+      background: linear-gradient(180deg, var(--light-gold), var(--gold));
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.92rem;
+      font-weight: bold;
+      letter-spacing: 0.045em;
+      text-decoration: none;
+      text-transform: uppercase;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+    }
+
+    .button.secondary {
+      color: var(--light-gold);
+      background: rgba(5, 3, 2, 0.72);
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-1px);
+      filter: brightness(1.08);
+    }
+
+    section {
+      padding: 84px 0;
+    }
+
+    .section-heading {
+      margin: 0 0 16px;
+      color: var(--light-gold);
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      line-height: 1.05;
+      text-align: center;
+    }
+
+    .section-lead {
+      max-width: 800px;
+      margin: 0 auto;
+      color: var(--parchment);
+      font-size: 1.08rem;
+      text-align: center;
+    }
+
+    .series-intro {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent),
+        #0c0604;
+    }
+
+    .books {
+      border-block: 1px solid rgba(210, 173, 85, 0.2);
+      background: #080403;
+    }
+
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 44px;
+    }
+
+    .book-card {
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
