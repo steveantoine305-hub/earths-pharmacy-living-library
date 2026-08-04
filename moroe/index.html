@@ -1,1 +1,72 @@
-moroe/index.html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moroë | Official Landing Page</title>
+
+  <style>
+    :root {
+      --black: #080604;
+      --deep-black: #030201;
+      --red: #7d1117;
+      --dark-red: #3e090d;
+      --gold: #d8b45a;
+      --light-gold: #f0d48d;
+      --cream: #fff8e7;
+      --muted: #c8c2b5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--cream);
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(125, 17, 23, 0.3),
+          transparent 38rem
+        ),
+        linear-gradient(
+          180deg,
+          #150706,
+          var(--black) 55%,
+          var(--deep-black)
+        );
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      padding: 18px;
+      border-bottom: 1px solid rgba(216, 180, 90, 0.35);
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    nav a {
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      text-decoration: underline;
+    }
+
+    header,
+    main,
+    footer {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    header {
+      padding: 76px
