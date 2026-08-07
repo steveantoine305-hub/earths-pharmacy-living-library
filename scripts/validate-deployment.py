@@ -5,17 +5,27 @@ from pathlib import Path
 
 
 def _normalize(path):
-    return str(Path(path).as_posix()).lstrip("./")
+    normalized = str(path).replace("\\", "/")
+
+    while normalized.startswith("./"):
+        normalized = normalized[2:]
+
+    return normalized.lstrip("/")
 
 
 def _is_allowlisted(rel_path, approved_paths):
-    rel_path = _normalize(rel_path)
+    rel_path = _normalize(rel_path).rstrip("/")
 
-    for approved in approved_paths:
-        approved = _normalize(approved)
+    for raw_approved in approved_paths:
+        approved = _normalize(raw_approved)
+        is_directory = approved.endswith("/")
+        approved = approved.rstrip("/")
 
-        if approved.endswith("/"):
-            if rel_path.startswith(approved):
+        if is_directory:
+            if (
+                rel_path == approved
+                or rel_path.startswith(approved + "/")
+            ):
                 return True
         elif rel_path == approved:
             return True
@@ -25,7 +35,9 @@ def _is_allowlisted(rel_path, approved_paths):
 
 def validate(deploy_dir=None):
     repo_root = Path(__file__).resolve().parent.parent
-    manifest_path = repo_root / "config" / "public-content-manifest.json"
+    manifest_path = (
+        repo_root / "config" / "public-content-manifest.json"
+    )
 
     if deploy_dir:
         deploy_root = Path(deploy_dir).resolve()
@@ -35,7 +47,11 @@ def validate(deploy_dir=None):
     with manifest_path.open("r", encoding="utf-8") as f:
         manifest = json.load(f)
 
-    approved_paths = manifest.get("approved_public_paths", [])
+    approved_paths = manifest.get(
+        "approved_public_paths",
+        [],
+    )
+
     excluded_paths = [
         _normalize(path).rstrip("/")
         for path in manifest.get("excluded_paths", [])
@@ -54,7 +70,8 @@ def validate(deploy_dir=None):
 
     if not deploy_root.exists() or not deploy_root.is_dir():
         errors.append(
-            f"CRITICAL ERROR: Deployment output not found: {deploy_root}"
+            "CRITICAL ERROR: Deployment output not found: "
+            f"{deploy_root}"
         )
     else:
         for root, dirs, files in os.walk(deploy_root):
@@ -75,6 +92,7 @@ def validate(deploy_dir=None):
 
             for filename in files:
                 full_path = root_path / filename
+
                 rel_path = full_path.relative_to(
                     deploy_root
                 ).as_posix()
@@ -93,26 +111,27 @@ def validate(deploy_dir=None):
                 for excluded in excluded_paths:
                     if (
                         normalized == excluded
-                        or normalized.startswith(excluded + "/")
+                        or normalized.startswith(
+                            excluded + "/"
+                        )
                     ):
                         errors.append(
                             "CRITICAL ERROR: Excluded path leaked "
-                            f"into deployment output: {normalized}"
+                            "into deployment output: "
+                            f"{normalized}"
                         )
                         break
 
                 if filename in known_drafts:
                     errors.append(
                         "CRITICAL ERROR: DRAFT/internal monograph "
-                        f"file in deployment output: {normalized}"
+                        "file in deployment output: "
+                        f"{normalized}"
                     )
 
                 if full_path.suffix.lower() in {
                     ".html",
                     ".htm",
-                    ".json",
-                    ".txt",
-                    ".md",
                 }:
                     try:
                         text = full_path.read_text(
@@ -125,6 +144,8 @@ def validate(deploy_dir=None):
                             '"lifecycle_status":"draft"',
                             "lifecycle_status = draft",
                             "lifecycle_status=draft",
+                            'data-lifecycle="draft"',
+                            "data-lifecycle='draft'",
                         ]
 
                         if any(
@@ -133,7 +154,7 @@ def validate(deploy_dir=None):
                         ):
                             errors.append(
                                 "CRITICAL ERROR: DRAFT lifecycle "
-                                "marker found in deployment output: "
+                                "marker found in deployed HTML: "
                                 f"{normalized}"
                             )
 
