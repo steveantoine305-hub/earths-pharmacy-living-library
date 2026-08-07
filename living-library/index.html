@@ -4,189 +4,225 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Living Evidence Library | The Earth’s Pharmacy</title>
-  <meta name="description" content="Living Evidence Library — the continuously updated scientific companion to The Earth’s Pharmacy." />
-
+  <meta name="description" content="Living Evidence Library — the evolving digital companion to the stable published edition of The Earth’s Pharmacy." />
+  <link rel="stylesheet" href="/assets/styles.css">
   <style>
-    /* Mirror homepage visual language */
-    * { box-sizing: border-box; }
-    html, body { height: 100%; margin: 0; }
-    body {
-      font-family: Georgia, "Times New Roman", serif;
-      -webkit-font-smoothing: antialiased;
-      background: #06180f; /* homepage background */
-      color: #f3e4bd;     /* parchment text */
-      line-height: 1.6;
-      padding: 24px 18px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .site { max-width: 1280px; width: 100%; margin: 0 auto; }
-
-    header.hero {
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 28px;
-      align-items: center;
-      background: linear-gradient(180deg, rgba(6,24,15,0.92), rgba(6,20,15,0.96));
-      padding: 40px;
+    /* Discovery Engine Styles */
+    .search-container {
+      margin: 40px 0;
+      background: rgba(212, 168, 79, 0.05);
+      padding: 32px;
       border-radius: 8px;
-      box-shadow: 0 18px 60px rgba(0,0,0,0.6);
+      border: 1px solid var(--border-color);
+    }
+    .search-box {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .search-box input {
+      flex: 1;
+      padding: 14px 20px;
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+      background: rgba(0,0,0,0.2);
+      color: var(--text-color);
+      font-size: 16px;
+    }
+    .search-box input:focus {
+      outline: none;
+      border-color: var(--gold-accent);
+    }
+    
+    .alphabet-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+    .letter-btn {
+      padding: 6px 12px;
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+      background: transparent;
+      color: var(--text-color);
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+    .letter-btn:hover, .letter-btn.active {
+      background: var(--gold-accent);
+      color: var(--bg-color);
+      border-color: var(--gold-accent);
     }
 
-    .hero h1 { margin: 0 0 8px 0; color: #d4a84f; font-size: 44px; line-height: 1.02; }
-    .hero p.lead { margin: 0 0 16px 0; font-size: 18px; color: #f3e4bd; max-width: 60ch; }
-
-    .hero-graphic { text-align: center; }
-    .hero-graphic .box { background:#08140f; padding:10px; border-radius:6px; display:inline-block; box-shadow:0 12px 36px rgba(0,0,0,0.55); }
-    .hero-graphic img { display:block; width:300px; height:auto; border-radius:4px; }
-
-    .cta-row { margin-top:16px; display:flex; gap:12px; flex-wrap:wrap; }
-    .btn { display:inline-block; padding:12px 20px; background:#d4a84f; color:#06140d; text-decoration:none; border-radius:6px; font-weight:700; box-shadow:0 8px 20px rgba(0,0,0,0.45); }
-    .btn.ghost { background:transparent; color:#f3e4bd; border:1px solid rgba(212,168,79,0.12); box-shadow:none; font-weight:600; }
-
-    main { margin-top:30px; }
-
-    /* Navigation cards */
-    .nav-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; }
-    .card {
-      background: linear-gradient(180deg, rgba(8,20,16,0.6), rgba(6,18,14,0.5));
-      border: 1px solid rgba(212,168,79,0.04);
-      padding:18px;
-      border-radius:8px;
-      min-height:120px;
-      display:flex; flex-direction:column; justify-content:space-between;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.45);
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
     }
-    .card h3 { margin:0 0 6px 0; color:#d4a84f; font-size:18px; }
-    .card p { margin:0; color:#f3e4bd; font-size:14px; }
-
-    /* Recently updated */
-    .recent { margin-top:28px; }
-    .recent-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-top:12px; }
-    .update { background: rgba(255,255,255,0.02); padding:14px; border-radius:8px; min-height:100px; }
-    .update h4 { margin:0 0 6px 0; color:#d4a84f; font-size:15px; }
-    .update p { margin:0; font-size:13px; color:#f3e4bd; }
-
-    /* QR explanation */
-    .qr { margin-top:28px; background: rgba(212,168,79,0.04); padding:18px; border-radius:8px; border:1px solid rgba(212,168,79,0.04); }
-
-    footer { margin-top:36px; text-align:center; }
-    footer a { color:#f3e4bd; text-decoration:underline; }
-
-    /* Responsive */
-    @media (max-width:1100px) { .nav-grid, .recent-grid { grid-template-columns: repeat(2, 1fr); } .hero { grid-template-columns: 1fr 320px; } }
-    @media (max-width:780px) { .hero { grid-template-columns: 1fr; text-align:center; } .nav-grid, .recent-grid { grid-template-columns: 1fr; } .hero-graphic img { width:260px; } }
-    @media (max-width:420px) { body{padding:16px 10px;} .hero h1{font-size:32px;} .hero-graphic img{width:220px;} }
-
+    .botanical-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 24px;
+      transition: transform 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+    .botanical-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold-accent);
+    }
+    .botanical-card h3 {
+      color: var(--gold-accent);
+      margin: 0 0 8px 0;
+      font-size: 20px;
+    }
+    .botanical-card .sci-name {
+      font-style: italic;
+      opacity: 0.8;
+      font-size: 14px;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .botanical-card .meta {
+      font-size: 13px;
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+    }
+    .status-tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(212, 168, 79, 0.1);
+      color: var(--gold-accent);
+    }
   </style>
 </head>
 <body>
-  <div class="site">
-    <header class="hero" role="banner" aria-labelledby="library-title">
-      <div class="hero-copy">
-        <h1 id="library-title">Living Evidence Library</h1>
-        <p class="lead">A continuously updated scientific companion to The Earth’s Pharmacy — collecting evidence, safety updates, clinical research, recipes, and discoveries that keep the book current for practitioners and curious readers alike.</p>
 
+  <nav role="navigation">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/living-library/">Living Evidence Library</a></li>
+        <li><a href="/monographs/">Botanical Monographs</a></li>
+        <li><a href="/safety/">Safety</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header class="hero" role="banner">
+      <div class="hero-copy">
+        <h1>Living Evidence Library</h1>
+        <p class="lead">
+          The Living Evidence Library is the evolving digital companion to the stable published edition of The Earth’s Pharmacy. While the publication remains fixed, this library documents new research, source verification, safety advisories, and expanded scholarship.
+        </p>
         <div class="cta-row">
-          <a class="btn" href="/founders-edition/" aria-label="Founder's Edition">Founder’s Edition</a>
-          <a class="btn ghost" href="/" aria-label="Return to home">Return to Home</a>
+          <a class="btn" href="/founders-edition/">Founder’s Edition</a>
+          <a class="btn ghost" href="/">Return to Home</a>
         </div>
       </div>
-
-      <div class="hero-graphic" aria-hidden="true">
-        <div class="box">
-          <img src="/Earths_Pharmacy_Homepage_Refined_Professional_Approved.png" alt="The Earth’s Pharmacy" />
-        </div>
+      <div class="cover">
+        <img src="/Earths_Pharmacy_Homepage_Refined_Professional_Approved.png" alt="The Earth’s Pharmacy" />
       </div>
     </header>
 
     <main>
-      <section aria-labelledby="navigate-title">
-        <h2 id="navigate-title" style="color:#d4a84f;margin:0 0 12px 0;font-size:22px;">Explore the Library</h2>
-
-        <div class="nav-grid" role="navigation" aria-label="Library sections">
-          <a class="card" href="/monographs/" aria-label="Botanical Monographs">
-            <div>
-              <h3>Botanical Monographs</h3>
-              <p>Authoritative monographs covering plant identification, traditional uses, dosing, and conservation notes.</p>
-            </div>
-          </a>
-
-          <a class="card" href="#" aria-label="Clinical Research">
-            <div>
-              <h3>Clinical Research</h3>
-              <p>Summaries and full-text links to clinical studies, systematic reviews, and human research on relevant botanicals.</p>
-            </div>
-          </a>
-
-          <a class="card" href="#" aria-label="Safety Updates">
-            <div>
-              <h3>Safety Updates</h3>
-              <p>Latest advisories, contraindications, toxicology notes, and regulatory safety communications.</p>
-            </div>
-          </a>
-
-          <a class="card" href="#" aria-label="Recipes and Preparations">
-            <div>
-              <h3>Recipes & Preparations</h3>
-              <p>Traditional and contemporary preparations, dosages, extraction notes, and practitioner tips.</p>
-            </div>
-          </a>
-
-          <a class="card" href="#" aria-label="New Discoveries">
-            <div>
-              <h3>New Discoveries</h3>
-              <p>Emerging findings, newly described species, or novel phytochemistry relevant to practice and research.</p>
-            </div>
-          </a>
-
-          <a class="card" href="#" aria-label="Frequently Asked Questions">
-            <div>
-              <h3>Frequently Asked Questions</h3>
-              <p>Editorial policy, citation guidance, how to interpret entries, and tips for clinicians and readers.</p>
-            </div>
-          </a>
-        </div>
-      </section>
-
-      <section class="recent" aria-labelledby="recent-title">
-        <h2 id="recent-title" style="color:#d4a84f;margin:0 0 12px 0;font-size:22px;">Recently Updated</h2>
-        <p style="margin:0 0 12px 0;">Placeholder cards below will be replaced with live updates as the library grows.</p>
-
-        <div class="recent-grid" aria-live="polite">
-          <div class="update">
-            <h4>Update: Herbal Safety Notice</h4>
-            <p>Placeholder: summary of a recent safety notice for a listed botanical.</p>
+      <section id="discovery">
+        <h2>Botanical Discovery</h2>
+        <div class="search-container">
+          <div class="search-box">
+            <input type="search" id="botanical-search" placeholder="Search by common or scientific name..." aria-label="Search botanicals">
           </div>
-
-          <div class="update">
-            <h4>Update: New Clinical Trial</h4>
-            <p>Placeholder: summary of newly published clinical research relevant to the text.</p>
+          <div class="alphabet-nav" id="alphabet-nav">
+            <!-- JS will populate or static letters -->
+            <button class="letter-btn">A</button>
+            <button class="letter-btn">B</button>
+            <button class="letter-btn">C</button>
+            <button class="letter-btn">D</button>
+            <button class="letter-btn">E</button>
+            <button class="letter-btn">F</button>
+            <button class="letter-btn">G</button>
+            <button class="letter-btn">H</button>
+            <button class="letter-btn">I</button>
+            <button class="letter-btn">J</button>
+            <button class="letter-btn">K</button>
+            <button class="letter-btn">L</button>
+            <button class="letter-btn">M</button>
+            <button class="letter-btn">N</button>
+            <button class="letter-btn">O</button>
+            <button class="letter-btn">P</button>
+            <button class="letter-btn">Q</button>
+            <button class="letter-btn">R</button>
+            <button class="letter-btn">S</button>
+            <button class="letter-btn">T</button>
+            <button class="letter-btn">U</button>
+            <button class="letter-btn">V</button>
+            <button class="letter-btn">W</button>
+            <button class="letter-btn">X</button>
+            <button class="letter-btn">Y</button>
+            <button class="letter-btn">Z</button>
           </div>
-
-          <div class="update">
-            <h4>Update: Recipe Revision</h4>
-            <p>Placeholder: revised preparation notes added to improve usability and safety.</p>
+          <div class="results-grid" id="results-grid">
+            <!-- Benchmark Botanicals will appear here -->
+            <div class="botanical-card">
+              <h3>Pending Evidence Review</h3>
+              <span class="sci-name">Initial Phase I batch loading...</span>
+              <p>Authoritative data is being verified for the first production batch.</p>
+              <div class="meta">
+                <span>Last Reviewed: 2026-08-07</span>
+                <span class="status-tag">Draft</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="qr" aria-labelledby="qr-title">
-        <h2 id="qr-title" style="color:#d4a84f;margin:0 0 10px 0;font-size:22px;">How QR Codes Connect You</h2>
+      <section id="library-scope">
+        <h2>Scope of the Library</h2>
+        <p>The Living Evidence Library may document:</p>
+        <div class="feature-grid">
+          <div class="feature-item">New Clinical Research</div>
+          <div class="feature-item">Source Verification</div>
+          <div class="feature-item">Citation Corrections</div>
+          <div class="feature-item">Safety Advisories</div>
+          <div class="feature-item">Regulatory Updates</div>
+          <div class="feature-item">Botanical Identity Corrections</div>
+          <div class="feature-item">Evidence-Tier Changes</div>
+          <div class="feature-item">Expanded Scholarship</div>
+        </div>
+      </section>
+
+      <section id="qr-connection" class="qr">
+        <h2>How QR Codes Connect You</h2>
         <p>The Founder’s Edition and select pages carry QR codes that link directly to this Living Evidence Library. Scanning a QR code will open the most recent evidence, errata, and updates for the referenced entry — ensuring readers always access the latest research and safety guidance.</p>
-        <p style="margin-top:8px;">Each QR code resolves to a stable library entry and may include contextual parameters (edition, plate number, or monograph) so the content you see is tailored to the exact reference in the book.</p>
       </section>
-
-      <section style="margin-top:28px;" aria-labelledby="library-policy">
-        <h2 id="library-policy" style="color:#d4a84f;margin:0 0 10px 0;font-size:22px;">About This Resource</h2>
-        <p>This library is curated and maintained by the editorial team. It is continuously updated and cross-referenced with primary literature. If you discover a correction or have a citation to share, please contact the editorial team so entries can be reviewed and incorporated.</p>
-      </section>
-
-      <footer>
-        <p style="margin-top:22px;"><a class="btn" href="/" aria-label="Return to home">Return to The Earth’s Pharmacy homepage</a></p>
-      </footer>
     </main>
+
+    <footer>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/living-library/">Living Evidence Library</a>
+        <a href="/monographs/">Botanical Monographs</a>
+        <a href="/safety/">Safety</a>
+        <a href="/about/">About</a>
+      </div>
+      <p>&copy; 2026 The Earth’s Pharmacy. By The Grandmaster Architect.</p>
+    </footer>
   </div>
+
 </body>
 </html>
