@@ -1,35 +1,66 @@
 #!/bin/bash
-# Deployment script for The Earth's Pharmacy Public Website
-# This script enforces an allowlist policy for GitHub Pages deployment.
+
+set -euo pipefail
+
+# Deployment script for The Earth's Pharmacy Public Website.
+# Builds a fresh GitHub Pages artifact from an explicit allowlist,
+# then validates the ACTUAL deploy_output artifact before deployment.
 
 REPO_ROOT=$(cd "$(dirname "$0")/.." && pwd)
 MANIFEST_PATH="$REPO_ROOT/config/public-content-manifest.json"
 DEPLOY_DIR="$REPO_ROOT/deploy_output"
-
-# Clean previous output
-rm -rf "$DEPLOY_DIR"
-mkdir -p "$DEPLOY_DIR"
+VALIDATOR="$REPO_ROOT/scripts/validate-deployment.py"
 
 echo "Starting allowlist-based deployment build..."
 
-# Read approved paths from manifest
-APPROVED_PATHS=$(python3 -c "import json; print(' '.join(json.load(open('$MANIFEST_PATH'))['approved_public_paths']))")
+# Always start from a clean deployment artifact.
+rm -rf "$DEPLOY_DIR"
+mkdir -p "$DEPLOY_DIR"
 
-for path in $APPROVED_PATHS; do
-    if [ -e "$REPO_ROOT/$path" ]; then
-        echo "Copying approved path: $path"
-        mkdir -p "$DEPLOY_DIR/$(dirname "$path")"
-        cp -r "$REPO_ROOT/$path" "$DEPLOY_DIR/$path"
+# Read approved paths safely, one path per line.
+mapfile -t APPROVED_PATHS < <(
+    python3 - "$MANIFEST_PATH" <<'PY'
+import json
+import sys
+
+manifest_path = sys.argv[1]
+
+with open(manifest_path, "r", encoding="utf-8") as f:
+    manifest = json.load(f)
+
+for path in manifest.get("approved_public_paths", []):
+    print(path)
+PY
+)
+
+if [ "${#APPROVED_PATHS[@]}" -eq 0 ]; then
+    echo "CRITICAL: No approved public paths found in manifest."
+    exit 1
+fi
+
+for path in "${APPROVED_PATHS[@]}"; do
+    source_path="$REPO_ROOT/$path"
+    destination_path="$DEPLOY_DIR/$path"
+
+    if [ ! -e "$source_path" ]; then
+        echo "CRITICAL: Approved public path not found: $path"
+        exit 1
+    fi
+
+    echo "Copying approved path: $path"
+
+    if [ -d "$source_path" ]; then
+        mkdir -p "$destination_path"
+        cp -R "$source_path"/. "$destination_path"/
     else
-        echo "WARNING: Approved path '$path' not found in repository root."
+        mkdir -p "$(dirname "$destination_path")"
+        cp "$source_path" "$destination_path"
     fi
 done
 
-# Run validation before final approval
-python3 "$REPO_ROOT/scripts/validate-deployment.py"
-if [ $? -eq 0 ]; then
-    echo "Deployment build complete and validated in $DEPLOY_DIR"
-else
-    echo "CRITICAL: Deployment validation failed. Aborting."
-    exit 1
-fi
+echo "Running deployment artifact validation..."
+
+python3 "$VALIDATOR" "$DEPLOY_DIR"
+
+echo "Deployment build complete and validated:"
+echo "$DEPLOY_DIR"
