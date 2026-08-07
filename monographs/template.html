@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{COMMON_NAME}} | The Earth’s Pharmacy</title>
+  <meta name="description" content="Evidence-based botanical monograph for {{COMMON_NAME}} ({{SCIENTIFIC_NAME}}). Traditional uses, modern evidence, safety, and preparations." />
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    /* Monograph Specific Styles */
+    .monograph-header {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 40px;
+    }
+    .monograph-header h1 {
+      font-size: 48px;
+      color: var(--gold-accent);
+      margin: 0;
+      text-transform: uppercase;
+    }
+    .monograph-header .sci-name {
+      font-size: 24px;
+      font-style: italic;
+      opacity: 0.8;
+      display: block;
+      margin-top: 8px;
+    }
+    .monograph-header .other-names {
+      font-size: 16px;
+      margin-top: 16px;
+      opacity: 0.7;
+    }
+
+    .monograph-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 48px;
+    }
+
+    section {
+      padding-bottom: 60px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 60px;
+    }
+    section:last-child {
+      border-bottom: none;
+    }
+    h2 {
+      color: var(--gold-accent);
+      font-size: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+    }
+
+    /* Evidence Table */
+    .evidence-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+    }
+    .evidence-table th, .evidence-table td {
+      text-align: left;
+      padding: 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .evidence-table th {
+      color: var(--gold-accent);
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+    .tier-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: bold;
+      color: #fff;
+    }
+    .tier-1 { background: #2b5f36; }
+    .tier-2 { background: #7a5b2b; }
+    .tier-3 { background: #3b3b3b; }
+
+    /* Safety Sidebar */
+    .safety-sidebar {
+      background: rgba(212, 168, 79, 0.05);
+      padding: 32px;
+      border-radius: 8px;
+      border: 1px solid var(--gold-accent);
+      height: fit-content;
+      position: sticky;
+      top: 24px;
+    }
+    .safety-sidebar h3 {
+      color: var(--gold-accent);
+      margin-top: 0;
+      text-transform: uppercase;
+      font-size: 18px;
+    }
+    .safety-sidebar p {
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    .safety-sidebar .caution-flag {
+      color: #ff9999;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .metadata-box {
+      font-size: 13px;
+      opacity: 0.6;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 900px) {
+      .monograph-grid { grid-template-columns: 1fr; }
+      .safety-sidebar { position: static; margin-top: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav role="navigation">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/living-library/">Living Evidence Library</a></li>
+        <li><a href="/monographs/">Botanical Monographs</a></li>
+        <li><a href="/safety/">Safety</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header class="monograph-header" role="banner">
+      <h1>{{COMMON_NAME}}</h1>
+      <span class="sci-name">{{SCIENTIFIC_NAME}}</span>
+      <div class="other-names"><strong>Other Names:</strong> {{OTHER_NAMES}}</div>
+    </header>
+
+    <div class="monograph-grid">
+      <main>
+        <section id="identity">
+          <h2>Botanical Identity</h2>
+          <p>{{BOTANICAL_IDENTITY}}</p>
+        </section>
+
+        <section id="origin">
+          <h2>Geographic Origin & Travel Pattern</h2>
+          <p>{{GEOGRAPHIC_ORIGIN}}</p>
+        </section>
+
+        <section id="tradition">
+          <h2>Traditional Context</h2>
+          <p>{{TRADITIONAL_CONTEXT}}</p>
+        </section>
+
+        <section id="evidence">
+          <h2>What the Evidence Says</h2>
+          <p>{{EVIDENCE_SUMMARY}}</p>
+          
+          <table class="evidence-table">
+            <thead>
+              <tr>
+                <th>Claim</th>
+                <th>Tier</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{EVIDENCE_ROWS}}
+            </tbody>
+          </table>
+        </section>
+
+        <section id="preparation">
+          <h2>Preparation</h2>
+          <p>{{PREPARATION}}</p>
+        </section>
+
+        <section id="dosage">
+          <h2>Dosage / Exposure Information</h2>
+          <p>{{DOSAGE}}</p>
+        </section>
+
+        <section id="references">
+          <h2>References</h2>
+          <div class="reference-list">
+            {{REFERENCES}}
+          </div>
+        </section>
+
+        <div class="metadata-box">
+          <div><strong>Living Evidence Status:</strong> {{STATUS}}</div>
+          <div><strong>Last Reviewed:</strong> {{LAST_REVIEWED}}</div>
+          <div><strong>Revision:</strong> {{REVISION}}</div>
+          <div style="margin-top: 12px; font-style: italic;">
+            Note: Website updates do not alter the Founder Frozen publication.
+          </div>
+        </div>
+      </main>
+
+      <aside class="safety-sidebar">
+        <h3>Safety & Cautions</h3>
+        <div class="caution-flag">Safety Principle: Natural origin does not guarantee safety.</div>
+        
+        <div style="margin-top: 24px;">
+          <strong>Contraindications:</strong>
+          <p>{{CONTRAINDICATIONS}}</p>
+        </div>
+
+        <div style="margin-top: 16px;">
+          <strong>Medication Interactions:</strong>
+          <p>{{INTERACTIONS}}</p>
+        </div>
+
+        <div style="margin-top: 16px;">
+          <strong>Special Populations:</strong>
+          <p>{{SPECIAL_POPULATIONS}}</p>
+        </div>
+
+        <div class="disclaimer" style="font-size: 11px; margin-top: 32px; opacity: 0.8;">
+          The Earth’s Pharmacy is educational reference material and is not individualized medical advice, diagnosis, prescribing, or treatment.
+        </div>
+      </aside>
+    </div>
+
+    <footer style="margin-top: 80px;">
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/living-library/">Living Evidence Library</a>
+        <a href="/monographs/">Botanical Monographs</a>
+        <a href="/safety/">Safety</a>
+        <a href="/about/">About</a>
+      </div>
+      <p>&copy; 2026 The Earth’s Pharmacy. By The Grandmaster Architect.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
