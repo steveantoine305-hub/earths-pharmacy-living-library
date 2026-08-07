@@ -1,0 +1,74 @@
+{
+  "records": [
+    {
+      "id": "1",
+      "type": "Botanical",
+      "common_name": "Ginger",
+      "identity": "Zingiber officinale",
+      "other_names": "Pending",
+      "short_origin": "Asia, African Diaspora",
+      "short_evidence": "Tier 1 Research-Supported nausea and anti-inflammatory support.",
+      "safety_flag": "Generally safe; caution with blood thinners.",
+      "last_reviewed": "2026-08-07",
+      "lifecycle_status": "DRAFT",
+      "access_level": "public",
+      "slug": "ginger"
+    },
+    {
+      "id": "20",
+      "type": "Seaweed / Algae",
+      "common_name": "Bladderwrack",
+      "identity": "Fucus vesiculosus",
+      "other_names": "Pending",
+      "short_origin": "Atlantic coastlines",
+      "short_evidence": "Tier 2 Promising iodine source.",
+      "safety_flag": "High complexity; thyroid and heavy metal risk.",
+      "last_reviewed": "2026-08-07",
+      "lifecycle_status": "DRAFT",
+      "access_level": "public",
+      "slug": "bladderwrack"
+    },
+    {
+      "id": "34B",
+      "type": "Animal-Derived Natural Product",
+      "common_name": "Honey",
+      "identity": "Animal-derived natural product produced by honey bees",
+      "other_names": "Primary Producing Species: Apis mellifera",
+      "short_origin": "Global, Egyptian Papyri",
+      "short_evidence": "Tier 1 Research-Supported for acute wounds and burns.",
+      "safety_flag": "No infants under 1 year (botulism risk).",
+      "last_reviewed": "2026-08-07",
+      "lifecycle_status": "DRAFT",
+      "access_level": "public",
+      "slug": "honey-the-oldest-medicine"
+    },
+    {
+      "id": "8",
+      "type": "Botanical",
+      "common_name": "Soursop",
+      "identity": "Annona muricata",
+      "other_names": "Graviola",
+      "short_origin": "Caribbean, West Africa",
+      "short_evidence": "Tier 3 Traditional Use for sleep and digestion.",
+      "safety_flag": "Avoid concentrated seed/leaf extracts; pregnancy.",
+      "last_reviewed": "2026-08-07",
+      "lifecycle_status": "DRAFT",
+      "access_level": "public",
+      "slug": "soursop-graviola"
+    },
+    {
+      "id": "5",
+      "type": "Botanical",
+      "common_name": "Moringa",
+      "identity": "Moringa oleifera",
+      "other_names": "Drumstick Tree",
+      "short_origin": "Sahel, East Africa",
+      "short_evidence": "Tier 1 Research-Supported nutrient density.",
+      "safety_flag": "Leaf/pod safe; avoid root/bark in pregnancy.",
+      "last_reviewed": "2026-08-07",
+      "lifecycle_status": "DRAFT",
+      "access_level": "public",
+      "slug": "moringa"
+    }
+  ]
+}
