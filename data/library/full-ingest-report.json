@@ -1,0 +1,2021 @@
+{
+  "status": "INTERNAL_DRAFT_GENERATION_COMPLETE",
+  "authority_file": "earths-pharmacy-claims-v1-REVISION-2I-DRAFT-PENDING-VALIDATION-201.jsonl",
+  "authority_sha256": "e692b022f99895db7acfa6c5b9d7427103a929ce042be1bb0d769c0be7a2087d",
+  "authority_rows": 1273,
+  "parent_records": 201,
+  "generated_files": 201,
+  "public_release": false,
+  "records": [
+    {
+      "parent_record_id": "1",
+      "common_name": "1. GINGER",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 12,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/1-ginger.html",
+      "slug": "1-ginger"
+    },
+    {
+      "parent_record_id": "10",
+      "common_name": "10. SEA MOSS (IRISH MOSS)",
+      "scientific_name": "",
+      "record_type": "Seaweed / Algae",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/10-sea-moss-irish-moss.html",
+      "slug": "10-sea-moss-irish-moss"
+    },
+    {
+      "parent_record_id": "100",
+      "common_name": "100. FEVERFEW",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 10,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/100-feverfew.html",
+      "slug": "100-feverfew"
+    },
+    {
+      "parent_record_id": "101",
+      "common_name": "101. SUGARCANE",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/101-sugarcane.html",
+      "slug": "101-sugarcane"
+    },
+    {
+      "parent_record_id": "102",
+      "common_name": "102. PLANTAIN (THE FOOD, NOT THE WEED)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/102-plantain-the-food-not-the-weed.html",
+      "slug": "102-plantain-the-food-not-the-weed"
+    },
+    {
+      "parent_record_id": "103",
+      "common_name": "103. SORGHUM",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/103-sorghum.html",
+      "slug": "103-sorghum"
+    },
+    {
+      "parent_record_id": "104",
+      "common_name": "104. MILLET",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/104-millet.html",
+      "slug": "104-millet"
+    },
+    {
+      "parent_record_id": "105",
+      "common_name": "105. FONIO",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/105-fonio.html",
+      "slug": "105-fonio"
+    },
+    {
+      "parent_record_id": "106",
+      "common_name": "106. EGUSI SEED",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/106-egusi-seed.html",
+      "slug": "106-egusi-seed"
+    },
+    {
+      "parent_record_id": "107",
+      "common_name": "107. BITTER KOLA",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/107-bitter-kola.html",
+      "slug": "107-bitter-kola"
+    },
+    {
+      "parent_record_id": "108",
+      "common_name": "108. IBOGA",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/108-iboga.html",
+      "slug": "108-iboga"
+    },
+    {
+      "parent_record_id": "109",
+      "common_name": "109. AFRICAN NUTMEG (CALABASH NUTMEG)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/109-african-nutmeg-calabash-nutmeg.html",
+      "slug": "109-african-nutmeg-calabash-nutmeg"
+    },
+    {
+      "parent_record_id": "11",
+      "common_name": "11. DANDELION",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 9,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/11-dandelion.html",
+      "slug": "11-dandelion"
+    },
+    {
+      "parent_record_id": "110",
+      "common_name": "110. AIDAN FRUIT",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/110-aidan-fruit.html",
+      "slug": "110-aidan-fruit"
+    },
+    {
+      "parent_record_id": "111",
+      "common_name": "111. COCONUT",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/111-coconut.html",
+      "slug": "111-coconut"
+    },
+    {
+      "parent_record_id": "112",
+      "common_name": "112. CASSAVA ROOT",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/112-cassava-root.html",
+      "slug": "112-cassava-root"
+    },
+    {
+      "parent_record_id": "113",
+      "common_name": "113. TRUE YAM",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/113-true-yam.html",
+      "slug": "113-true-yam"
+    },
+    {
+      "parent_record_id": "114",
+      "common_name": "114. GROUNDNUT (PEANUT)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/114-groundnut-peanut.html",
+      "slug": "114-groundnut-peanut"
+    },
+    {
+      "parent_record_id": "115",
+      "common_name": "115. COWPEA (BLACK-EYED PEA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/115-cowpea-black-eyed-pea.html",
+      "slug": "115-cowpea-black-eyed-pea"
+    },
+    {
+      "parent_record_id": "116",
+      "common_name": "116. GUAVA FRUIT",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/116-guava-fruit.html",
+      "slug": "116-guava-fruit"
+    },
+    {
+      "parent_record_id": "117",
+      "common_name": "117. MANGO LEAF",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/117-mango-leaf.html",
+      "slug": "117-mango-leaf"
+    },
+    {
+      "parent_record_id": "118",
+      "common_name": "118. PYGEUM (AFRICAN CHERRY)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 3,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/118-pygeum-african-cherry.html",
+      "slug": "118-pygeum-african-cherry"
+    },
+    {
+      "parent_record_id": "119",
+      "common_name": "119. SESAME SEED (BENNE)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/119-sesame-seed-benne.html",
+      "slug": "119-sesame-seed-benne"
+    },
+    {
+      "parent_record_id": "12",
+      "common_name": "12. BURDOCK ROOT",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/12-burdock-root.html",
+      "slug": "12-burdock-root"
+    },
+    {
+      "parent_record_id": "120",
+      "common_name": "120. SCOTCH BONNET PEPPER",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/120-scotch-bonnet-pepper.html",
+      "slug": "120-scotch-bonnet-pepper"
+    },
+    {
+      "parent_record_id": "121",
+      "common_name": "121. BUCHU",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/121-buchu.html",
+      "slug": "121-buchu"
+    },
+    {
+      "parent_record_id": "122",
+      "common_name": "122. SUTHERLANDIA (CANCER BUSH)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/122-sutherlandia-cancer-bush.html",
+      "slug": "122-sutherlandia-cancer-bush"
+    },
+    {
+      "parent_record_id": "123",
+      "common_name": "123. MARULA",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/123-marula.html",
+      "slug": "123-marula"
+    },
+    {
+      "parent_record_id": "124",
+      "common_name": "124. KIGELIA (SAUSAGE TREE)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/124-kigelia-sausage-tree.html",
+      "slug": "124-kigelia-sausage-tree"
+    },
+    {
+      "parent_record_id": "125",
+      "common_name": "125. WATERLEAF",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/125-waterleaf.html",
+      "slug": "125-waterleaf"
+    },
+    {
+      "parent_record_id": "126",
+      "common_name": "126. EWEDU (JUTE LEAF)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/126-ewedu-jute-leaf.html",
+      "slug": "126-ewedu-jute-leaf"
+    },
+    {
+      "parent_record_id": "127",
+      "common_name": "127. LEAF OF LIFE (MIRACLE LEAF)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/127-leaf-of-life-miracle-leaf.html",
+      "slug": "127-leaf-of-life-miracle-leaf"
+    },
+    {
+      "parent_record_id": "128",
+      "common_name": "128. FITWEED (CULANTRO)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/128-fitweed-culantro.html",
+      "slug": "128-fitweed-culantro"
+    },
+    {
+      "parent_record_id": "129",
+      "common_name": "129. BITTER BUSH",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/129-bitter-bush.html",
+      "slug": "129-bitter-bush"
+    },
+    {
+      "parent_record_id": "13",
+      "common_name": "13. SARSAPARILLA",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/13-sarsaparilla.html",
+      "slug": "13-sarsaparilla"
+    },
+    {
+      "parent_record_id": "130",
+      "common_name": "130. SPANISH NEEDLES",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/130-spanish-needles.html",
+      "slug": "130-spanish-needles"
+    },
+    {
+      "parent_record_id": "131",
+      "common_name": "131. SASSAFRAS",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/131-sassafras.html",
+      "slug": "131-sassafras"
+    },
+    {
+      "parent_record_id": "132",
+      "common_name": "132. POKEWEED (POKE SALAD)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/132-pokeweed-poke-salad.html",
+      "slug": "132-pokeweed-poke-salad"
+    },
+    {
+      "parent_record_id": "133",
+      "common_name": "133. BONESET",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/133-boneset.html",
+      "slug": "133-boneset"
+    },
+    {
+      "parent_record_id": "134",
+      "common_name": "134. YELLOWROOT",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/134-yellowroot.html",
+      "slug": "134-yellowroot"
+    },
+    {
+      "parent_record_id": "135",
+      "common_name": "135. LIFE EVERLASTING (RABBIT TOBACCO)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/135-life-everlasting-rabbit-tobacco.html",
+      "slug": "135-life-everlasting-rabbit-tobacco"
+    },
+    {
+      "parent_record_id": "136",
+      "common_name": "136. CURRY LEAF",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/136-curry-leaf.html",
+      "slug": "136-curry-leaf"
+    },
+    {
+      "parent_record_id": "137",
+      "common_name": "137. AMLA (INDIAN GOOSEBERRY)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/137-amla-indian-gooseberry.html",
+      "slug": "137-amla-indian-gooseberry"
+    },
+    {
+      "parent_record_id": "138",
+      "common_name": "138. TEFF",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/138-teff.html",
+      "slug": "138-teff"
+    },
+    {
+      "parent_record_id": "139",
+      "common_name": "139. ENSET (FALSE BANANA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/139-enset-false-banana.html",
+      "slug": "139-enset-false-banana"
+    },
+    {
+      "parent_record_id": "14",
+      "common_name": "14. NETTLE",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/14-nettle.html",
+      "slug": "14-nettle"
+    },
+    {
+      "parent_record_id": "140",
+      "common_name": "140. KHAT",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/140-khat.html",
+      "slug": "140-khat"
+    },
+    {
+      "parent_record_id": "141",
+      "common_name": "141. NASEBERRY (SAPODILLA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/141-naseberry-sapodilla.html",
+      "slug": "141-naseberry-sapodilla"
+    },
+    {
+      "parent_record_id": "142",
+      "common_name": "142. MAN PIABA (ECLIPTA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/142-man-piaba-eclipta.html",
+      "slug": "142-man-piaba-eclipta"
+    },
+    {
+      "parent_record_id": "143",
+      "common_name": "143. CHRISTMAS BUSH (JAMAICAN)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 3,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/143-christmas-bush-jamaican.html",
+      "slug": "143-christmas-bush-jamaican"
+    },
+    {
+      "parent_record_id": "144",
+      "common_name": "144. OTAHEITE APPLE (MOUNTAIN APPLE)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 3,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/144-otaheite-apple-mountain-apple.html",
+      "slug": "144-otaheite-apple-mountain-apple"
+    },
+    {
+      "parent_record_id": "145",
+      "common_name": "145. SEA GRAPE",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/145-sea-grape.html",
+      "slug": "145-sea-grape"
+    },
+    {
+      "parent_record_id": "146",
+      "common_name": "146. PASSION FRUIT",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/146-passion-fruit.html",
+      "slug": "146-passion-fruit"
+    },
+    {
+      "parent_record_id": "147",
+      "common_name": "147. NIGER SEED",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/147-niger-seed.html",
+      "slug": "147-niger-seed"
+    },
+    {
+      "parent_record_id": "148",
+      "common_name": "148. BAOBAB LEAF (KUKA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/148-baobab-leaf-kuka.html",
+      "slug": "148-baobab-leaf-kuka"
+    },
+    {
+      "parent_record_id": "149",
+      "common_name": "149. SOCIETY GARLIC (WILD GARLIC)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/149-society-garlic-wild-garlic.html",
+      "slug": "149-society-garlic-wild-garlic"
+    },
+    {
+      "parent_record_id": "15",
+      "common_name": "15. ELDERBERRY",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/15-elderberry.html",
+      "slug": "15-elderberry"
+    },
+    {
+      "parent_record_id": "150",
+      "common_name": "150. UTAZI",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/150-utazi.html",
+      "slug": "150-utazi"
+    },
+    {
+      "parent_record_id": "151",
+      "common_name": "151. CRYPTOLEPIS (NIBIMA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 10,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/151-cryptolepis-nibima.html",
+      "slug": "151-cryptolepis-nibima"
+    },
+    {
+      "parent_record_id": "152",
+      "common_name": "152. AFRICAN SNAKEROOT (RAUVOLFIA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 10,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/152-african-snakeroot-rauvolfia.html",
+      "slug": "152-african-snakeroot-rauvolfia"
+    },
+    {
+      "parent_record_id": "153",
+      "common_name": "153. PINEAPPLE (BROMELAIN)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 10,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/153-pineapple-bromelain.html",
+      "slug": "153-pineapple-bromelain"
+    },
+    {
+      "parent_record_id": "154",
+      "common_name": "154. SWEET POTATO",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/154-sweet-potato.html",
+      "slug": "154-sweet-potato"
+    },
+    {
+      "parent_record_id": "155",
+      "common_name": "155. KINKELIBA",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 9,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/155-kinkeliba.html",
+      "slug": "155-kinkeliba"
+    },
+    {
+      "parent_record_id": "156",
+      "common_name": "156. JOHN CROW BEAD (ROSARY PEA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 9,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/156-john-crow-bead-rosary-pea.html",
+      "slug": "156-john-crow-bead-rosary-pea"
+    },
+    {
+      "parent_record_id": "157",
+      "common_name": "157. CHICORY ROOT",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/157-chicory-root.html",
+      "slug": "157-chicory-root"
+    },
+    {
+      "parent_record_id": "158",
+      "common_name": "158. COLLARD GREENS",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/158-collard-greens.html",
+      "slug": "158-collard-greens"
+    },
+    {
+      "parent_record_id": "159",
+      "common_name": "159. GUM ARABIC",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/159-gum-arabic.html",
+      "slug": "159-gum-arabic"
+    },
+    {
+      "parent_record_id": "16",
+      "common_name": "16. NEEM",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/16-neem.html",
+      "slug": "16-neem"
+    },
+    {
+      "parent_record_id": "160",
+      "common_name": "160. TIGER NUT (CHUFA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/160-tiger-nut-chufa.html",
+      "slug": "160-tiger-nut-chufa"
+    },
+    {
+      "parent_record_id": "161",
+      "common_name": "161. AKUAMMA",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/161-akuamma.html",
+      "slug": "161-akuamma"
+    },
+    {
+      "parent_record_id": "162",
+      "common_name": "162. MUSCADINE GRAPE",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/162-muscadine-grape.html",
+      "slug": "162-muscadine-grape"
+    },
+    {
+      "parent_record_id": "163",
+      "common_name": "163. OGBONO (BUSH MANGO SEED)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/163-ogbono-bush-mango-seed.html",
+      "slug": "163-ogbono-bush-mango-seed"
+    },
+    {
+      "parent_record_id": "164",
+      "common_name": "164. VERVAIN (JAMAICAN)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/164-vervain-jamaican.html",
+      "slug": "164-vervain-jamaican"
+    },
+    {
+      "parent_record_id": "165",
+      "common_name": "165. AMERICAN PERSIMMON",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 9,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/165-american-persimmon.html",
+      "slug": "165-american-persimmon"
+    },
+    {
+      "parent_record_id": "166",
+      "common_name": "166. THE PURGING NUT (JATROPHA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/166-the-purging-nut-jatropha.html",
+      "slug": "166-the-purging-nut-jatropha"
+    },
+    {
+      "parent_record_id": "167",
+      "common_name": "167. AFRICAN YELLOW WOOD (ENANTIA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 9,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/167-african-yellow-wood-enantia.html",
+      "slug": "167-african-yellow-wood-enantia"
+    },
+    {
+      "parent_record_id": "168",
+      "common_name": "168. WATERMELON SEED",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/168-watermelon-seed.html",
+      "slug": "168-watermelon-seed"
+    },
+    {
+      "parent_record_id": "169",
+      "common_name": "169. DOUM PALM FRUIT",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/169-doum-palm-fruit.html",
+      "slug": "169-doum-palm-fruit"
+    },
+    {
+      "parent_record_id": "17",
+      "common_name": "17. KOLA NUT",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/17-kola-nut.html",
+      "slug": "17-kola-nut"
+    },
+    {
+      "parent_record_id": "170",
+      "common_name": "170. AFRICAN MAHOGANY (KHAYA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/170-african-mahogany-khaya.html",
+      "slug": "170-african-mahogany-khaya"
+    },
+    {
+      "parent_record_id": "171",
+      "common_name": "171. AFRICAN BORDER TREE (NEWBOULDIA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 9,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/171-african-border-tree-newbouldia.html",
+      "slug": "171-african-border-tree-newbouldia"
+    },
+    {
+      "parent_record_id": "172",
+      "common_name": "172. AFRICAN PEACH (NAUCLEA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/172-african-peach-nauclea.html",
+      "slug": "172-african-peach-nauclea"
+    },
+    {
+      "parent_record_id": "173",
+      "common_name": "173. RINGWORM BUSH (CASSIA ALATA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/173-ringworm-bush-cassia-alata.html",
+      "slug": "173-ringworm-bush-cassia-alata"
+    },
+    {
+      "parent_record_id": "174",
+      "common_name": "174. AFRICAN STAR APPLE (AGBALUMO)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/174-african-star-apple-agbalumo.html",
+      "slug": "174-african-star-apple-agbalumo"
+    },
+    {
+      "parent_record_id": "175",
+      "common_name": "175. AFRICAN PEAR (SAFOU)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/175-african-pear-safou.html",
+      "slug": "175-african-pear-safou"
+    },
+    {
+      "parent_record_id": "176",
+      "common_name": "176. BLACK PLUM (VITEX DONIANA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/176-black-plum-vitex-doniana.html",
+      "slug": "176-black-plum-vitex-doniana"
+    },
+    {
+      "parent_record_id": "177",
+      "common_name": "177. AFRICAN BREADFRUIT (UKWA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/177-african-breadfruit-ukwa.html",
+      "slug": "177-african-breadfruit-ukwa"
+    },
+    {
+      "parent_record_id": "178",
+      "common_name": "178. BLACK PEPPER",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 9,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/178-black-pepper.html",
+      "slug": "178-black-pepper"
+    },
+    {
+      "parent_record_id": "179",
+      "common_name": "179. CHRISTMAS BUSH (ALCHORNEA CORDIFOLIA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 10,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/179-christmas-bush-alchornea-cordifolia.html",
+      "slug": "179-christmas-bush-alchornea-cordifolia"
+    },
+    {
+      "parent_record_id": "18",
+      "common_name": "18. GRAINS OF PARADISE",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/18-grains-of-paradise.html",
+      "slug": "18-grains-of-paradise"
+    },
+    {
+      "parent_record_id": "180",
+      "common_name": "180. CHAYA (TREE SPINACH)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 9,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/180-chaya-tree-spinach.html",
+      "slug": "180-chaya-tree-spinach"
+    },
+    {
+      "parent_record_id": "181",
+      "common_name": "181. PEPPER FRUIT (DENNETTIA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/181-pepper-fruit-dennettia.html",
+      "slug": "181-pepper-fruit-dennettia"
+    },
+    {
+      "parent_record_id": "182",
+      "common_name": "182. TROPICAL ALMOND (TERMINALIA CATAPPA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 10,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/182-tropical-almond-terminalia-catappa.html",
+      "slug": "182-tropical-almond-terminalia-catappa"
+    },
+    {
+      "parent_record_id": "183",
+      "common_name": "183. BUSH CANE (COSTUS AFER)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/183-bush-cane-costus-afer.html",
+      "slug": "183-bush-cane-costus-afer"
+    },
+    {
+      "parent_record_id": "184",
+      "common_name": "184. ACEROLA (WEST INDIAN CHERRY)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/184-acerola-west-indian-cherry.html",
+      "slug": "184-acerola-west-indian-cherry"
+    },
+    {
+      "parent_record_id": "185",
+      "common_name": "185. SWEET BASIL",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/185-sweet-basil.html",
+      "slug": "185-sweet-basil"
+    },
+    {
+      "parent_record_id": "186",
+      "common_name": "186. MANGO (FRUIT)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/186-mango-fruit.html",
+      "slug": "186-mango-fruit"
+    },
+    {
+      "parent_record_id": "187",
+      "common_name": "187. CASHEW APPLE",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/187-cashew-apple.html",
+      "slug": "187-cashew-apple"
+    },
+    {
+      "parent_record_id": "188",
+      "common_name": "188. MALANGA (NEW COCOYAM)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/188-malanga-new-cocoyam.html",
+      "slug": "188-malanga-new-cocoyam"
+    },
+    {
+      "parent_record_id": "189",
+      "common_name": "189. PUMPKIN (FLESH)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/189-pumpkin-flesh.html",
+      "slug": "189-pumpkin-flesh"
+    },
+    {
+      "parent_record_id": "19",
+      "common_name": "19. AFRICAN BASIL (EFIRIN / TEA BUSH)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/19-african-basil-efirin-tea-bush.html",
+      "slug": "19-african-basil-efirin-tea-bush"
+    },
+    {
+      "parent_record_id": "190",
+      "common_name": "190. FLUTED PUMPKIN LEAF (UGU)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/190-fluted-pumpkin-leaf-ugu.html",
+      "slug": "190-fluted-pumpkin-leaf-ugu"
+    },
+    {
+      "parent_record_id": "191",
+      "common_name": "191. CUCUMBER",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/191-cucumber.html",
+      "slug": "191-cucumber"
+    },
+    {
+      "parent_record_id": "192",
+      "common_name": "192. LAGOS SPINACH (SOKO)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/192-lagos-spinach-soko.html",
+      "slug": "192-lagos-spinach-soko"
+    },
+    {
+      "parent_record_id": "193",
+      "common_name": "193. OKAZI (AFANG LEAF)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 3,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/193-okazi-afang-leaf.html",
+      "slug": "193-okazi-afang-leaf"
+    },
+    {
+      "parent_record_id": "194",
+      "common_name": "194. BAMBARA GROUNDNUT",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/194-bambara-groundnut.html",
+      "slug": "194-bambara-groundnut"
+    },
+    {
+      "parent_record_id": "195",
+      "common_name": "195. AFRICAN YAM BEAN",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/195-african-yam-bean.html",
+      "slug": "195-african-yam-bean"
+    },
+    {
+      "parent_record_id": "196",
+      "common_name": "196. MIRACLE FRUIT",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 12,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/196-miracle-fruit.html",
+      "slug": "196-miracle-fruit"
+    },
+    {
+      "parent_record_id": "197",
+      "common_name": "197. BREADNUT (CHATAIGNE)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/197-breadnut-chataigne.html",
+      "slug": "197-breadnut-chataigne"
+    },
+    {
+      "parent_record_id": "198",
+      "common_name": "198. OTAHEITE GOOSEBERRY (JIMBILIN)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/198-otaheite-gooseberry-jimbilin.html",
+      "slug": "198-otaheite-gooseberry-jimbilin"
+    },
+    {
+      "parent_record_id": "199",
+      "common_name": "199. AFRICAN CUSTARD APPLE (WILD SOURSOP)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/199-african-custard-apple-wild-soursop.html",
+      "slug": "199-african-custard-apple-wild-soursop"
+    },
+    {
+      "parent_record_id": "2",
+      "common_name": "2. TURMERIC",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/2-turmeric.html",
+      "slug": "2-turmeric"
+    },
+    {
+      "parent_record_id": "20",
+      "common_name": "20. BLADDERWRACK",
+      "scientific_name": "",
+      "record_type": "Seaweed / Algae",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/20-bladderwrack.html",
+      "slug": "20-bladderwrack"
+    },
+    {
+      "parent_record_id": "200",
+      "common_name": "200. KENAF LEAF",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/200-kenaf-leaf.html",
+      "slug": "200-kenaf-leaf"
+    },
+    {
+      "parent_record_id": "21",
+      "common_name": "21. CHAMOMILE",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/21-chamomile.html",
+      "slug": "21-chamomile"
+    },
+    {
+      "parent_record_id": "22",
+      "common_name": "22. PEPPERMINT",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/22-peppermint.html",
+      "slug": "22-peppermint"
+    },
+    {
+      "parent_record_id": "23",
+      "common_name": "23. SAGE",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/23-sage.html",
+      "slug": "23-sage"
+    },
+    {
+      "parent_record_id": "24",
+      "common_name": "24. MULLEIN",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/24-mullein.html",
+      "slug": "24-mullein"
+    },
+    {
+      "parent_record_id": "25",
+      "common_name": "25. GUINEA HEN WEED (ANAMU)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/25-guinea-hen-weed-anamu.html",
+      "slug": "25-guinea-hen-weed-anamu"
+    },
+    {
+      "parent_record_id": "26",
+      "common_name": "26. CAT’S CLAW",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/26-cats-claw.html",
+      "slug": "26-cats-claw"
+    },
+    {
+      "parent_record_id": "27",
+      "common_name": "27. HYDRANGEA ROOT",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/27-hydrangea-root.html",
+      "slug": "27-hydrangea-root"
+    },
+    {
+      "parent_record_id": "28",
+      "common_name": "28. CASCARA SAGRADA",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 9,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/28-cascara-sagrada.html",
+      "slug": "28-cascara-sagrada"
+    },
+    {
+      "parent_record_id": "29",
+      "common_name": "29. ROOIBOS",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/29-rooibos.html",
+      "slug": "29-rooibos"
+    },
+    {
+      "parent_record_id": "3",
+      "common_name": "3. GARLIC",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/3-garlic.html",
+      "slug": "3-garlic"
+    },
+    {
+      "parent_record_id": "30",
+      "common_name": "30. BAOBAB",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/30-baobab.html",
+      "slug": "30-baobab"
+    },
+    {
+      "parent_record_id": "31",
+      "common_name": "31. NEEM’S COUSIN — BITTER LEAF",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/31-neems-cousin-bitter-leaf.html",
+      "slug": "31-neems-cousin-bitter-leaf"
+    },
+    {
+      "parent_record_id": "32",
+      "common_name": "32. HONEYBUSH",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/32-honeybush.html",
+      "slug": "32-honeybush"
+    },
+    {
+      "parent_record_id": "33",
+      "common_name": "33. DEVIL’S CLAW",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/33-devils-claw.html",
+      "slug": "33-devils-claw"
+    },
+    {
+      "parent_record_id": "34",
+      "common_name": "34. AFRICAN GINGER (WILD GINGER)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 3,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/34-african-ginger-wild-ginger.html",
+      "slug": "34-african-ginger-wild-ginger"
+    },
+    {
+      "parent_record_id": "34B",
+      "common_name": "34B. HONEY (THE OLDEST MEDICINE)",
+      "scientific_name": "",
+      "record_type": "Animal-Derived Natural Product",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/34b-honey-the-oldest-medicine.html",
+      "slug": "34b-honey-the-oldest-medicine"
+    },
+    {
+      "parent_record_id": "35",
+      "common_name": "35. GRAINS OF SELIM (NEGRO PEPPER)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/35-grains-of-selim-negro-pepper.html",
+      "slug": "35-grains-of-selim-negro-pepper"
+    },
+    {
+      "parent_record_id": "36",
+      "common_name": "36. PRODIGIOSA (WOMEN’S TONGUE / GOAT BUSH)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/36-prodigiosa-womens-tongue-goat-bush.html",
+      "slug": "36-prodigiosa-womens-tongue-goat-bush"
+    },
+    {
+      "parent_record_id": "37",
+      "common_name": "37. CHAPARRAL",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/37-chaparral.html",
+      "slug": "37-chaparral"
+    },
+    {
+      "parent_record_id": "38",
+      "common_name": "38. YELLOW DOCK",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/38-yellow-dock.html",
+      "slug": "38-yellow-dock"
+    },
+    {
+      "parent_record_id": "39",
+      "common_name": "39. CASSIA (WILD SENNA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/39-cassia-wild-senna.html",
+      "slug": "39-cassia-wild-senna"
+    },
+    {
+      "parent_record_id": "4",
+      "common_name": "4. HIBISCUS (SORREL / BISSAP)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 9,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/4-hibiscus-sorrel-bissap.html",
+      "slug": "4-hibiscus-sorrel-bissap"
+    },
+    {
+      "parent_record_id": "40",
+      "common_name": "40. WORMWOOD (AFRICAN & CARIBBEAN VARIANTS)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/40-wormwood-african-and-caribbean-variants.html",
+      "slug": "40-wormwood-african-and-caribbean-variants"
+    },
+    {
+      "parent_record_id": "41",
+      "common_name": "41. BLACK SEED",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/41-black-seed.html",
+      "slug": "41-black-seed"
+    },
+    {
+      "parent_record_id": "42",
+      "common_name": "42. SHEA",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/42-shea.html",
+      "slug": "42-shea"
+    },
+    {
+      "parent_record_id": "43",
+      "common_name": "43. TAMARIND",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/43-tamarind.html",
+      "slug": "43-tamarind"
+    },
+    {
+      "parent_record_id": "44",
+      "common_name": "44. GUAVA LEAF",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/44-guava-leaf.html",
+      "slug": "44-guava-leaf"
+    },
+    {
+      "parent_record_id": "45",
+      "common_name": "45. CLOVES",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/45-cloves.html",
+      "slug": "45-cloves"
+    },
+    {
+      "parent_record_id": "46",
+      "common_name": "46. YOHIMBE",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/46-yohimbe.html",
+      "slug": "46-yohimbe"
+    },
+    {
+      "parent_record_id": "47",
+      "common_name": "47. AFRICAN MANGO",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/47-african-mango.html",
+      "slug": "47-african-mango"
+    },
+    {
+      "parent_record_id": "48",
+      "common_name": "48. KANNA",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/48-kanna.html",
+      "slug": "48-kanna"
+    },
+    {
+      "parent_record_id": "49",
+      "common_name": "49. HOODIA",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/49-hoodia.html",
+      "slug": "49-hoodia"
+    },
+    {
+      "parent_record_id": "5",
+      "common_name": "5. MORINGA",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/5-moringa.html",
+      "slug": "5-moringa"
+    },
+    {
+      "parent_record_id": "50",
+      "common_name": "50. BROADLEAF PLANTAIN (PLANTAIN WEED)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/50-broadleaf-plantain-plantain-weed.html",
+      "slug": "50-broadleaf-plantain-plantain-weed"
+    },
+    {
+      "parent_record_id": "51",
+      "common_name": "51. OKRA",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/51-okra.html",
+      "slug": "51-okra"
+    },
+    {
+      "parent_record_id": "52",
+      "common_name": "52. CACAO",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/52-cacao.html",
+      "slug": "52-cacao"
+    },
+    {
+      "parent_record_id": "53",
+      "common_name": "53. PAPAYA (LEAF AND SEED)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/53-papaya-leaf-and-seed.html",
+      "slug": "53-papaya-leaf-and-seed"
+    },
+    {
+      "parent_record_id": "54",
+      "common_name": "54. ANNATTO (ACHIOTE)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/54-annatto-achiote.html",
+      "slug": "54-annatto-achiote"
+    },
+    {
+      "parent_record_id": "55",
+      "common_name": "55. SOUR ORANGE / BITTER ORANGE LEAF",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/55-sour-orange-bitter-orange-leaf.html",
+      "slug": "55-sour-orange-bitter-orange-leaf"
+    },
+    {
+      "parent_record_id": "56",
+      "common_name": "56. AVOCADO LEAF",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/56-avocado-leaf.html",
+      "slug": "56-avocado-leaf"
+    },
+    {
+      "parent_record_id": "57",
+      "common_name": "57. CORN SILK",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/57-corn-silk.html",
+      "slug": "57-corn-silk"
+    },
+    {
+      "parent_record_id": "58",
+      "common_name": "58. GOLDENSEAL’S SOUTHERN COUSIN — ECHINACEA (ADOPTED USE)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/58-goldenseals-southern-cousin-echinacea-adopted-use.html",
+      "slug": "58-goldenseals-southern-cousin-echinacea-adopted-use"
+    },
+    {
+      "parent_record_id": "59",
+      "common_name": "59. FENUGREEK",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/59-fenugreek.html",
+      "slug": "59-fenugreek"
+    },
+    {
+      "parent_record_id": "6",
+      "common_name": "6. ALOE VERA",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 10,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/6-aloe-vera.html",
+      "slug": "6-aloe-vera"
+    },
+    {
+      "parent_record_id": "60",
+      "common_name": "60. WATERCRESS",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/60-watercress.html",
+      "slug": "60-watercress"
+    },
+    {
+      "parent_record_id": "61",
+      "common_name": "61. TRUE CINNAMON (AND ITS CASSIA COUSIN)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/61-true-cinnamon-and-its-cassia-cousin.html",
+      "slug": "61-true-cinnamon-and-its-cassia-cousin"
+    },
+    {
+      "parent_record_id": "62",
+      "common_name": "62. CAYENNE PEPPER",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/62-cayenne-pepper.html",
+      "slug": "62-cayenne-pepper"
+    },
+    {
+      "parent_record_id": "63",
+      "common_name": "63. ACKEE",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 10,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/63-ackee.html",
+      "slug": "63-ackee"
+    },
+    {
+      "parent_record_id": "64",
+      "common_name": "64. CASSAVA LEAF",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/64-cassava-leaf.html",
+      "slug": "64-cassava-leaf"
+    },
+    {
+      "parent_record_id": "65",
+      "common_name": "65. AFRICAN POTATO",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/65-african-potato.html",
+      "slug": "65-african-potato"
+    },
+    {
+      "parent_record_id": "66",
+      "common_name": "66. LOCUST BEAN (DAWADAWA / IRU)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/66-locust-bean-dawadawa-iru.html",
+      "slug": "66-locust-bean-dawadawa-iru"
+    },
+    {
+      "parent_record_id": "67",
+      "common_name": "67. PUMPKIN SEED",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/67-pumpkin-seed.html",
+      "slug": "67-pumpkin-seed"
+    },
+    {
+      "parent_record_id": "68",
+      "common_name": "68. RED PALM OIL",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/68-red-palm-oil.html",
+      "slug": "68-red-palm-oil"
+    },
+    {
+      "parent_record_id": "69",
+      "common_name": "69. BREADFRUIT",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/69-breadfruit.html",
+      "slug": "69-breadfruit"
+    },
+    {
+      "parent_record_id": "7",
+      "common_name": "7. HIBISCUS’S KITCHEN COUSIN — LEMONGRASS (FEVER GRASS)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/7-hibiscuss-kitchen-cousin-lemongrass-fever-grass.html",
+      "slug": "7-hibiscuss-kitchen-cousin-lemongrass-fever-grass"
+    },
+    {
+      "parent_record_id": "70",
+      "common_name": "70. CALLALOO (AMARANTH GREENS)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/70-callaloo-amaranth-greens.html",
+      "slug": "70-callaloo-amaranth-greens"
+    },
+    {
+      "parent_record_id": "71",
+      "common_name": "71. WILD LETTUCE",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/71-wild-lettuce.html",
+      "slug": "71-wild-lettuce"
+    },
+    {
+      "parent_record_id": "72",
+      "common_name": "72. HORSETAIL",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/72-horsetail.html",
+      "slug": "72-horsetail"
+    },
+    {
+      "parent_record_id": "73",
+      "common_name": "73. SLIPPERY ELM",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/73-slippery-elm.html",
+      "slug": "73-slippery-elm"
+    },
+    {
+      "parent_record_id": "74",
+      "common_name": "74. COMFREY",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/74-comfrey.html",
+      "slug": "74-comfrey"
+    },
+    {
+      "parent_record_id": "75",
+      "common_name": "75. BLACK WALNUT HULL",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/75-black-walnut-hull.html",
+      "slug": "75-black-walnut-hull"
+    },
+    {
+      "parent_record_id": "76",
+      "common_name": "76. UVA URSI (BEARBERRY)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/76-uva-ursi-bearberry.html",
+      "slug": "76-uva-ursi-bearberry"
+    },
+    {
+      "parent_record_id": "77",
+      "common_name": "77. MILK THISTLE",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/77-milk-thistle.html",
+      "slug": "77-milk-thistle"
+    },
+    {
+      "parent_record_id": "78",
+      "common_name": "78. WILD YAM",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/78-wild-yam.html",
+      "slug": "78-wild-yam"
+    },
+    {
+      "parent_record_id": "79",
+      "common_name": "79. CAMWOOD",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/79-camwood.html",
+      "slug": "79-camwood"
+    },
+    {
+      "parent_record_id": "8",
+      "common_name": "8. SOURSOP (GRAVIOLA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/8-soursop-graviola.html",
+      "slug": "8-soursop-graviola"
+    },
+    {
+      "parent_record_id": "80",
+      "common_name": "80. UZIZA (WEST AFRICAN PEPPER)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/80-uziza-west-african-pepper.html",
+      "slug": "80-uziza-west-african-pepper"
+    },
+    {
+      "parent_record_id": "81",
+      "common_name": "81. CUSTARD APPLE / SUGAR APPLE",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 9,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/81-custard-apple-sugar-apple.html",
+      "slug": "81-custard-apple-sugar-apple"
+    },
+    {
+      "parent_record_id": "82",
+      "common_name": "82. NONI",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/82-noni.html",
+      "slug": "82-noni"
+    },
+    {
+      "parent_record_id": "83",
+      "common_name": "83. PERIWINKLE",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/83-periwinkle.html",
+      "slug": "83-periwinkle"
+    },
+    {
+      "parent_record_id": "84",
+      "common_name": "84. JAMAICAN DOGWOOD",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/84-jamaican-dogwood.html",
+      "slug": "84-jamaican-dogwood"
+    },
+    {
+      "parent_record_id": "85",
+      "common_name": "85. PIMENTO (ALLSPICE)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/85-pimento-allspice.html",
+      "slug": "85-pimento-allspice"
+    },
+    {
+      "parent_record_id": "86",
+      "common_name": "86. BAY RUM TREE",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/86-bay-rum-tree.html",
+      "slug": "86-bay-rum-tree"
+    },
+    {
+      "parent_record_id": "87",
+      "common_name": "87. STAR APPLE LEAF",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 5,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/87-star-apple-leaf.html",
+      "slug": "87-star-apple-leaf"
+    },
+    {
+      "parent_record_id": "88",
+      "common_name": "88. TARO / COCOYAM LEAF",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/88-taro-cocoyam-leaf.html",
+      "slug": "88-taro-cocoyam-leaf"
+    },
+    {
+      "parent_record_id": "89",
+      "common_name": "89. GENIP",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/89-genip.html",
+      "slug": "89-genip"
+    },
+    {
+      "parent_record_id": "9",
+      "common_name": "9. BITTER MELON (CERASEE)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/9-bitter-melon-cerasee.html",
+      "slug": "9-bitter-melon-cerasee"
+    },
+    {
+      "parent_record_id": "90",
+      "common_name": "90. GOLDEN APPLE (AMBARELLA)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/90-golden-apple-ambarella.html",
+      "slug": "90-golden-apple-ambarella"
+    },
+    {
+      "parent_record_id": "91",
+      "common_name": "91. ROSEMARY",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/91-rosemary.html",
+      "slug": "91-rosemary"
+    },
+    {
+      "parent_record_id": "92",
+      "common_name": "92. HOLY BASIL (TULSI)",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/92-holy-basil-tulsi.html",
+      "slug": "92-holy-basil-tulsi"
+    },
+    {
+      "parent_record_id": "93",
+      "common_name": "93. LAVENDER",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/93-lavender.html",
+      "slug": "93-lavender"
+    },
+    {
+      "parent_record_id": "94",
+      "common_name": "94. MARSHMALLOW ROOT",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 6,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/94-marshmallow-root.html",
+      "slug": "94-marshmallow-root"
+    },
+    {
+      "parent_record_id": "95",
+      "common_name": "95. LICORICE ROOT",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/95-licorice-root.html",
+      "slug": "95-licorice-root"
+    },
+    {
+      "parent_record_id": "96",
+      "common_name": "96. ASHWAGANDHA",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/96-ashwagandha.html",
+      "slug": "96-ashwagandha"
+    },
+    {
+      "parent_record_id": "97",
+      "common_name": "97. VALERIAN ROOT",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 8,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/97-valerian-root.html",
+      "slug": "97-valerian-root"
+    },
+    {
+      "parent_record_id": "98",
+      "common_name": "98. PASSIONFLOWER",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 4,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/98-passionflower.html",
+      "slug": "98-passionflower"
+    },
+    {
+      "parent_record_id": "99",
+      "common_name": "99. WILLOW BARK",
+      "scientific_name": "",
+      "record_type": "Botanical",
+      "claim_count": 7,
+      "lifecycle_status": "DRAFT",
+      "internal_path": "content/internal/monographs/99-willow-bark.html",
+      "slug": "99-willow-bark"
+    }
+  ]
+}
