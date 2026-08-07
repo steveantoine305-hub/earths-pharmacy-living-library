@@ -2,6 +2,12 @@ name: Generate Internal Monographs
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - methodology/experiment-200-record-ingest
+    paths-ignore:
+      - "content/internal/monographs/**"
+      - "data/library/full-ingest-report.json"
 
 permissions:
   contents: write
@@ -11,13 +17,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repository
+      - name: Check out experimental branch
         uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
 
       - name: Generate internal monographs
-        run: python scripts/generate_internal_monographs.py 
+        run: python scripts/generate-internal-monographs.py
+
+      - name: Commit generated internal files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/internal/monographs data/library/full-ingest-report.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Generate experimental internal monographs"
+          git push
