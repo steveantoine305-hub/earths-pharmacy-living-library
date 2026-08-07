@@ -2,141 +2,403 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>The Earth’s Pharmacy — Botanical Monographs</title>
-  <meta name="description" content="Master botanical encyclopedia for The Earth’s Pharmacy — authoritative monographs, evidence tiers, safety notices, and practitioner resources." />
-  <link rel="stylesheet" href="/assets/styles.css">
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  />
+
+  <title>
+    The Earth’s Pharmacy — Botanical Monographs
+  </title>
+
+  <meta
+    name="description"
+    content="The Earth’s Pharmacy botanical monograph library: evidence-based plant records, claim-level evidence tiers, safety guidance, and Living Evidence Library resources."
+  />
+
+  <link rel="stylesheet" href="/assets/styles.css" />
+
   <style>
-    /* Page-specific small adjustments */
-    .search-bar { display:flex; gap:8px; margin-top:12px; }
-    .search-bar input[type="search"] { flex:1; padding:10px 12px; border-radius:6px; border:1px solid rgba(255,255,255,0.04); background:rgba(255,255,255,0.01); color:inherit; }
-    .az-index { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
-    .az-index a { display:inline-block; padding:8px 10px; border-radius:6px; background:rgba(255,255,255,0.02); color:inherit; text-decoration:none; border:1px solid rgba(212,168,79,0.03); }
+    .library-status {
+      margin-top: 24px;
+      padding: 20px;
+      border-radius: 8px;
+      background: rgba(212, 168, 79, 0.05);
+      border: 1px solid rgba(212, 168, 79, 0.18);
+    }
 
-    .featured-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; margin-top:16px; }
-    .bot-card { background: linear-gradient(180deg, rgba(8,20,16,0.6), rgba(6,18,14,0.5)); padding:16px; border-radius:8px; border:1px solid rgba(212,168,79,0.04); box-shadow:0 8px 20px rgba(0,0,0,0.45); text-decoration:none; color:inherit; display:flex; flex-direction:column; }
-    .bot-card h3 { margin:0 0 8px 0; color:#d4a84f; }
-    .bot-card p { margin:0; font-size:14px; flex:1; }
+    .library-status strong {
+      color: #d4a84f;
+    }
 
-    .recent-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-top:12px; }
+    .browse-box {
+      margin-top: 28px;
+      padding: 22px;
+      border-radius: 8px;
+      background: linear-gradient(
+        180deg,
+        rgba(8, 20, 16, 0.65),
+        rgba(6, 18, 14, 0.55)
+      );
+      border: 1px solid rgba(212, 168, 79, 0.08);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    }
 
-    .tier { margin-top:12px; padding:12px; border-radius:6px; background:rgba(212,168,79,0.03); border:1px solid rgba(212,168,79,0.04); }
-    .safety { margin-top:12px; padding:12px; border-radius:6px; background:rgba(255,80,80,0.03); border:1px solid rgba(255,80,80,0.08); color:#ffd6d6; }
+    .browse-box h3 {
+      color: #d4a84f;
+      margin-top: 0;
+    }
 
-    /* Accessibility helper (hidden label) */
-    .visually-hidden { position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap; }
+    .az-index {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
 
-    @media (max-width:1000px) { .featured-grid, .recent-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width:780px) { .hero { grid-template-columns: 1fr; text-align:center; } .featured-grid, .recent-grid { grid-template-columns: 1fr; } .search-bar { flex-direction:column; } }
+    .az-index span {
+      display: inline-block;
+      min-width: 34px;
+      padding: 8px 10px;
+      text-align: center;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(212, 168, 79, 0.05);
+      opacity: 0.7;
+    }
+
+    .tier {
+      margin-top: 12px;
+      padding: 14px;
+      border-radius: 6px;
+      background: rgba(212, 168, 79, 0.03);
+      border: 1px solid rgba(212, 168, 79, 0.06);
+    }
+
+    .safety {
+      margin-top: 12px;
+      padding: 16px;
+      border-radius: 6px;
+      background: rgba(255, 80, 80, 0.03);
+      border: 1px solid rgba(255, 80, 80, 0.08);
+      color: #ffd6d6;
+    }
+
+    .boundary-note {
+      margin-top: 16px;
+      padding: 14px;
+      border-left: 3px solid #d4a84f;
+      background: rgba(212, 168, 79, 0.03);
+      font-size: 14px;
+    }
+
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .status-card {
+      padding: 18px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(212, 168, 79, 0.05);
+    }
+
+    .status-card h3 {
+      margin-top: 0;
+      color: #d4a84f;
+      font-size: 17px;
+    }
+
+    @media (max-width: 900px) {
+      .status-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="site">
-    <header class="hero" role="banner" aria-labelledby="monographs-title">
+
+    <header
+      class="hero"
+      role="banner"
+      aria-labelledby="monographs-title"
+    >
       <div class="hero-copy">
-        <h1 id="monographs-title">The Earth’s Pharmacy — Botanical Monographs</h1>
-        <p class="lead">The master botanical encyclopedia: comprehensive, evidence-based monographs, safety guidance, and practitioner resources for the plants referenced throughout The Earth’s Pharmacy.</p>
 
-        <div class="search-bar" role="search" aria-label="Search botanical monographs">
-          <label for="search-input" class="visually-hidden">Search botanicals</label>
-          <input id="search-input" type="search" placeholder="Search botanicals, common names, or scientific names" aria-label="Search botanical monographs" />
-          <a class="btn" href="#" id="search-button" aria-label="Search">Search</a>
-        </div>
+        <h1 id="monographs-title">
+          The Earth’s Pharmacy — Botanical Monographs
+        </h1>
 
-        <div style="margin-top:12px;">
-          <span style="color:rgba(243,228,189,0.9);font-size:13px;">Browse A–Z</span>
-          <div class="az-index" aria-label="Alphabetical index">
-            <!-- Letters link to anchors within this page for future index grouping -->
-            <a href="#A">A</a><a href="#B">B</a><a href="#C">C</a><a href="#D">D</a><a href="#E">E</a><a href="#F">F</a>
-            <a href="#G">G</a><a href="#H">H</a><a href="#I">I</a><a href="#J">J</a><a href="#K">K</a><a href="#L">L</a>
-            <a href="#M">M</a><a href="#N">N</a><a href="#O">O</a><a href="#P">P</a><a href="#Q">Q</a><a href="#R">R</a>
-            <a href="#S">S</a><a href="#T">T</a><a href="#U">U</a><a href="#V">V</a><a href="#W">W</a><a href="#X">X</a>
-            <a href="#Y">Y</a><a href="#Z">Z</a>
-          </div>
+        <p class="lead">
+          The botanical monograph library of The Earth’s Pharmacy,
+          designed to connect traditional knowledge with modern
+          evidence, claim-level evidence classification, safety
+          guidance, and continuing review.
+        </p>
+
+        <div class="library-status">
+          <strong>Current Library Status:</strong>
+          Individual monographs are undergoing internal source
+          verification, editorial review, and Founder review before
+          public activation.
         </div>
 
         <div class="cta-row">
-          <a class="btn secondary" href="/living-library/" aria-label="Return to Living Evidence Library">Return to Living Library</a>
-          <a class="btn ghost" href="/" aria-label="Return to Home">Return to Home</a>
+          <a
+            class="btn secondary"
+            href="/living-library/"
+            aria-label="Open the Living Evidence Library"
+          >
+            Open Living Evidence Library
+          </a>
+
+          <a
+            class="btn ghost"
+            href="/"
+            aria-label="Return to Home"
+          >
+            Return to Home
+          </a>
         </div>
       </div>
 
-      <div class="cover" aria-hidden="true">
-        <img src="/Earths_Pharmacy_Homepage_Refined_Professional_Approved.png" alt="Botanical monographs — cover art" />
+      <div class="cover">
+        <img
+          src="/Earths_Pharmacy_Homepage_Refined_Professional_Approved.png"
+          alt="The Earth’s Pharmacy botanical library artwork"
+        />
       </div>
     </header>
 
     <main>
-      <section aria-labelledby="featured-title">
-        <h2 id="featured-title">Featured Botanicals</h2>
-        <p>Highlighted monographs and practitioner notes chosen for their clinical relevance and readership interest.</p>
 
-        <div class="featured-grid" role="list">
-          <div class="bot-card">
-            <h3>Botanical Monographs</h3>
-            <p>Individual monographs are currently undergoing internal source verification and Founder review. The full library index will be activated upon final approval.</p>
+      <section aria-labelledby="library-development-title">
+
+        <h2 id="library-development-title">
+          Living Library Development
+        </h2>
+
+        <p>
+          The Earth’s Pharmacy Living Evidence Library is being
+          developed as a versioned botanical reference system.
+          Botanical records may be researched and revised internally
+          before they become available as complete public monographs.
+        </p>
+
+        <div class="status-grid">
+
+          <div class="status-card">
+            <h3>Evidence Review</h3>
+            <p>
+              Therapeutic claims are evaluated individually.
+              Evidence strength is not assigned to an entire plant
+              as a single blanket rating.
+            </p>
           </div>
+
+          <div class="status-card">
+            <h3>Safety Review</h3>
+            <p>
+              Contraindications, medication interactions, special
+              populations, preparation risks, and other safety
+              considerations are reviewed separately from efficacy.
+            </p>
+          </div>
+
+          <div class="status-card">
+            <h3>Controlled Publication</h3>
+            <p>
+              Draft and internal monograph source files remain
+              outside the public deployment artifact until they are
+              explicitly approved for public release.
+            </p>
+          </div>
+
         </div>
+
       </section>
 
-      <section aria-labelledby="recent-bots">
-        <h2 id="recent-bots">Recently Updated Botanicals</h2>
-        <p>Recent revisions, new evidence, or safety notices are noted here.</p>
+      <section aria-labelledby="browse-title">
 
-        <div class="recent-grid" aria-live="polite">
-          <div class="update">
-            <h4>Garlic — Interaction update</h4>
-            <p>Placeholder: summary of a recent interaction or safety note.</p>
+        <h2 id="browse-title">
+          A–Z Botanical Index
+        </h2>
+
+        <p>
+          The complete alphabetical monograph index is being built
+          progressively. Public botanical discovery remains available
+          through the Living Evidence Library while individual
+          monographs complete review.
+        </p>
+
+        <div class="browse-box">
+
+          <h3>Alphabetical Coverage</h3>
+
+          <div
+            class="az-index"
+            aria-label="Alphabetical botanical index under development"
+          >
+            <span>A</span>
+            <span>B</span>
+            <span>C</span>
+            <span>D</span>
+            <span>E</span>
+            <span>F</span>
+            <span>G</span>
+            <span>H</span>
+            <span>I</span>
+            <span>J</span>
+            <span>K</span>
+            <span>L</span>
+            <span>M</span>
+            <span>N</span>
+            <span>O</span>
+            <span>P</span>
+            <span>Q</span>
+            <span>R</span>
+            <span>S</span>
+            <span>T</span>
+            <span>U</span>
+            <span>V</span>
+            <span>W</span>
+            <span>X</span>
+            <span>Y</span>
+            <span>Z</span>
           </div>
 
-          <div class="update">
-            <h4>Turmeric — New trial summary</h4>
-            <p>Placeholder: summary of newly reviewed clinical trial.</p>
+          <div class="boundary-note">
+            Complete monograph pages are activated only after the
+            applicable review and release controls are satisfied.
           </div>
 
-          <div class="update">
-            <h4>Ginger — Preparation revision</h4>
-            <p>Placeholder: improved preparation guidance for practitioner use.</p>
-          </div>
         </div>
+
       </section>
 
-      <section aria-labelledby="evidence-tier">
-        <h2 id="evidence-tier">Evidence Tier Explanation</h2>
-        <p>The library classifies evidence by **Claim-Level Tiers** to help readers interpret clinical confidence. Tiers apply to individual therapeutic claims, not entire botanicals:</p>
+      <section aria-labelledby="evidence-tier-title">
+
+        <h2 id="evidence-tier-title">
+          Claim-Level Evidence Tiers
+        </h2>
+
+        <p>
+          Evidence tiers apply to individual therapeutic claims,
+          not to an entire botanical. One plant may contain claims
+          supported by different levels of evidence.
+        </p>
 
         <div class="tier">
-          <strong>Tier 1 — Research-Supported</strong>: Strong human evidence from high-quality clinical trials.
+          <strong>Tier 1 — Research-Supported:</strong>
+          Strong human evidence from high-quality clinical research
+          supporting the specific claim.
         </div>
+
         <div class="tier">
-          <strong>Tier 2 — Promising</strong>: Supportive clinical data, observational studies, or mechanistic research.
+          <strong>Tier 2 — Promising:</strong>
+          Supportive clinical, observational, mechanistic, or other
+          meaningful research exists, but the evidence is less
+          conclusive.
         </div>
+
         <div class="tier">
-          <strong>Tier 3 — Traditional Use</strong>: Documented historical or traditional use with limited modern clinical data.
+          <strong>Tier 3 — Traditional Use:</strong>
+          The claim has documented historical or traditional use
+          with limited modern clinical evidence.
         </div>
+
       </section>
 
-      <section aria-labelledby="safety-notice">
-        <h2 id="safety-notice">Safety Notice</h2>
+      <section aria-labelledby="safety-title">
+
+        <h2 id="safety-title">
+          Safety Is Evaluated Separately
+        </h2>
+
         <div class="safety">
-          <p>Herbal medicines can interact with pharmaceuticals and may not be safe for everyone. Always consult a qualified clinician before using botanicals therapeutically. The editorial team maintains safety notices and errata; check this section regularly for updates.</p>
+
+          <p>
+            Natural origin does not guarantee safety.
+          </p>
+
+          <p>
+            Botanical safety can vary according to plant identity,
+            plant part, preparation, concentration, dose, duration,
+            individual health conditions, pregnancy or lactation,
+            medication use, age, sourcing, contamination, and other
+            factors.
+          </p>
+
+          <p>
+            Safety information does not establish that a therapeutic
+            claim is effective, and evidence of benefit does not
+            eliminate safety considerations.
+          </p>
+
         </div>
+
       </section>
 
-      <section aria-labelledby="full-index">
-        <h2 id="full-index">A–Z Botanical Index</h2>
-        <p>The full alphabetical index is currently under internal review. Discovery and search functionality remain available through the Living Evidence Library index.</p>
+      <section aria-labelledby="publication-boundary-title">
+
+        <h2 id="publication-boundary-title">
+          Publication Boundary
+        </h2>
+
+        <p>
+          The public website and the internal botanical production
+          system are intentionally separated. Draft source material
+          is not part of the public GitHub Pages deployment.
+        </p>
+
+        <p>
+          Website updates to the Living Evidence Library do not alter
+          the Founder Frozen publication edition.
+        </p>
+
       </section>
 
       <footer>
-        <p style="margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-          <a class="btn" href="/living-library/" aria-label="Return to Living Library">Return to Living Library</a>
-          <a class="btn ghost" href="/" aria-label="Return to Home">Return to Home</a>
+
+        <p
+          style="
+            margin-top: 22px;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+          "
+        >
+          <a
+            class="btn"
+            href="/living-library/"
+            aria-label="Open Living Evidence Library"
+          >
+            Open Living Evidence Library
+          </a>
+
+          <a
+            class="btn ghost"
+            href="/"
+            aria-label="Return to Home"
+          >
+            Return to Home
+          </a>
         </p>
+
       </footer>
+
     </main>
   </div>
-
-  <!-- Prepared for future JavaScript: search functionality will bind to #search-input and #search-button -->
 </body>
 </html>
