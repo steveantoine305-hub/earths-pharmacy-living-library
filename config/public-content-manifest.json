@@ -1,0 +1,25 @@
+{
+  "project": "The Earth's Pharmacy",
+  "deployment_policy": "allowlist",
+  "version": "1.0.0",
+  "approved_public_paths": [
+    "index.html",
+    "founders-edition/index.html",
+    "living-library/index.html",
+    "monographs/index.html",
+    "safety/index.html",
+    "about/index.html",
+    "assets/",
+    "data/library/metadata.json",
+    "Earths_Pharmacy_Homepage_Refined_Professional_Approved.png"
+  ],
+  "excluded_paths": [
+    "content/internal/",
+    "content/protected/",
+    "data/authority/",
+    "config/",
+    "docs/",
+    "scripts/",
+    ".git/"
+  ]
+}
