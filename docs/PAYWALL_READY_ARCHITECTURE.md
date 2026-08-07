@@ -12,7 +12,7 @@ The library currently operates as a static site on GitHub Pages. Publicly access
 - **Public / Free**: Homepage, Search, Alpha-Index, and top-level metadata (Common Name, Identity, Safety Flags).
 - **Metered**: Limited full-monograph access (e.g., 2 free records) for anonymous or registered users.
 - **Subscriber**: Unlimited access to the full Living Evidence Library, detailed evidence tables, and preparation guidance.
-- **Book-Buyer**: Entitlement for owners of the physical Founder’s Edition.
+- **Book-Buyer**: Future entitlement for eligible or qualifying book purchasers.
 
 ## 3. Secure Content Delivery
 GitHub Pages cannot securely protect content via JavaScript/CSS hiding. To implement a secure paywall, the following transition is required:
@@ -25,7 +25,7 @@ GitHub Pages cannot securely protect content via JavaScript/CSS hiding. To imple
 ### Protected Content Requirements
 The future system must provide:
 1. **Secure User Identity**: Verified login sessions.
-2. **Entitlement Verification**: Checking if a user has an active subscription or book-buyer status.
+2. **Entitlement Verification**: Checking if a user has an active subscription or book-purchaser status.
 3. **Metered Logic**: Server-side tracking of free views.
 4. **Protected Delivery**: Content is only served to authorized sessions, never exposed in public JSON/JS files.
 
@@ -38,7 +38,7 @@ Critical safety data (Toxicity, Pregnancy Contraindications, Emergency Warnings)
 3. **Phase IV**: Integration of payment and authentication providers.
 
 ## 6. Metadata Schema
-Public metadata is stored in `data/authority/metadata.json` and includes:
+Public metadata is stored in `data/library/metadata.json` and includes:
 - `access_level`: public, metered, or subscriber.
 - `lifecycle_status`: DRAFT, SOURCE_REVIEW, QA, READY_FOR_FOUNDER_REVIEW, FOUNDER_APPROVED.
 
