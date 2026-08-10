@@ -2,257 +2,318 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ginger | The Earth’s Pharmacy</title>
-  <meta name="description" content="Evidence-based botanical monograph for Ginger (Tier 1 — Research-Supported). Traditional uses, modern evidence, safety, and preparations." />
-  <link rel="stylesheet" href="/assets/styles.css">
+
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  />
+
+  <meta
+    name="robots"
+    content="noindex,nofollow,noarchive"
+  />
+
+  <title>
+    GINGER
+    — Internal Validation DRAFT
+    — The Earth’s Pharmacy
+  </title>
+
   <style>
-    /* Monograph Specific Styles */
-    .monograph-header {
-      padding: 60px 0;
-      border-bottom: 1px solid var(--border-color);
-      margin-bottom: 40px;
-    }
-    .monograph-header h1 {
-      font-size: 48px;
-      color: var(--gold-accent);
-      margin: 0;
-      text-transform: uppercase;
-    }
-    .monograph-header .sci-name {
-      font-size: 24px;
-      font-style: italic;
-      opacity: 0.8;
-      display: block;
-      margin-top: 8px;
-    }
-    .monograph-header .other-names {
-      font-size: 16px;
-      margin-top: 16px;
-      opacity: 0.7;
+    body {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px 60px;
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+      line-height: 1.6;
+      background: #07130f;
+      color: #f3efe3;
     }
 
-    .monograph-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 48px;
-    }
-
-    section {
-      padding-bottom: 60px;
-      border-bottom: 1px solid var(--border-color);
-      margin-bottom: 60px;
-    }
-    section:last-child {
-      border-bottom: none;
-    }
+    h1,
     h2 {
-      color: var(--gold-accent);
-      font-size: 24px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 24px;
+      color: #d4a84f;
     }
 
-    /* Evidence Table */
-    .evidence-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 24px 0;
-    }
-    .evidence-table th, .evidence-table td {
-      text-align: left;
+    .draft-banner {
       padding: 16px;
-      border-bottom: 1px solid var(--border-color);
-    }
-    .evidence-table th {
-      color: var(--gold-accent);
-      font-size: 14px;
-      text-transform: uppercase;
-    }
-    .tier-badge {
-      display: inline-block;
-      padding: 4px 12px;
-      border-radius: 999px;
-      font-size: 12px;
+      margin-bottom: 24px;
+      border: 2px solid #b84040;
+      background:
+        rgba(184, 64, 64, 0.12);
       font-weight: bold;
-      color: #fff;
-    }
-    .tier-1 { background: #2b5f36; }
-    .tier-2 { background: #7a5b2b; }
-    .tier-3 { background: #3b3b3b; }
-
-    /* Safety Sidebar */
-    .safety-sidebar {
-      background: rgba(212, 168, 79, 0.05);
-      padding: 32px;
-      border-radius: 8px;
-      border: 1px solid var(--gold-accent);
-      height: fit-content;
-      position: sticky;
-      top: 24px;
-    }
-    .safety-sidebar h3 {
-      color: var(--gold-accent);
-      margin-top: 0;
-      text-transform: uppercase;
-      font-size: 18px;
-    }
-    .safety-sidebar p {
-      font-size: 14px;
-      margin-bottom: 16px;
-    }
-    .safety-sidebar .caution-flag {
-      color: #ff9999;
-      font-weight: bold;
-      display: block;
-      margin-bottom: 8px;
     }
 
-    .metadata-box {
+    .identity,
+    .safety {
+      padding: 18px;
+      margin: 20px 0;
+      border:
+        1px solid
+        rgba(212, 168, 79, 0.25);
+      border-radius: 6px;
+    }
+
+    .safety {
+      border-color:
+        rgba(255, 100, 100, 0.30);
+      background:
+        rgba(255, 80, 80, 0.05);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      min-width: 1100px;
+      border-collapse: collapse;
+      margin-top: 18px;
+    }
+
+    th,
+    td {
+      border:
+        1px solid
+        rgba(212, 168, 79, 0.18);
+      padding: 10px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      color: #d4a84f;
+    }
+
+    footer {
+      margin-top: 36px;
       font-size: 13px;
-      opacity: 0.6;
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border-color);
-    }
-
-    @media (max-width: 900px) {
-      .monograph-grid { grid-template-columns: 1fr; }
-      .safety-sidebar { position: static; margin-top: 40px; }
+      opacity: 0.75;
     }
   </style>
 </head>
+
 <body>
 
-  <nav role="navigation">
-    <div class="container">
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/living-library/">Living Evidence Library</a></li>
-        <li><a href="/monographs/">Botanical Monographs</a></li>
-        <li><a href="/safety/">Safety</a></li>
-        <li><a href="/about/">About</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <div class="container">
-    <header class="monograph-header" role="banner">
-      <h1>Ginger</h1>
-      <span class="sci-name">Zingiber officinale</span>
-      <div class="other-names"><strong>Other Names:</strong> Pending evidence review</div>
-    </header>
-
-    <div class="monograph-grid">
-      <main>
-        <section id="identity">
-          <h2>Botanical Identity</h2>
-          <p>Pending evidence review</p>
-        </section>
-
-        <section id="origin">
-          <h2>Geographic Origin & Travel Pattern</h2>
-          <p>Pending evidence review</p>
-        </section>
-
-        <section id="tradition">
-          <h2>Traditional Context</h2>
-          <p>Tradition of origin &** historical use.** Ginger traveled the oldest trade routes on earth — out of Asia, across the Indian Ocean on the monsoon dhows, into the Swahili coast and up the Nile, and later throughout the African diaspora, where it became a cornerstone of Caribbean bush medicine. The elders reached for it for the stomach above all: nausea, sluggish digestion, gas, the queasiness of travel and pregnancy. It was warmed into teas for colds and chills and steeped for aches.</p>
-        </section>
-
-        <section id="evidence">
-          <h2>What the Evidence Says</h2>
-          <p>The following therapeutic claims have been evaluated from the authoritative Earth’s Pharmacy dataset.</p>
-          
-          <table class="evidence-table">
-            <thead>
-              <tr>
-                <th>Claim</th>
-                <th>Tier</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Ginger traveled the oldest trade routes on earth - out of Asia, across the Indian Ocean on the monsoon dhows, into the Swahili coast and up the Nile, and later throughout the African diaspora, where it became a cornerstone of Caribbean bush medicine.</td><td><span class="tier-badge tier-3">Tier 3</span></td><td>Pending</td></tr>
-<tr><td>Ginger: The elders reached for it for the stomach above all: nausea, sluggish digestion, gas, the queasiness of travel and pregnancy.</td><td><span class="tier-badge tier-3">Tier 3</span></td><td>Pending</td></tr>
-<tr><td>Ginger: It was warmed into teas for colds and chills and steeped for aches.</td><td><span class="tier-badge tier-3">Tier 3</span></td><td>Pending</td></tr>
-<tr><td>Ginger is one of the best-studied herbs in the world for nausea.</td><td><span class="tier-badge tier-1">Tier 1</span></td><td>Pending</td></tr>
-<tr><td>Ginger: Clinical trials support its use for pregnancy-related nausea, motion sickness, and post-operative and chemotherapy-associated nausea.</td><td><span class="tier-badge tier-1">Tier 1</span></td><td>Pending</td></tr>
-<tr><td>Evidence suggests ginger speeds gastric emptying and eases indigestion.</td><td><span class="tier-badge tier-2">Tier 2</span></td><td>Pending</td></tr>
-<tr><td>Ginger: Studies point to modest reductions in inflammation markers and exercise-related soreness.</td><td><span class="tier-badge tier-2">Tier 2</span></td><td>Pending</td></tr>
-<tr><td>Ginger: Generally very safe as a food and tea.</td><td><span class="tier-badge tier-3">Tier 3</span></td><td>Pending</td></tr>
-<tr><td>Ginger: In large concentrated doses it may thin the blood slightly - relevant if you take blood-thinning medication or face surgery.</td><td><span class="tier-badge tier-3">Tier 3</span></td><td>Pending</td></tr>
-<tr><td>Ginger: Pregnant women use it commonly for nausea, but should keep to culinary/tea amounts and mention it to their provider.</td><td><span class="tier-badge tier-3">Tier 3</span></td><td>Pending</td></tr>
-<tr><td>Ginger: Fresh root sliced and simmered for tea; grated into food; dried and powdered; candied.</td><td><span class="tier-badge tier-3">Tier 3</span></td><td>Pending</td></tr>
-<tr><td>Ginger: A thumb-sized piece of fresh root simmered ten minutes makes a strong cup.</td><td><span class="tier-badge tier-3">Tier 3</span></td><td>Pending</td></tr>
-            </tbody>
-          </table>
-        </section>
-
-        <section id="preparation">
-          <h2>Preparation</h2>
-          <p>Preparation. Fresh root sliced and simmered for tea; grated into food; dried and powdered; candied. A thumb-sized piece of fresh root simmered ten minutes makes a strong cup.</p>
-        </section>
-
-        <section id="dosage">
-          <h2>Dosage / Exposure Information</h2>
-          <p>Pending evidence review</p>
-        </section>
-
-        <section id="references">
-          <h2>References</h2>
-          <div class="reference-list">
-            Pending evidence review
-          </div>
-        </section>
-
-        <div class="metadata-box">
-          <div><strong>Living Evidence Status:</strong> DRAFT</div>
-          <div><strong>Last Reviewed:</strong> 2026-08-07</div>
-          <div><strong>Revision:</strong> 1.0</div>
-          <div style="margin-top: 12px; font-style: italic;">
-            Note: Website updates do not alter the Founder Frozen publication.
-          </div>
-        </div>
-      </main>
-
-      <aside class="safety-sidebar">
-        <h3>Safety & Cautions</h3>
-        <div class="caution-flag">Safety Principle: Natural origin does not guarantee safety.</div>
-        
-        <div style="margin-top: 24px;">
-          <strong>Contraindications:</strong>
-          <p>Cautions. Generally very safe as a food and tea. In large concentrated doses it may thin the blood slightly — relevant if you take blood-thinning medication or face surgery. Pregnant women use it commonly for nausea, but should keep to culinary/tea amounts and mention it to their provider.</p>
-        </div>
-
-        <div style="margin-top: 16px;">
-          <strong>Medication Interactions:</strong>
-          <p>Pending evidence review</p>
-        </div>
-
-        <div style="margin-top: 16px;">
-          <strong>Special Populations:</strong>
-          <p>Pending evidence review</p>
-        </div>
-
-        <div class="disclaimer" style="font-size: 11px; margin-top: 32px; opacity: 0.8;">
-          The Earth’s Pharmacy is educational reference material and is not individualized medical advice, diagnosis, prescribing, or treatment.
-        </div>
-      </aside>
-    </div>
-
-    <footer style="margin-top: 80px;">
-      <div class="footer-links">
-        <a href="/">Home</a>
-        <a href="/living-library/">Living Evidence Library</a>
-        <a href="/monographs/">Botanical Monographs</a>
-        <a href="/safety/">Safety</a>
-        <a href="/about/">About</a>
-      </div>
-      <p>&copy; 2026 The Earth’s Pharmacy. By The Grandmaster Architect.</p>
-    </footer>
+  <div class="draft-banner">
+    INTERNAL VALIDATION DRAFT —
+    NOT APPROVED FOR PUBLICATION —
+    NOT PART OF THE PUBLIC DEPLOYMENT
   </div>
+
+  <h1>
+    GINGER
+  </h1>
+
+  <div class="identity">
+
+    <p>
+      <strong>Parent Record:</strong>
+      1
+    </p>
+
+    
+    <p>
+      <strong>Record Type:</strong>
+      Botanical
+    </p>
+
+    <p>
+      <strong>Scientific Name:</strong>
+      <em>
+        Pending verification
+      </em>
+    </p>
+    
+
+    <p>
+      <strong>Lifecycle Status:</strong>
+      DRAFT
+    </p>
+
+    <p>
+      <strong>Validation Batch:</strong>
+      10-record controlled test
+    </p>
+
+  </div>
+
+  <section>
+
+    <h2>
+      Claim-Level Evidence
+    </h2>
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Claim ID</th>
+            <th>Claim Type</th>
+            <th>Exact Claim Text</th>
+            <th>Evidence Category</th>
+            <th>Source Mapping</th>
+            <th>Governance Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+            <tr>
+              <td>1-001</td>
+              <td>traditional_use</td>
+              <td>Ginger traveled the oldest trade routes on earth - out of Asia, across the Indian Ocean on the monsoon dhows, into the Swahili coast and up the Nile, and later throughout the African diaspora, where it became a cornerstone of Caribbean bush medicine.</td>
+              <td>tradition</td>
+              <td>tradition: 42-292</td>
+              <td>citation_verified=false; validation_status=pending; founder_frozen=false; publication_status=pending_founder_release</td>
+            </tr>
+            
+
+            <tr>
+              <td>1-002</td>
+              <td>traditional_use</td>
+              <td>Ginger: The elders reached for it for the stomach above all: nausea, sluggish digestion, gas, the queasiness of travel and pregnancy.</td>
+              <td>tradition</td>
+              <td>tradition: 293-418</td>
+              <td>citation_verified=false; validation_status=pending; founder_frozen=false; publication_status=pending_founder_release</td>
+            </tr>
+            
+
+            <tr>
+              <td>1-003</td>
+              <td>traditional_use</td>
+              <td>Ginger: It was warmed into teas for colds and chills and steeped for aches.</td>
+              <td>tradition</td>
+              <td>tradition: 419-486</td>
+              <td>citation_verified=false; validation_status=pending; founder_frozen=false; publication_status=pending_founder_release</td>
+            </tr>
+            
+
+            <tr>
+              <td>1-004</td>
+              <td>evidence_context</td>
+              <td>Ginger is one of the best-studied herbs in the world for nausea.</td>
+              <td>Tier 1 — Research-Supported</td>
+              <td>research: 67-131</td>
+              <td>citation_verified=false; validation_status=pending; founder_frozen=false; publication_status=pending_founder_release</td>
+            </tr>
+            
+
+            <tr>
+              <td>1-005</td>
+              <td>evidence_context</td>
+              <td>Ginger: Clinical trials support its use for pregnancy-related nausea, motion sickness, and post-operative and chemotherapy-associated nausea.</td>
+              <td>Tier 1 — Research-Supported</td>
+              <td>research: 132-265</td>
+              <td>citation_verified=false; validation_status=pending; founder_frozen=false; publication_status=pending_founder_release</td>
+            </tr>
+            
+
+            <tr>
+              <td>1-006</td>
+              <td>evidence_conclusion</td>
+              <td>Evidence suggests ginger speeds gastric emptying and eases indigestion.</td>
+              <td>Tier 2 — Promising</td>
+              <td>research: 354-425</td>
+              <td>citation_verified=false; validation_status=pending; founder_frozen=false; publication_status=pending_founder_release</td>
+            </tr>
+            
+
+            <tr>
+              <td>1-007</td>
+              <td>evidence_context</td>
+              <td>Ginger: Studies point to modest reductions in inflammation markers and exercise-related soreness.</td>
+              <td>Tier 2 — Promising</td>
+              <td>research: 485-574</td>
+              <td>citation_verified=false; validation_status=pending; founder_frozen=false; publication_status=pending_founder_release</td>
+            </tr>
+            
+
+            <tr>
+              <td>1-008</td>
+              <td>safety</td>
+              <td>Ginger: Generally very safe as a food and tea.</td>
+              <td>safety</td>
+              <td>safety: 10-48</td>
+              <td>citation_verified=false; validation_status=pending; founder_frozen=false; publication_status=pending_founder_release</td>
+            </tr>
+            
+
+            <tr>
+              <td>1-009</td>
+              <td>safety</td>
+              <td>Ginger: In large concentrated doses it may thin the blood slightly - relevant if you take blood-thinning medication or face surgery.</td>
+              <td>safety</td>
+              <td>safety: 49-173</td>
+              <td>citation_verified=false; validation_status=pending; founder_frozen=false; publication_status=pending_founder_release</td>
+            </tr>
+            
+
+            <tr>
+              <td>1-010</td>
+              <td>safety</td>
+              <td>Ginger: Pregnant women use it commonly for nausea, but should keep to culinary/tea amounts and mention it to their provider.</td>
+              <td>safety</td>
+              <td>safety: 174-290</td>
+              <td>citation_verified=false; validation_status=pending; founder_frozen=false; publication_status=pending_founder_release</td>
+            </tr>
+            
+
+            <tr>
+              <td>1-011</td>
+              <td>preparation_or_pharmacokinetic</td>
+              <td>Ginger: Fresh root sliced and simmered for tea; grated into food; dried and powdered; candied.</td>
+              <td>preparation</td>
+              <td>preparation: 13-99</td>
+              <td>citation_verified=false; validation_status=pending; founder_frozen=false; publication_status=pending_founder_release</td>
+            </tr>
+            
+
+            <tr>
+              <td>1-012</td>
+              <td>preparation_or_pharmacokinetic</td>
+              <td>Ginger: A thumb-sized piece of fresh root simmered ten minutes makes a strong cup.</td>
+              <td>preparation</td>
+              <td>preparation: 100-174</td>
+              <td>citation_verified=false; validation_status=pending; founder_frozen=false; publication_status=pending_founder_release</td>
+            </tr>
+            
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+  <section class="safety">
+
+    <h2>
+      Safety / Toxicity Claims
+    </h2>
+
+    <ul>
+<li>Ginger: Generally very safe as a food and tea.</li>
+<li>Ginger: In large concentrated doses it may thin the blood slightly - relevant if you take blood-thinning medication or face surgery.</li>
+<li>Ginger: Pregnant women use it commonly for nausea, but should keep to culinary/tea amounts and mention it to their provider.</li>
+</ul>
+
+  </section>
+
+  <footer>
+    Generated from the immutable Revision 2I
+    authority dataset for internal validation only.
+    Generation does not constitute Founder approval,
+    Founder Frozen status, publication, release,
+    medical endorsement, citation verification,
+    or public activation.
+  </footer>
 
 </body>
 </html>
