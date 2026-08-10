@@ -4,8 +4,8 @@ import hashlib
 import json
 import re
 from collections import defaultdict
-from pathlib import Path
 from html import escape
+from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,12 +32,20 @@ REPORT_DIR = (
 
 REPORT_FILE = (
     REPORT_DIR
-    / "full-ingest-report.json"
+    / "validation-batch-report.json"
 )
 
 EXPECTED_SHA256 = (
     "e692b022f99895db7acfa6c5b9d7427103a929ce042be1bb0d769c0be7a2087d"
 )
+
+EXPECTED_AUTHORITY_ROWS = 1273
+EXPECTED_PARENT_RECORDS = 201
+
+# Controlled validation batch only.
+# This generator intentionally renders 10 records,
+# not the full 201-record library.
+VALIDATION_PARENT_LIMIT = 10
 
 
 def sha256_file(path: Path) -> str:
@@ -51,27 +59,6 @@ def sha256_file(path: Path) -> str:
             digest.update(chunk)
 
     return digest.hexdigest()
-
-
-def slugify(value: str) -> str:
-    value = str(value or "").strip().lower()
-
-    value = (
-        value
-        .replace("&", " and ")
-        .replace("’", "")
-        .replace("'", "")
-    )
-
-    value = re.sub(
-        r"[^a-z0-9]+",
-        "-",
-        value
-    )
-
-    value = value.strip("-")
-
-    return value or "record"
 
 
 def first_present(record, keys, default=""):
@@ -115,21 +102,53 @@ def normalize_parent_id(record):
     return claim_id or "UNKNOWN"
 
 
-def normalize_common_name(record):
-    return str(
-        first_present(
-            record,
-            [
-                "common_name",
-                "plant_name",
-                "botanical_name",
-                "record_name",
-                "title",
-                "parent_name"
-            ],
-            "Unnamed Record"
+def parent_sort_key(value):
+    value = str(value).strip()
+
+    match = re.match(
+        r"^(\d+)([A-Za-z]*)$",
+        value
+    )
+
+    if match:
+        return (
+            int(match.group(1)),
+            match.group(2).upper()
         )
-    ).strip()
+
+    return (
+        999999,
+        value.upper()
+    )
+
+
+def clean_record_name(value):
+    value = str(value or "").strip()
+
+    value = re.sub(
+        r"^\s*\d+[A-Za-z]?\.\s*",
+        "",
+        value
+    )
+
+    return value.strip()
+
+
+def normalize_common_name(record):
+    raw = first_present(
+        record,
+        [
+            "common_name",
+            "plant_name",
+            "botanical_name",
+            "record_name",
+            "title",
+            "parent_name"
+        ],
+        "Unnamed Record"
+    )
+
+    return clean_record_name(raw)
 
 
 def normalize_scientific_name(record):
@@ -138,6 +157,7 @@ def normalize_scientific_name(record):
             record,
             [
                 "scientific_name",
+                "accepted_scientific_name",
                 "latin_name",
                 "botanical_scientific_name"
             ],
@@ -158,7 +178,7 @@ def normalize_record_type(record):
     if parent_id == "34B":
         return "Animal-Derived Natural Product"
 
-    if "honey" == common_name:
+    if common_name == "honey":
         return "Animal-Derived Natural Product"
 
     if any(
@@ -176,71 +196,25 @@ def normalize_record_type(record):
     return "Botanical"
 
 
-def extract_claim_text(record):
-    return str(
-        first_present(
-            record,
-            [
-                "claim_text",
-                "claim",
-                "therapeutic_claim",
-                "claim_statement",
-                "statement"
-            ],
-            ""
-        )
-    ).strip()
+def slugify(value):
+    value = str(value or "").strip().lower()
 
-
-def extract_tier(record):
-    return str(
-        first_present(
-            record,
-            [
-                "evidence_tier",
-                "tier",
-                "evidence_level"
-            ],
-            "Unclassified"
-        )
-    ).strip()
-
-
-def extract_safety(record):
-    return str(
-        first_present(
-            record,
-            [
-                "safety",
-                "safety_flag",
-                "cautions",
-                "safety_notes",
-                "warning"
-            ],
-            ""
-        )
-    ).strip()
-
-
-def extract_citation(record):
-    value = first_present(
-        record,
-        [
-            "citation",
-            "citation_text",
-            "reference",
-            "source"
-        ],
-        ""
+    value = (
+        value
+        .replace("&", " and ")
+        .replace("’", "")
+        .replace("'", "")
     )
 
-    if isinstance(value, list):
-        return "; ".join(
-            str(item)
-            for item in value
-        )
+    value = re.sub(
+        r"[^a-z0-9]+",
+        "-",
+        value
+    )
 
-    return str(value).strip()
+    value = value.strip("-")
+
+    return value or "record"
 
 
 def unique_slug(
@@ -254,7 +228,10 @@ def unique_slug(
         used_slugs.add(slug)
         return slug
 
-    slug = f"{base_slug}-{slugify(parent_id)}"
+    slug = (
+        f"{base_slug}-"
+        f"{slugify(parent_id)}"
+    )
 
     counter = 2
 
@@ -271,6 +248,116 @@ def unique_slug(
     return slug
 
 
+def extract_claim_text(record):
+    return str(
+        first_present(
+            record,
+            [
+                "exact_claim_text",
+                "claim_text",
+                "claim",
+                "therapeutic_claim",
+                "claim_statement",
+                "statement"
+            ],
+            ""
+        )
+    ).strip()
+
+
+def extract_evidence_category(record):
+    return str(
+        first_present(
+            record,
+            [
+                "evidence_category",
+                "evidence_tier",
+                "tier",
+                "evidence_level"
+            ],
+            "Unclassified"
+        )
+    ).strip()
+
+
+def extract_claim_type(record):
+    return str(
+        record.get(
+            "claim_type",
+            ""
+        )
+    ).strip()
+
+
+def extract_source_mapping(record):
+    source_field = str(
+        record.get(
+            "source_field",
+            ""
+        )
+    ).strip()
+
+    source_locator = str(
+        record.get(
+            "source_locator",
+            ""
+        )
+    ).strip()
+
+    if source_field and source_locator:
+        return (
+            f"{source_field}: "
+            f"{source_locator}"
+        )
+
+    if source_field:
+        return source_field
+
+    if source_locator:
+        return source_locator
+
+    return (
+        "Source mapping unavailable"
+    )
+
+
+def extract_governance_status(record):
+    citation_verified = record.get(
+        "citation_verified",
+        False
+    )
+
+    validation_status = str(
+        record.get(
+            "validation_status",
+            "pending"
+        )
+    ).strip()
+
+    founder_frozen = record.get(
+        "founder_frozen",
+        False
+    )
+
+    publication_status = str(
+        record.get(
+            "publication_status",
+            "pending_founder_release"
+        )
+    ).strip()
+
+    return (
+        "citation_verified="
+        f"{str(bool(citation_verified)).lower()}; "
+        "validation_status="
+        f"{validation_status}; "
+        "founder_frozen="
+        f"{str(bool(founder_frozen)).lower()}; "
+        "publication_status="
+        f"{publication_status}"
+    )
+
+
 def render_claim_rows(records):
     rows = []
 
@@ -284,31 +371,45 @@ def render_claim_rows(records):
             )
         )
 
-        claim_text = escape(
-            extract_claim_text(record)
-        )
-
-        tier = escape(
-            extract_tier(record)
-        )
-
-        citation = escape(
-            extract_citation(record)
-        )
-
-        if not citation:
-            citation = (
-                "Citation mapping pending "
-                "internal review"
+        claim_type = escape(
+            extract_claim_type(
+                record
             )
+        )
+
+        claim_text = escape(
+            extract_claim_text(
+                record
+            )
+        )
+
+        evidence_category = escape(
+            extract_evidence_category(
+                record
+            )
+        )
+
+        source_mapping = escape(
+            extract_source_mapping(
+                record
+            )
+        )
+
+        governance = escape(
+            extract_governance_status(
+                record
+            )
+        )
 
         rows.append(
             f"""
             <tr>
               <td>{claim_id}</td>
+              <td>{claim_type}</td>
               <td>{claim_text}</td>
-              <td>{tier}</td>
-              <td>{citation}</td>
+              <td>{evidence_category}</td>
+              <td>{source_mapping}</td>
+              <td>{governance}</td>
             </tr>
             """
         )
@@ -320,27 +421,51 @@ def render_safety(records):
     notes = []
 
     for record in records:
-        value = extract_safety(record)
+        claim_type = extract_claim_type(
+            record
+        ).lower()
 
-        if value and value not in notes:
-            notes.append(value)
+        if claim_type not in {
+            "safety",
+            "toxicity"
+        }:
+            continue
+
+        claim_text = extract_claim_text(
+            record
+        )
+
+        if (
+            claim_text
+            and claim_text not in notes
+        ):
+            notes.append(
+                claim_text
+            )
 
     if not notes:
         return (
-            "Safety review pending. "
-            "This internal DRAFT must not "
-            "be publicly released."
+            "<p>"
+            "No discrete safety or toxicity claim "
+            "was extracted for this record. "
+            "Safety validation remains pending."
+            "</p>"
         )
 
-    return " ".join(
-        escape(item)
-        for item in notes
+    items = "\n".join(
+        f"<li>{escape(note)}</li>"
+        for note in notes
+    )
+
+    return (
+        "<ul>\n"
+        f"{items}\n"
+        "</ul>"
     )
 
 
 def render_identity(
     record_type,
-    common_name,
     scientific_name
 ):
     if (
@@ -352,6 +477,7 @@ def render_identity(
           <strong>Record Type:</strong>
           Animal-Derived Natural Product
         </p>
+
         <p>
           <strong>Botanical Scientific Name:</strong>
           Not applicable
@@ -364,9 +490,17 @@ def render_identity(
           <strong>Record Type:</strong>
           Seaweed / Algae
         </p>
+
         <p>
           <strong>Scientific Identity:</strong>
-          <em>{escape(scientific_name or "Pending verification")}</em>
+          <em>
+            {
+                escape(
+                    scientific_name
+                    or "Pending verification"
+                )
+            }
+          </em>
         </p>
         """
 
@@ -375,9 +509,17 @@ def render_identity(
       <strong>Record Type:</strong>
       Botanical
     </p>
+
     <p>
       <strong>Scientific Name:</strong>
-      <em>{escape(scientific_name or "Pending verification")}</em>
+      <em>
+        {
+            escape(
+                scientific_name
+                or "Pending verification"
+            )
+        }
+      </em>
     </p>
     """
 
@@ -391,7 +533,6 @@ def render_monograph(
 ):
     identity = render_identity(
         record_type,
-        common_name,
         scientific_name
     )
 
@@ -407,6 +548,7 @@ def render_monograph(
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+
   <meta
     name="viewport"
     content="width=device-width,initial-scale=1"
@@ -418,14 +560,14 @@ def render_monograph(
   />
 
   <title>
-    {escape(common_name)} —
-    Internal DRAFT —
-    The Earth’s Pharmacy
+    {escape(common_name)}
+    — Internal Validation DRAFT
+    — The Earth’s Pharmacy
   </title>
 
   <style>
     body {{
-      max-width: 960px;
+      max-width: 1200px;
       margin: 40px auto;
       padding: 0 20px 60px;
       font-family:
@@ -463,13 +605,18 @@ def render_monograph(
 
     .safety {{
       border-color:
-        rgba(255, 100, 100, 0.3);
+        rgba(255, 100, 100, 0.30);
       background:
         rgba(255, 80, 80, 0.05);
     }}
 
+    .table-wrap {{
+      overflow-x: auto;
+    }}
+
     table {{
       width: 100%;
+      min-width: 1100px;
       border-collapse: collapse;
       margin-top: 18px;
     }}
@@ -499,11 +646,14 @@ def render_monograph(
 <body>
 
   <div class="draft-banner">
-    INTERNAL DRAFT — NOT APPROVED FOR PUBLICATION —
+    INTERNAL VALIDATION DRAFT —
+    NOT APPROVED FOR PUBLICATION —
     NOT PART OF THE PUBLIC DEPLOYMENT
   </div>
 
-  <h1>{escape(common_name)}</h1>
+  <h1>
+    {escape(common_name)}
+  </h1>
 
   <div class="identity">
 
@@ -519,47 +669,61 @@ def render_monograph(
       DRAFT
     </p>
 
+    <p>
+      <strong>Validation Batch:</strong>
+      10-record controlled test
+    </p>
+
   </div>
 
   <section>
 
-    <h2>Claim-Level Evidence</h2>
+    <h2>
+      Claim-Level Evidence
+    </h2>
 
-    <table>
+    <div class="table-wrap">
 
-      <thead>
-        <tr>
-          <th>Claim ID</th>
-          <th>Claim</th>
-          <th>Evidence Tier</th>
-          <th>Citation / Mapping Status</th>
-        </tr>
-      </thead>
+      <table>
 
-      <tbody>
-        {claim_rows}
-      </tbody>
+        <thead>
+          <tr>
+            <th>Claim ID</th>
+            <th>Claim Type</th>
+            <th>Exact Claim Text</th>
+            <th>Evidence Category</th>
+            <th>Source Mapping</th>
+            <th>Governance Status</th>
+          </tr>
+        </thead>
 
-    </table>
+        <tbody>
+          {claim_rows}
+        </tbody>
+
+      </table>
+
+    </div>
 
   </section>
 
   <section class="safety">
 
-    <h2>Safety Review</h2>
+    <h2>
+      Safety / Toxicity Claims
+    </h2>
 
-    <p>
-      {safety}
-    </p>
+    {safety}
 
   </section>
 
   <footer>
     Generated from the immutable Revision 2I
-    authority dataset for internal production use.
+    authority dataset for internal validation only.
     Generation does not constitute Founder approval,
     Founder Frozen status, publication, release,
-    medical endorsement, or public activation.
+    medical endorsement, citation verification,
+    or public activation.
   </footer>
 
 </body>
@@ -604,7 +768,10 @@ def main():
                 continue
 
             try:
-                record = json.loads(line)
+                record = json.loads(
+                    line
+                )
+
             except json.JSONDecodeError as exc:
                 raise SystemExit(
                     "ERROR: Invalid JSONL on "
@@ -621,17 +788,30 @@ def main():
                 record
             )
 
-    if row_count != 1273:
+    if row_count != EXPECTED_AUTHORITY_ROWS:
         raise SystemExit(
             "ERROR: Authority row count mismatch. "
-            f"Expected 1273, found {row_count}."
+            f"Expected {EXPECTED_AUTHORITY_ROWS}, "
+            f"found {row_count}."
         )
 
-    if len(grouped) != 201:
+    if len(grouped) != EXPECTED_PARENT_RECORDS:
         raise SystemExit(
             "ERROR: Parent-record count mismatch. "
-            f"Expected 201, found {len(grouped)}."
+            f"Expected {EXPECTED_PARENT_RECORDS}, "
+            f"found {len(grouped)}."
         )
+
+    ordered_parent_ids = sorted(
+        grouped.keys(),
+        key=parent_sort_key
+    )
+
+    validation_parent_ids = (
+        ordered_parent_ids[
+            :VALIDATION_PARENT_LIMIT
+        ]
+    )
 
     OUTPUT_DIR.mkdir(
         parents=True,
@@ -647,10 +827,10 @@ def main():
 
     generated = []
 
-    for parent_id in sorted(
-        grouped.keys(),
-        key=str
-    ):
+    blank_claim_count = 0
+    unclassified_count = 0
+
+    for parent_id in validation_parent_ids:
         records = grouped[parent_id]
 
         first = records[0]
@@ -669,6 +849,20 @@ def main():
             first
         )
 
+        for record in records:
+            if not extract_claim_text(
+                record
+            ):
+                blank_claim_count += 1
+
+            if (
+                extract_evidence_category(
+                    record
+                )
+                == "Unclassified"
+            ):
+                unclassified_count += 1
+
         slug = unique_slug(
             slugify(common_name),
             parent_id,
@@ -679,7 +873,10 @@ def main():
             f"{slug}.html"
         )
 
-        path = OUTPUT_DIR / filename
+        path = (
+            OUTPUT_DIR
+            / filename
+        )
 
         html = render_monograph(
             parent_id=parent_id,
@@ -721,18 +918,26 @@ def main():
 
     report = {
         "status":
-            "INTERNAL_DRAFT_GENERATION_COMPLETE",
+            "INTERNAL_VALIDATION_BATCH_COMPLETE",
         "authority_file":
             AUTHORITY_FILE.name,
         "authority_sha256":
             actual_hash,
         "authority_rows":
             row_count,
-        "parent_records":
+        "authority_parent_records":
             len(grouped),
+        "validation_parent_limit":
+            VALIDATION_PARENT_LIMIT,
         "generated_files":
             len(generated),
+        "blank_claim_text_count":
+            blank_claim_count,
+        "unclassified_evidence_count":
+            unclassified_count,
         "public_release":
+            False,
+        "founder_frozen":
             False,
         "records":
             generated
@@ -748,20 +953,39 @@ def main():
         encoding="utf-8"
     )
 
+    if blank_claim_count:
+        raise SystemExit(
+            "FAIL: Validation batch contains "
+            f"{blank_claim_count} blank claim texts."
+        )
+
     print(
-        "PASS: Internal monograph generation complete."
+        "PASS: Revision 2I field mapping validation "
+        "batch complete."
     )
 
     print(
-        f"Authority rows: {row_count}"
+        f"Authority rows verified: {row_count}"
     )
 
     print(
-        f"Parent records: {len(grouped)}"
+        "Authority parent records verified: "
+        f"{len(grouped)}"
     )
 
     print(
-        f"Generated internal DRAFT files: {len(generated)}"
+        "Validation monographs generated: "
+        f"{len(generated)}"
+    )
+
+    print(
+        "Blank exact claim texts: "
+        f"{blank_claim_count}"
+    )
+
+    print(
+        "Unclassified evidence categories: "
+        f"{unclassified_count}"
     )
 
     print(
@@ -769,7 +993,12 @@ def main():
     )
 
     print(
-        f"Report: {REPORT_FILE.relative_to(ROOT)}"
+        "Founder Frozen: NO"
+    )
+
+    print(
+        "Report: "
+        f"{REPORT_FILE.relative_to(ROOT)}"
     )
 
 
