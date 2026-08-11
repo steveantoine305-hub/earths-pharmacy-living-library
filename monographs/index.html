@@ -11,7 +11,7 @@
 
   <meta
     name="description"
-    content="Explore The Earth’s Pharmacy botanical monograph library."
+    content="Explore The Earth’s Pharmacy 201-record botanical monograph library."
   >
 
   <style>
@@ -116,10 +116,11 @@
     }
 
     .letter {
-      width: 36px;
+      min-width: 36px;
       height: 36px;
-      border-radius: 50%;
-      border: 1px solid rgba(216,184,90,.35);
+      padding: 0 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(216, 184, 90, 0.35);
       background: transparent;
       color: var(--text);
       cursor: pointer;
@@ -145,21 +146,20 @@
     }
 
     .card {
-      display: block;
-      text-decoration: none;
+      appearance: none;
+      width: 100%;
+      text-align: left;
       color: inherit;
       background: var(--card);
-      border: 1px solid rgba(185,154,75,.5);
+      border: 1px solid rgba(185, 154, 75, 0.5);
       border-radius: 18px;
       padding: 20px;
-      min-height: 190px;
-      transition:
-        transform .15s ease,
-        border-color .15s ease;
+      min-height: 170px;
+      cursor: pointer;
+      font-family: inherit;
     }
 
     .card:hover {
-      transform: translateY(-3px);
       border-color: var(--gold);
     }
 
@@ -179,12 +179,12 @@
       font-style: italic;
       font-size: 14px;
       margin-bottom: 12px;
-      opacity: .88;
+      opacity: 0.88;
     }
 
-    .summary {
-      font-size: 14px;
-      line-height: 1.55;
+    .other {
+      font-size: 13px;
+      line-height: 1.45;
       color: #e8e1cf;
     }
 
@@ -201,15 +201,85 @@
       border: 1px solid var(--gold2);
       border-radius: 16px;
       background: var(--bg2);
-      line-height: 1.6;
     }
 
-    footer {
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.76);
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 20px;
+      z-index: 1000;
+      overflow: auto;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .panel {
+      width: min(900px, 100%);
+      margin: auto;
+      background: #07160e;
+      border: 1px solid var(--gold2);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .close {
+      float: right;
+      border: 1px solid var(--gold2);
+      background: transparent;
+      color: var(--gold);
+      border-radius: 999px;
+      padding: 9px 14px;
+      cursor: pointer;
+    }
+
+    .panel h2 {
+      color: var(--gold);
+      font-size: clamp(28px, 4vw, 44px);
+      margin: 8px 0;
+    }
+
+    .panel h3 {
+      color: var(--gold);
+      margin: 24px 0 7px;
+    }
+
+    .panel p {
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 14px 0;
+    }
+
+    .badge {
+      border: 1px solid rgba(216, 184, 90, 0.35);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .warning {
+      border-left: 3px solid var(--gold);
+      padding-left: 14px;
+    }
+
+    .foot {
       margin-top: 40px;
       text-align: center;
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.5;
     }
 
     @media (max-width: 650px) {
@@ -228,6 +298,14 @@
       .grid {
         grid-template-columns: 1fr;
       }
+
+      .modal {
+        padding: 8px;
+      }
+
+      .panel {
+        padding: 18px;
+      }
     }
   </style>
 </head>
@@ -245,9 +323,9 @@
     </h1>
 
     <p class="intro">
-      Explore The Earth’s Pharmacy botanical library.
-      Search by common name, scientific name, alternate name,
-      origin, or botanical topic.
+      Explore the complete 201-record Earth’s Pharmacy library.
+      Search by common name, scientific name, alternate name, or topic.
+      Tap any entry to open its full monograph.
     </p>
 
     <section class="tools">
@@ -259,7 +337,6 @@
           type="search"
           placeholder="Search ginger, moringa, hibiscus..."
           autocomplete="off"
-          aria-label="Search botanical monographs"
         >
 
         <button id="clear" type="button">
@@ -271,7 +348,6 @@
       <div
         class="alphabet"
         id="alphabet"
-        aria-label="Filter alphabetically"
       ></div>
 
     </section>
@@ -279,7 +355,6 @@
     <div
       class="count"
       id="count"
-      aria-live="polite"
     >
       Loading botanical library...
     </div>
@@ -289,12 +364,34 @@
       id="grid"
     ></section>
 
+    <div class="foot">
+      The Earth’s Pharmacy • Educational botanical reference •
+      Natural origin does not guarantee safety.
+    </div>
+
   </main>
 
-  <footer>
-    The Earth’s Pharmacy • Educational botanical reference.
-    Natural origin does not guarantee safety.
-  </footer>
+  <div
+    class="modal"
+    id="modal"
+    role="dialog"
+    aria-modal="true"
+  >
+
+    <div class="panel">
+
+      <button
+        class="close"
+        id="close"
+      >
+        Close ✕
+      </button>
+
+      <div id="detail"></div>
+
+    </div>
+
+  </div>
 
   <script>
 
@@ -313,135 +410,59 @@
     const alphabet =
       document.getElementById("alphabet");
 
+    const modal =
+      document.getElementById("modal");
+
+    const detail =
+      document.getElementById("detail");
+
+    const closeBtn =
+      document.getElementById("close");
+
     let records = [];
     let activeLetter = "";
 
-    function text(value) {
-      return String(value || "");
-    }
+    const esc = value =>
+      String(value || "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
 
-    function normalize(value) {
-      return text(value)
+    const norm = value =>
+      String(value || "")
         .toLowerCase()
         .trim();
-    }
 
-    function firstAvailable(object, keys) {
-      for (const key of keys) {
-        if (
-          object &&
-          object[key] !== undefined &&
-          object[key] !== null &&
-          object[key] !== ""
-        ) {
-          return object[key];
-        }
-      }
+    function searchable(record) {
 
-      return "";
-    }
-
-    function getName(record) {
-      return firstAvailable(record, [
-        "common_name",
-        "commonName",
-        "name",
-        "title"
-      ]);
-    }
-
-    function getScientific(record) {
-      return firstAvailable(record, [
-        "scientific_name",
-        "scientificName",
-        "identity",
-        "latin_name",
-        "latinName"
-      ]);
-    }
-
-    function getOtherNames(record) {
-      return firstAvailable(record, [
-        "other_names",
-        "otherNames",
-        "aliases"
-      ]);
-    }
-
-    function getOrigin(record) {
-      return firstAvailable(record, [
-        "short_origin",
-        "origin",
-        "tradition"
-      ]);
-    }
-
-    function getSummary(record) {
-      return firstAvailable(record, [
-        "short_evidence",
-        "summary",
-        "description",
-        "traditional_use",
-        "traditionalUse"
-      ]);
-    }
-
-    function getUrl(record) {
-
-      const explicit =
-        firstAvailable(record, [
-          "url",
-          "href",
-          "path",
-          "public_url"
-        ]);
-
-      if (explicit) {
-        return explicit;
-      }
-
-      const slug =
-        firstAvailable(record, [
-          "slug",
-          "id"
-        ]);
-
-      if (slug) {
-        return "/monographs/" + slug + "/";
-      }
-
-      return "#";
-    }
-
-    function searchableText(record) {
-
-      return normalize([
-        getName(record),
-        getScientific(record),
-        getOtherNames(record),
-        getOrigin(record),
-        getSummary(record)
+      return norm([
+        record.common_name,
+        record.identity,
+        record.other_names,
+        record.tradition_of_origin_and_historical_use,
+        record.what_modern_research_says,
+        record.preparation,
+        record.cautions
       ].join(" "));
 
     }
 
-    function filteredRecords() {
+    function filtered() {
 
-      const q =
-        normalize(search.value);
+      const query =
+        norm(search.value);
 
       return records.filter(record => {
 
-        const name =
-          text(getName(record));
-
         const queryMatch =
-          !q ||
-          searchableText(record).includes(q);
+          !query ||
+          searchable(record).includes(query);
 
         const letterMatch =
           !activeLetter ||
-          name
+          String(record.common_name || "")
             .toUpperCase()
             .startsWith(activeLetter);
 
@@ -453,17 +474,15 @@
 
     function render() {
 
-      const filtered =
-        filteredRecords();
+      const list =
+        filtered();
 
       count.textContent =
-        filtered.length +
-        " botanical monograph" +
-        (filtered.length === 1 ? "" : "s");
+        `${list.length} botanical monograph${list.length === 1 ? "" : "s"}`;
 
       grid.innerHTML = "";
 
-      if (!filtered.length) {
+      if (!list.length) {
 
         grid.innerHTML =
           '<div class="message">' +
@@ -474,56 +493,35 @@
 
       }
 
-      filtered.forEach((record, index) => {
+      list.forEach(record => {
 
-        const card =
-          document.createElement("a");
+        const button =
+          document.createElement("button");
 
-        card.className = "card";
-        card.href = getUrl(record);
+        button.className = "card";
+        button.type = "button";
 
-        const name =
-          text(getName(record)) ||
-          "Botanical Monograph";
-
-        const scientific =
-          text(getScientific(record));
-
-        const origin =
-          text(getOrigin(record));
-
-        const summary =
-          text(getSummary(record));
-
-        card.innerHTML = `
+        button.innerHTML = `
           <div class="number">
-            Monograph ${index + 1}
+            Monograph ${esc(record.record_number || "")}
           </div>
 
           <h2 class="name">
-            ${escapeHtml(name)}
+            ${esc(record.common_name)}
           </h2>
 
           ${
-            scientific
+            record.identity
               ? `<div class="scientific">
-                   ${escapeHtml(scientific)}
+                   ${esc(record.identity)}
                  </div>`
               : ""
           }
 
           ${
-            origin
-              ? `<div class="summary">
-                   ${escapeHtml(origin)}
-                 </div>`
-              : ""
-          }
-
-          ${
-            summary
-              ? `<div class="summary">
-                   ${escapeHtml(summary)}
+            record.other_names
+              ? `<div class="other">
+                   ${esc(record.other_names)}
                  </div>`
               : ""
           }
@@ -533,70 +531,198 @@
           </span>
         `;
 
-        grid.appendChild(card);
+        button.addEventListener(
+          "click",
+          () => openRecord(record)
+        );
+
+        grid.appendChild(button);
 
       });
 
     }
 
-    function escapeHtml(value) {
+    function openRecord(record) {
 
-      return text(value)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
+      const tiers =
+        Array.isArray(record.evidence_tiers_detected)
+          ? record.evidence_tiers_detected.join(", ")
+          : record.evidence_tiers_detected;
+
+      detail.innerHTML = `
+
+        <div class="number">
+          Monograph ${esc(record.record_number || "")}
+        </div>
+
+        <h2>
+          ${esc(record.common_name)}
+        </h2>
+
+        ${
+          record.identity
+            ? `<div class="scientific">
+                 ${esc(record.identity)}
+               </div>`
+            : ""
+        }
+
+        ${
+          record.other_names
+            ? `<p>
+                 <strong>Other names:</strong>
+                 ${esc(record.other_names)}
+               </p>`
+            : ""
+        }
+
+        <div class="badges">
+
+          ${
+            tiers
+              ? `<span class="badge">
+                   Evidence: ${esc(tiers)}
+                 </span>`
+              : ""
+          }
+
+          ${
+            record.validation_status
+              ? `<span class="badge">
+                   ${esc(record.validation_status)}
+                 </span>`
+              : ""
+          }
+
+        </div>
+
+        <h3>
+          Tradition of Origin & Historical Use
+        </h3>
+
+        <p>
+          ${esc(record.tradition_of_origin_and_historical_use)}
+        </p>
+
+        <h3>
+          What Modern Research Says
+        </h3>
+
+        <p>
+          ${esc(record.what_modern_research_says)}
+        </p>
+
+        <h3>
+          Preparation
+        </h3>
+
+        <p>
+          ${esc(record.preparation)}
+        </p>
+
+        <h3>
+          Cautions
+        </h3>
+
+        <p class="warning">
+          ${esc(record.cautions)}
+        </p>
+      `;
+
+      modal.classList.add("open");
+
+      document.body.style.overflow =
+        "hidden";
 
     }
 
-    function createAlphabet() {
+    function closeModal() {
+
+      modal.classList.remove("open");
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+    closeBtn.addEventListener(
+      "click",
+      closeModal
+    );
+
+    modal.addEventListener(
+      "click",
+      event => {
+
+        if (event.target === modal) {
+          closeModal();
+        }
+
+      }
+    );
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (event.key === "Escape") {
+          closeModal();
+        }
+
+      }
+    );
+
+    function makeAlphabet() {
 
       const all =
         document.createElement("button");
 
-      all.type = "button";
-      all.className = "letter active";
-      all.textContent = "All";
-      all.style.width = "52px";
+      all.className =
+        "letter active";
 
-      all.addEventListener("click", () => {
+      all.textContent =
+        "All";
+
+      all.onclick = () => {
 
         activeLetter = "";
 
         document
           .querySelectorAll(".letter")
-          .forEach(button =>
-            button.classList.remove("active")
+          .forEach(item =>
+            item.classList.remove("active")
           );
 
         all.classList.add("active");
 
         render();
 
-      });
+      };
 
       alphabet.appendChild(all);
 
       for (
-        let code = 65;
-        code <= 90;
-        code++
+        let i = 65;
+        i <= 90;
+        i++
       ) {
 
         const letter =
-          String.fromCharCode(code);
+          String.fromCharCode(i);
 
         const button =
           document.createElement("button");
 
-        button.type = "button";
-        button.className = "letter";
-        button.textContent = letter;
+        button.className =
+          "letter";
 
-        button.addEventListener("click", () => {
+        button.textContent =
+          letter;
 
-          activeLetter = letter;
+        button.onclick = () => {
+
+          activeLetter =
+            letter;
 
           document
             .querySelectorAll(".letter")
@@ -604,89 +730,19 @@
               item.classList.remove("active")
             );
 
-          button.classList.add("active");
+          button.classList.add(
+            "active"
+          );
 
           render();
 
-        });
+        };
 
-        alphabet.appendChild(button);
-
-      }
-
-    }
-
-    async function loadLibrary() {
-
-      /*
-        The site already contains botanical data infrastructure.
-        Try the likely public data locations automatically.
-      */
-
-      const sources = [
-        "/data/library/metadata.json",
-        "/data/botanical-records.json",
-        "/data/public-botanical-index.json",
-        "/data/library.json"
-      ];
-
-      for (const source of sources) {
-
-        try {
-
-          const response =
-            await fetch(source, {
-              cache: "no-store"
-            });
-
-          if (!response.ok) {
-            continue;
-          }
-
-          const data =
-            await response.json();
-
-          if (Array.isArray(data)) {
-
-            records = data;
-            render();
-            return;
-
-          }
-
-          const possible =
-            data.records ||
-            data.botanicals ||
-            data.monographs ||
-            data.items ||
-            data.library;
-
-          if (Array.isArray(possible)) {
-
-            records = possible;
-            render();
-            return;
-
-          }
-
-        } catch (error) {
-          console.log(
-            "Could not load",
-            source
-          );
-        }
+        alphabet.appendChild(
+          button
+        );
 
       }
-
-      count.textContent =
-        "Botanical library data connection needed.";
-
-      grid.innerHTML = `
-        <div class="message">
-          The searchable library page is installed correctly,
-          but the monograph data file still needs to be connected.
-        </div>
-      `;
 
     }
 
@@ -704,8 +760,8 @@
 
         document
           .querySelectorAll(".letter")
-          .forEach(button =>
-            button.classList.remove("active")
+          .forEach(item =>
+            item.classList.remove("active")
           );
 
         document
@@ -719,8 +775,54 @@
       }
     );
 
-    createAlphabet();
-    loadLibrary();
+    async function load() {
+
+      try {
+
+        const response =
+          await fetch(
+            "/data/library/metadata.json",
+            {
+              cache: "no-store"
+            }
+          );
+
+        if (!response.ok) {
+          throw new Error("data");
+        }
+
+        const data =
+          await response.json();
+
+        records =
+          Array.isArray(data)
+            ? data
+            : (data.records || []);
+
+        records.sort(
+          (a, b) =>
+            (Number(a.record_number) || 9999) -
+            (Number(b.record_number) || 9999)
+        );
+
+        render();
+
+      } catch (error) {
+
+        count.textContent =
+          "Botanical library data connection needed.";
+
+        grid.innerHTML =
+          '<div class="message">' +
+          'The 201-record metadata file could not be loaded.' +
+          '</div>';
+
+      }
+
+    }
+
+    makeAlphabet();
+    load();
 
   </script>
 
