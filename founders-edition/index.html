@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>The Earth’s Pharmacy | A Comprehensive Evidence-Based Reference</title>
-  <meta name="description" content="The Earth’s Pharmacy: A Comprehensive Evidence-Based Reference to Medicinal Plants. A Compendium of African & Diaspora Herbal Wisdom by The Grandmaster Architect." />
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    The Earth’s Pharmacy | A Comprehensive Evidence-Based Reference
+  </title>
+
+  <meta
+    name="description"
+    content="The Earth’s Pharmacy: A Comprehensive Evidence-Based Reference to Medicinal Plants. A Compendium of African & Diaspora Herbal Wisdom by The Grandmaster Architect."
+  >
 
   <style>
-    /* Design Language: Deep botanical green, gold accents, parchment typography */
     :root {
       --bg-color: #06180f;
       --text-color: #f3e4bd;
@@ -17,8 +27,17 @@
       --font-serif: Georgia, "Times New Roman", serif;
     }
 
-    * { box-sizing: border-box; }
-    html, body { height: 100%; margin: 0; scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: var(--font-serif);
       -webkit-font-smoothing: antialiased;
@@ -35,12 +54,12 @@
       padding: 0 24px;
     }
 
-    /* Navigation */
     nav {
       padding: 24px 0;
       border-bottom: 1px solid var(--border-color);
       margin-bottom: 40px;
     }
+
     .nav-links {
       display: flex;
       justify-content: center;
@@ -50,6 +69,7 @@
       padding: 0;
       margin: 0;
     }
+
     .nav-links a {
       color: var(--text-color);
       text-decoration: none;
@@ -58,11 +78,11 @@
       letter-spacing: 0.1em;
       transition: color 0.3s;
     }
+
     .nav-links a:hover {
       color: var(--gold-accent);
     }
 
-    /* Hero Section */
     .hero {
       display: grid;
       grid-template-columns: 1fr 400px;
@@ -70,6 +90,7 @@
       align-items: center;
       padding: 40px 0 80px;
     }
+
     .hero-content h1 {
       margin: 0;
       font-size: 48px;
@@ -78,18 +99,21 @@
       text-transform: uppercase;
       letter-spacing: 0.02em;
     }
+
     .hero-content .subtitle {
       font-size: 22px;
       margin: 12px 0 8px;
       font-style: italic;
       opacity: 0.9;
     }
+
     .hero-content .secondary-pos {
       font-size: 18px;
       margin-bottom: 24px;
       color: var(--gold-accent);
       font-weight: bold;
     }
+
     .hero-content p.intro {
       font-size: 19px;
       margin-bottom: 32px;
@@ -98,11 +122,12 @@
 
     .cover-wrapper {
       position: relative;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
       border-radius: 4px;
       overflow: hidden;
       border: 1px solid var(--border-color);
     }
+
     .cover-wrapper img {
       display: block;
       width: 100%;
@@ -114,6 +139,7 @@
       gap: 16px;
       flex-wrap: wrap;
     }
+
     .btn {
       display: inline-block;
       padding: 14px 28px;
@@ -124,28 +150,32 @@
       transition: all 0.3s;
       border: 1px solid var(--gold-accent);
     }
+
     .btn-primary {
       background: var(--gold-accent);
       color: var(--bg-color);
     }
+
     .btn-primary:hover {
       background: #e5ba65;
       transform: translateY(-2px);
     }
+
     .btn-secondary {
       background: transparent;
       color: var(--gold-accent);
     }
+
     .btn-secondary:hover {
       background: rgba(212, 168, 79, 0.1);
       transform: translateY(-2px);
     }
 
-    /* Section Styles */
     section {
       padding: 80px 0;
       border-top: 1px solid var(--border-color);
     }
+
     h2 {
       color: var(--gold-accent);
       font-size: 32px;
@@ -155,6 +185,7 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
+
     .section-intro {
       text-align: center;
       max-width: 800px;
@@ -162,12 +193,12 @@
       font-size: 18px;
     }
 
-    /* Evidence Tiers */
     .tiers-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
+
     .tier-card {
       background: var(--card-bg);
       padding: 32px;
@@ -175,6 +206,7 @@
       border-radius: 8px;
       text-align: center;
     }
+
     .tier-card h3 {
       color: var(--gold-accent);
       margin-top: 0;
@@ -182,6 +214,7 @@
       border-bottom: 1px solid var(--border-color);
       padding-bottom: 12px;
     }
+
     .tier-card .tier-label {
       font-weight: bold;
       display: block;
@@ -189,19 +222,19 @@
       letter-spacing: 0.1em;
     }
 
-    /* Feature Grid */
     .feature-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns:
+        repeat(auto-fill, minmax(280px, 1fr));
       gap: 20px;
     }
+
     .feature-item {
       padding: 16px;
       border-left: 2px solid var(--gold-accent);
       background: var(--card-bg);
     }
 
-    /* Safety Section */
     .safety-note {
       background: rgba(212, 168, 79, 0.05);
       padding: 40px;
@@ -209,6 +242,7 @@
       border-radius: 8px;
       margin-top: 40px;
     }
+
     .safety-principle {
       font-size: 24px;
       color: var(--gold-accent);
@@ -216,6 +250,7 @@
       font-weight: bold;
       margin-bottom: 24px;
     }
+
     .disclaimer {
       font-size: 14px;
       font-style: italic;
@@ -226,7 +261,6 @@
       padding-top: 24px;
     }
 
-    /* Availability */
     .availability-status {
       text-align: center;
       padding: 40px;
@@ -234,198 +268,569 @@
       border: 1px dashed var(--gold-accent);
       border-radius: 8px;
     }
+
     .retailer-list {
       display: flex;
       justify-content: center;
       gap: 24px;
       margin-top: 24px;
-      opacity: 0.5;
       flex-wrap: wrap;
     }
+
     .retailer-item {
-      padding: 8px 16px;
+      padding: 10px 18px;
       border: 1px solid var(--text-color);
       border-radius: 4px;
       font-size: 14px;
+      opacity: 0.5;
     }
 
-    /* Footer */
+    .retailer-live {
+      display: inline-block;
+      padding: 10px 18px;
+      border: 1px solid var(--gold-accent);
+      border-radius: 4px;
+      font-size: 14px;
+      background: var(--gold-accent);
+      color: var(--bg-color);
+      text-decoration: none;
+      font-weight: bold;
+      opacity: 1;
+      transition: all 0.3s;
+    }
+
+    .retailer-live:hover {
+      background: #e5ba65;
+      transform: translateY(-2px);
+    }
+
+    .buy-direct {
+      margin-top: 32px;
+    }
+
+    .buy-direct a {
+      display: inline-block;
+      padding: 16px 34px;
+      background: var(--gold-accent);
+      color: var(--bg-color);
+      border: 1px solid var(--gold-accent);
+      border-radius: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
     footer {
       padding: 60px 0 40px;
       text-align: center;
       border-top: 1px solid var(--border-color);
     }
+
     .footer-links {
       margin-bottom: 24px;
     }
+
     .footer-links a {
       color: var(--text-color);
       margin: 0 12px;
       text-decoration: none;
     }
 
-    /* Responsive */
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; text-align: center; }
-      .hero-content p.intro { margin-left: auto; margin-right: auto; }
-      .cover-wrapper { max-width: 320px; margin: 0 auto; }
-      .btn-group { justify-content: center; }
-      .tiers-grid { grid-template-columns: 1fr; }
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-content p.intro {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cover-wrapper {
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      .btn-group {
+        justify-content: center;
+      }
+
+      .tiers-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <nav role="navigation">
     <div class="container">
       <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/living-library/">Living Evidence Library</a></li>
-        <li><a href="/monographs/">Botanical Monographs</a></li>
-        <li><a href="/safety/">Safety</a></li>
-        <li><a href="/about/">About</a></li>
+
+        <li>
+          <a href="/">Home</a>
+        </li>
+
+        <li>
+          <a href="/living-library/">
+            Living Evidence Library
+          </a>
+        </li>
+
+        <li>
+          <a href="/monographs/">
+            Botanical Monographs
+          </a>
+        </li>
+
+        <li>
+          <a href="/safety/">
+            Safety
+          </a>
+        </li>
+
+        <li>
+          <a href="/about/">
+            About
+          </a>
+        </li>
+
       </ul>
     </div>
   </nav>
 
   <div class="container">
-    <header class="hero" role="banner">
+
+    <header
+      class="hero"
+      role="banner"
+    >
+
       <div class="hero-content">
-        <h1>The Earth’s Pharmacy</h1>
-        <div class="subtitle">A Comprehensive Evidence-Based Reference to Medicinal Plants</div>
-        <div class="secondary-pos">A Compendium of African & Diaspora Herbal Wisdom</div>
-        <p class="intro">
-          The Earth’s Pharmacy brings traditional botanical knowledge into direct conversation with modern evidence, while keeping tradition, promising research, established human evidence, and safety clearly distinguished.
-        </p>
-        <div class="btn-group">
-          <a href="/living-library/" class="btn btn-primary">Explore the Living Evidence Library</a>
-          <a href="/monographs/" class="btn btn-secondary">Explore Botanical Monographs</a>
+
+        <h1>
+          The Earth’s Pharmacy
+        </h1>
+
+        <div class="subtitle">
+          A Comprehensive Evidence-Based Reference to Medicinal Plants
         </div>
+
+        <div class="secondary-pos">
+          A Compendium of African & Diaspora Herbal Wisdom
+        </div>
+
+        <p class="intro">
+          The Earth’s Pharmacy brings traditional botanical knowledge
+          into direct conversation with modern evidence, while keeping
+          tradition, promising research, established human evidence,
+          and safety clearly distinguished.
+        </p>
+
+        <div class="btn-group">
+
+          <a
+            href="/living-library/"
+            class="btn btn-primary"
+          >
+            Explore the Living Evidence Library
+          </a>
+
+          <a
+            href="/monographs/"
+            class="btn btn-secondary"
+          >
+            Explore Botanical Monographs
+          </a>
+
+        </div>
+
       </div>
+
       <div class="cover-wrapper">
-        <img src="/assets/THE_EARTHS_PHARMACY_V16_2_GRANDMASTER_ARCHITECT_COVER.png.PNG" alt="The Earth’s Pharmacy — Founder’s Edition cover artwork" />
+
+        <img
+          src="/assets/THE_EARTHS_PHARMACY_V16_2_GRANDMASTER_ARCHITECT_COVER.png.PNG"
+          alt="The Earth’s Pharmacy — Founder’s Edition cover artwork"
+        >
+
       </div>
+
     </header>
 
     <main>
+
       <section id="reference">
-        <h2>A Reference Built Differently</h2>
+
+        <h2>
+          A Reference Built Differently
+        </h2>
+
         <div class="section-intro">
-          <p>The Earth’s Pharmacy does not grade an entire plant as simply “proven” or “unproven.” It evaluates specific claims. A single botanical may have strong human evidence for one use, promising but incomplete evidence for another, and a documented traditional use for a third.</p>
+
+          <p>
+            The Earth’s Pharmacy does not grade an entire plant
+            as simply “proven” or “unproven.” It evaluates specific
+            claims. A single botanical may have strong human evidence
+            for one use, promising but incomplete evidence for another,
+            and a documented traditional use for a third.
+          </p>
+
         </div>
+
         <div class="tiers-grid">
+
           <div class="tier-card">
             <span class="tier-label">TIER 1</span>
             <h3>Research-Supported</h3>
-            <p>Meaningful human evidence directly relevant to the stated use.</p>
+
+            <p>
+              Meaningful human evidence directly relevant to the
+              stated use.
+            </p>
           </div>
+
           <div class="tier-card">
             <span class="tier-label">TIER 2</span>
             <h3>Promising</h3>
-            <p>A credible signal exists, but evidence remains incomplete, inconsistent, indirect, preparation-specific, early, or substantially preclinical.</p>
+
+            <p>
+              A credible signal exists, but evidence remains incomplete,
+              inconsistent, indirect, preparation-specific, early,
+              or substantially preclinical.
+            </p>
           </div>
+
           <div class="tier-card">
             <span class="tier-label">TIER 3</span>
             <h3>Traditional Use</h3>
-            <p>Documented historical or ethnomedical use where adequate clinical evidence for that specific therapeutic claim has not been established.</p>
+
+            <p>
+              Documented historical or ethnomedical use where adequate
+              clinical evidence for that specific therapeutic claim has
+              not been established.
+            </p>
           </div>
+
         </div>
-        <p style="text-align: center; margin-top: 32px; font-weight: bold;">Safety is evaluated separately from efficacy.</p>
+
+        <p
+          style="
+            text-align:center;
+            margin-top:32px;
+            font-weight:bold;
+          "
+        >
+          Safety is evaluated separately from efficacy.
+        </p>
+
       </section>
 
       <section id="inside">
-        <h2>Inside The Earth’s Pharmacy</h2>
+
+        <h2>
+          Inside The Earth’s Pharmacy
+        </h2>
+
         <div class="feature-grid">
-          <div class="feature-item">200 Botanical Monographs</div>
-          <div class="feature-item">Traditional Origin & Context</div>
-          <div class="feature-item">Common and Scientific Names</div>
-          <div class="feature-item">What Modern Research Says</div>
-          <div class="feature-item">Evidence Tiering</div>
-          <div class="feature-item">Preparation Guidance</div>
-          <div class="feature-item">Safety Cautions</div>
-          <div class="feature-item">Contraindications</div>
-          <div class="feature-item">Medication Interaction Awareness</div>
-          <div class="feature-item">Support by Wellness Concern</div>
-          <div class="feature-item">Cannabis, Cannabinoids & the Endocannabinoid System</div>
-          <div class="feature-item">Bibliography & Source Framework</div>
+
+          <div class="feature-item">
+            201 Botanical Monographs
+          </div>
+
+          <div class="feature-item">
+            Traditional Origin & Context
+          </div>
+
+          <div class="feature-item">
+            Common and Scientific Names
+          </div>
+
+          <div class="feature-item">
+            What Modern Research Says
+          </div>
+
+          <div class="feature-item">
+            Evidence Tiering
+          </div>
+
+          <div class="feature-item">
+            Preparation Guidance
+          </div>
+
+          <div class="feature-item">
+            Safety Cautions
+          </div>
+
+          <div class="feature-item">
+            Contraindications
+          </div>
+
+          <div class="feature-item">
+            Medication Interaction Awareness
+          </div>
+
+          <div class="feature-item">
+            Support by Wellness Concern
+          </div>
+
+          <div class="feature-item">
+            Cannabis, Cannabinoids & the Endocannabinoid System
+          </div>
+
+          <div class="feature-item">
+            Bibliography & Source Framework
+          </div>
+
         </div>
+
       </section>
 
       <section id="tradition">
-        <h2>Tradition and Evidence</h2>
+
+        <h2>
+          Tradition and Evidence
+        </h2>
+
         <div class="section-intro">
-          <p>This work preserves African, Caribbean, Diaspora, and other botanical knowledge while refusing to blur the distinction between documented tradition, laboratory findings, animal research, human evidence, and established clinical evidence.</p>
-          <p>The Earth’s Pharmacy honors traditional knowledge without representing tradition alone as clinical proof.</p>
+
+          <p>
+            This work preserves African, Caribbean, Diaspora, and
+            other botanical knowledge while refusing to blur the
+            distinction between documented tradition, laboratory
+            findings, animal research, human evidence, and established
+            clinical evidence.
+          </p>
+
+          <p>
+            The Earth’s Pharmacy honors traditional knowledge without
+            representing tradition alone as clinical proof.
+          </p>
+
         </div>
+
       </section>
 
       <section id="safety">
-        <h2>Safety is Part of the Knowledge</h2>
+
+        <h2>
+          Safety is Part of the Knowledge
+        </h2>
+
         <div class="section-intro">
-          <p>Botanical effects and risks can depend on species, plant part, preparation, concentration, route, dose, duration, age, pregnancy or lactation, medical condition, medication use, and product identity and quality.</p>
+
+          <p>
+            Botanical effects and risks can depend on species, plant
+            part, preparation, concentration, route, dose, duration,
+            age, pregnancy or lactation, medical condition, medication
+            use, and product identity and quality.
+          </p>
+
         </div>
+
         <div class="safety-note">
-          <div class="safety-principle">Natural origin does not guarantee safety.</div>
-          <div class="disclaimer">
-            The Earth’s Pharmacy is educational reference material. It is not individualized medical advice, diagnosis, prescribing, or treatment and is not a substitute for care from a qualified health professional.
+
+          <div class="safety-principle">
+            Natural origin does not guarantee safety.
           </div>
+
+          <div class="disclaimer">
+            The Earth’s Pharmacy is educational reference material.
+            It is not individualized medical advice, diagnosis,
+            prescribing, or treatment and is not a substitute for
+            care from a qualified health professional.
+          </div>
+
         </div>
+
       </section>
 
       <section id="living-library">
-        <h2>The Living Evidence Library</h2>
+
+        <h2>
+          The Living Evidence Library
+        </h2>
+
         <div class="section-intro">
-          <p><strong>The Book:</strong> A stable published reference edition.</p>
-          <p><strong>The Website:</strong> A Living Evidence Library designed to document future evidence updates, corrections, safety advisories, sourcing improvements, and expanded botanical scholarship over time.</p>
-          <div style="margin-top: 32px;">
-            <a href="/living-library/" class="btn btn-primary">Explore the Living Evidence Library</a>
+
+          <p>
+            <strong>The Book:</strong>
+            A stable published reference edition.
+          </p>
+
+          <p>
+            <strong>The Website:</strong>
+            A Living Evidence Library designed to document future
+            evidence updates, corrections, safety advisories,
+            sourcing improvements, and expanded botanical scholarship
+            over time.
+          </p>
+
+          <div style="margin-top:32px;">
+
+            <a
+              href="/living-library/"
+              class="btn btn-primary"
+            >
+              Explore the Living Evidence Library
+            </a>
+
           </div>
+
         </div>
+
       </section>
 
       <section id="botanicals">
-        <h2>Explore the Botanicals</h2>
+
+        <h2>
+          Explore the Botanicals
+        </h2>
+
         <div class="section-intro">
-          <p>Explore botanical entries connecting traditional context, modern evidence, preparation, cautions, and source-aware interpretation.</p>
-          <div style="margin-top: 32px;">
-            <a href="/monographs/" class="btn btn-secondary">Explore Botanical Monographs</a>
+
+          <p>
+            Explore botanical entries connecting traditional context,
+            modern evidence, preparation, cautions, and source-aware
+            interpretation.
+          </p>
+
+          <div style="margin-top:32px;">
+
+            <a
+              href="/monographs/"
+              class="btn btn-secondary"
+            >
+              Explore Botanical Monographs
+            </a>
+
           </div>
+
         </div>
+
       </section>
 
       <section id="philosophy">
-        <h2>The door is open. The standard remains.</h2>
+
+        <h2>
+          The door is open. The standard remains.
+        </h2>
+
         <div class="section-intro">
-          <p>Readers, researchers, clinicians, pharmacists, historians, ethnobotanists, and other qualified contributors may challenge citations, evidence grades, botanical identity, historical interpretation, or safety statements. Meaningful corrections belong in the version record rather than being silently erased.</p>
+
+          <p>
+            Readers, researchers, clinicians, pharmacists, historians,
+            ethnobotanists, and other qualified contributors may
+            challenge citations, evidence grades, botanical identity,
+            historical interpretation, or safety statements.
+            Meaningful corrections belong in the version record rather
+            than being silently erased.
+          </p>
+
         </div>
+
       </section>
 
       <section id="availability">
-        <h2>Availability</h2>
+
+        <h2>
+          Availability
+        </h2>
+
         <div class="availability-status">
-          <p>Retailer listings are being activated as platform approvals are completed.</p>
+
+          <p>
+            Retailer listings are being activated as platform approvals
+            are completed.
+          </p>
+
           <div class="retailer-list">
-            <span class="retailer-item">Google Play Books</span>
-            <span class="retailer-item">Amazon Kindle</span>
-            <span class="retailer-item">Apple Books</span>
-            <span class="retailer-item">Kobo</span>
-            <span class="retailer-item">Direct Store</span>
+
+            <span class="retailer-item">
+              Google Play Books
+            </span>
+
+            <span class="retailer-item">
+              Amazon Kindle
+            </span>
+
+            <span class="retailer-item">
+              Apple Books
+            </span>
+
+            <span class="retailer-item">
+              Kobo
+            </span>
+
+            <a
+              class="retailer-live"
+              href="https://payhip.com/b/9TKBH"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Direct Store
+            </a>
+
           </div>
+
+          <div class="buy-direct">
+
+            <a
+              href="https://payhip.com/b/9TKBH"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Buy The Earth’s Pharmacy Direct
+            </a>
+
+          </div>
+
         </div>
+
       </section>
+
     </main>
 
-    <footer>
-      <div class="footer-links">
-        <a href="/">Home</a>
-        <a href="/living-library/">Living Evidence Library</a>
-        <a href="/monographs/">Botanical Monographs</a>
-        <a href="/safety/">Safety</a>
-        <a href="/about/">About</a>
-      </div>
-      <p>&copy; 2026 The Earth’s Pharmacy. By The Grandmaster Architect.</p>
-    </footer>
   </div>
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-links">
+
+        <a href="/">
+          Home
+        </a>
+
+        <a href="/living-library/">
+          Living Evidence Library
+        </a>
+
+        <a href="/monographs/">
+          Botanical Monographs
+        </a>
+
+        <a href="/safety/">
+          Safety
+        </a>
+
+        <a href="/about/">
+          About
+        </a>
+
+      </div>
+
+      <p>
+        © 2026 The Earth’s Pharmacy.
+        By The Grandmaster Architect.
+      </p>
+
+    </div>
+
+  </footer>
 
 </body>
 </html>
