@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
   <title>The Earth’s Pharmacy AI | Living Library</title>
 
@@ -38,14 +42,41 @@
       text-align: center;
     }
 
+    .top-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
     .home-link {
       display: inline-block;
-      margin-bottom: 24px;
       color: #d8b85a;
       text-decoration: none;
       border: 1px solid #b99a4b;
-      padding: 10px 16px;
+      padding: 11px 18px;
       border-radius: 999px;
+    }
+
+    .buy-book-button {
+      display: inline-block;
+      padding: 12px 22px;
+      background: #d8b85a;
+      color: #06140c;
+      border: 1px solid #d8b85a;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: Georgia, "Times New Roman", serif;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+      transition: all 0.2s ease;
+    }
+
+    .buy-book-button:hover {
+      background: #e5c66d;
+      transform: translateY(-1px);
     }
 
     h1 {
@@ -59,6 +90,18 @@
       line-height: 1.6;
       margin: 0 auto 24px;
       max-width: 760px;
+    }
+
+    .sales-note {
+      max-width: 760px;
+      margin: 0 auto 22px;
+      padding: 14px 18px;
+      border: 1px solid rgba(216, 184, 90, 0.45);
+      border-radius: 14px;
+      background: rgba(216, 184, 90, 0.05);
+      color: #e8e1cf;
+      line-height: 1.55;
+      font-size: 15px;
     }
 
     .frame {
@@ -78,6 +121,15 @@
       background: #041009;
     }
 
+    .bottom-buy {
+      margin-top: 24px;
+    }
+
+    .bottom-buy .buy-book-button {
+      font-size: 18px;
+      padding: 14px 26px;
+    }
+
     .note {
       color: #b8b3a5;
       font-size: 13px;
@@ -93,41 +145,93 @@
       iframe {
         height: 820px;
       }
+
+      .top-actions {
+        gap: 10px;
+      }
+
+      .home-link,
+      .buy-book-button {
+        width: 100%;
+        max-width: 360px;
+      }
     }
   </style>
 </head>
 
 <body>
+
   <main class="ai-wrap">
+
     <div class="ai-inner">
 
-      <a class="home-link" href="/">
-        ← Return to The Earth’s Pharmacy
-      </a>
+      <div class="top-actions">
+
+        <a
+          class="home-link"
+          href="/"
+        >
+          ← Return to The Earth’s Pharmacy
+        </a>
+
+        <a
+          href="https://payhip.com/b/9TKBH"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="buy-book-button"
+        >
+          Buy The Earth’s Pharmacy
+        </a>
+
+      </div>
 
       <h1>
         Ask The Earth’s Pharmacy AI
       </h1>
 
       <p class="intro">
-        Search The Earth’s Pharmacy Living Evidence Library for botanical knowledge,
-        traditional use, research evidence, evidence classification, and safety information.
+        Search The Earth’s Pharmacy Living Evidence Library for
+        botanical knowledge, traditional use, research evidence,
+        evidence classification, and safety information.
       </p>
 
+      <div class="sales-note">
+        Prefer the complete reference in one place?
+        Purchase The Earth’s Pharmacy directly from the author.
+      </div>
+
       <div class="frame">
+
         <iframe
           src="https://earths-pharmacy-earths-pharmacy-ai.static.hf.space"
           title="The Earth’s Pharmacy AI"
           loading="lazy"
           allow="clipboard-write"
         ></iframe>
+
+      </div>
+
+      <div class="bottom-buy">
+
+        <a
+          href="https://payhip.com/b/9TKBH"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="buy-book-button"
+        >
+          Buy The Earth’s Pharmacy
+        </a>
+
       </div>
 
       <p class="note">
-        Educational botanical reference. Not a substitute for individualized medical care.
+        Educational botanical reference.
+        Not a substitute for individualized medical care.
       </p>
 
     </div>
+
   </main>
+
 </body>
 </html>
