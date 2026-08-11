@@ -201,6 +201,63 @@
       z-index: 20;
     }
 
+    /* ======================================================
+       UNLIMITED AI ACCESS BUTTON
+       ====================================================== */
+
+    .ai-access-button {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 1000;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 54px;
+      padding: 14px 22px;
+
+      border: 2px solid #f0d27a;
+      border-radius: 999px;
+
+      background: linear-gradient(
+        135deg,
+        #d6b45f,
+        #f0d27a,
+        #b88d32
+      );
+
+      color: #06180f;
+      text-decoration: none;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.2;
+      text-align: center;
+
+      box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.40),
+        0 0 0 1px rgba(255, 255, 255, 0.10);
+
+      cursor: pointer;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .ai-access-button:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        0 9px 22px rgba(0, 0, 0, 0.48),
+        0 0 0 1px rgba(255, 255, 255, 0.14);
+    }
+
+    .ai-access-button:focus-visible {
+      outline: 3px solid #ffffff;
+      outline-offset: 3px;
+    }
+
     footer,
     .site-nav,
     .duplicate-navigation,
@@ -222,6 +279,18 @@
 
       .hotspot:focus-visible {
         outline-width: 2px;
+      }
+
+      .ai-access-button {
+        right: 12px;
+        bottom: 12px;
+        left: 12px;
+
+        width: auto;
+        min-height: 52px;
+        padding: 13px 16px;
+
+        font-size: 14px;
       }
     }
 
@@ -339,5 +408,15 @@
 
     </div>
   </main>
+
+  <!-- UNLIMITED AI ACCESS -->
+  <a
+    class="ai-access-button"
+    href="https://payhip.com/order?link=WkXvF&pricing_plan=lNzM4qXlW7"
+    aria-label="Unlock Unlimited AI Access for $4.99 per month"
+  >
+    UNLOCK UNLIMITED AI ACCESS — $4.99/MONTH
+  </a>
+
 </body>
 </html>
