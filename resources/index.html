@@ -1,121 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Resources Center | The Earth’s Pharmacy</title>
-  <meta name="description" content="Resources Center — downloadable guides, scientific references, clinical studies, videos, and QR code collection for The Earth’s Pharmacy." />
-  <link rel="stylesheet" href="/assets/styles.css">
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  >
+
+  <title>
+    Resources Center | The Earth’s Pharmacy
+  </title>
+
+  <meta
+    name="description"
+    content="Resources Center — downloadable guides, scientific references, clinical studies, videos, and QR code collection for The Earth’s Pharmacy."
+  >
+
+  <link
+    rel="stylesheet"
+    href="/assets/styles.css"
+  >
+
   <style>
-    /* Page-specific tweaks while leveraging shared stylesheet */
-    .resources-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; margin-top:18px; }
-    .resource-card { background: linear-gradient(180deg, rgba(8,20,16,0.6), rgba(6,18,14,0.5)); padding:18px; border-radius:10px; border:1px solid rgba(212,168,79,0.04); box-shadow:0 10px 34px rgba(0,0,0,0.55); color:inherit; text-decoration:none; display:flex; flex-direction:column; min-height:160px; }
-    .resource-card h3 { margin:0 0 8px 0; color:#d4a84f; font-size:18px; }
-    .resource-card p { margin:0; font-size:14px; flex:1; }
+    :root {
+      --bg-color: #06180f;
+      --text-color: #f3e4bd;
+      --gold-accent: #d4a84f;
+      --border-color: rgba(212, 168, 79, 0.15);
+      --card-bg: rgba(255, 255, 255, 0.03);
+    }
 
-    .featured { grid-column: span 3; display:flex; gap:18px; align-items:center; padding:20px; }
-    .featured .card { flex:1; }
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+    }
 
-    .list-inline { display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
+    .site {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+    }
 
-    @media (max-width:1000px) { .resources-grid { grid-template-columns: repeat(2, 1fr); } .featured { grid-column: span 2; } }
-    @media (max-width:780px) { .resources-grid { grid-template-columns: 1fr; } .featured { grid-column: span 1; flex-direction:column; } .hero { grid-template-columns: 1fr; text-align:center; } }
-  </style>
-</head>
-<body>
-  <div class="site">
-    <header class="hero" role="banner" aria-labelledby="resources-title">
-      <div class="hero-copy">
-        <h1 id="resources-title">Resources Center</h1>
-        <p class="lead">Downloadable guides, primary literature, clinical studies, multimedia lectures, and a curated QR code collection — a single place for practitioners, researchers, and readers to access the evidence and educational materials that support The Earth’s Pharmacy.</p>
+    .top-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 28px 0 20px;
+    }
 
-        <div class="cta-row" style="margin-top:18px;">
-          <a class="btn" href="/qr-center/" aria-label="Digital Access Center">Digital Access Center</a>
-          <a class="btn ghost" href="/" aria-label="Return to home">Return Home</a>
-        </div>
-      </div>
+    .home-button {
+      display: inline-block;
+      color: var(--gold-accent);
+      text-decoration: none;
+      border: 1px solid var(--gold-accent);
+      border-radius: 999px;
+      padding: 11px 18px;
+    }
 
-      <div class="cover" aria-hidden="true">
-        <img src="/Earths_Pharmacy_Homepage_Refined_Professional_Approved.png" alt="The Earth’s Pharmacy — Resources" />
-      </div>
-    </header>
-
-    <main>
-      <section aria-labelledby="featured">
-        <div class="featured">
-          <a class="resource-card card" href="/qr-center/" aria-label="Digital Access Center - QR hub">
-            <div>
-              <h3>Digital Access Center</h3>
-              <p>Featured hub for QR codes, quick-access downloads, and digital companion materials. (Featured)</p>
-            </div>
-          </a>
-        </div>
-      </section>
-
-      <section aria-labelledby="resources-list">
-        <h2 id="resources-list">Resources</h2>
-        <p>Browse resources grouped by type. Each card contains downloadable materials, links to primary sources, or multimedia content.</p>
-
-        <div class="resources-grid" role="list" aria-label="Resource categories">
-          <a class="resource-card" href="#" role="listitem" aria-label="Downloadable Guides">
-            <h3>Downloadable Guides</h3>
-            <p>Practice guides, dosing charts, quick-reference PDFs prepared for clinicians and educators.</p>
-          </a>
-
-          <a class="resource-card" href="#" role="listitem" aria-label="Scientific References">
-            <h3>Scientific References</h3>
-            <p>Curated bibliographies, citation lists, and annotated references supporting monographs and editorials.</p>
-          </a>
-
-          <a class="resource-card" href="#" role="listitem" aria-label="Clinical Studies">
-            <h3>Clinical Studies</h3>
-            <p>Summaries and links to clinical trials, RCTs, and systematic reviews relevant to the text.</p>
-          </a>
-
-          <a class="resource-card" href="#" role="listitem" aria-label="Research Papers">
-            <h3>Research Papers</h3>
-            <p>Access to full-text research articles, conference proceedings, and preprints.</p>
-          </a>
-
-          <a class="resource-card" href="#" role="listitem" aria-label="Videos and Lectures">
-            <h3>Videos &amp; Lectures</h3>
-            <p>Recorded lectures, webinars, and multimedia tutorials from the editorial team and guest experts.</p>
-          </a>
-
-          <a class="resource-card" href="#" role="listitem" aria-label="QR Code Collection">
-            <h3>QR Code Collection</h3>
-            <p>Centralized repository of all QR codes used across editions, linked to stable library entries for each plate and monograph.</p>
-          </a>
-
-          <a class="resource-card" href="#" role="listitem" aria-label="External Resources">
-            <h3>External Resources</h3>
-            <p>Trusted external databases, institutional collections, and partner resources curated by the editorial team.</p>
-          </a>
-
-          <a class="resource-card" href="#" role="listitem" aria-label="Frequently Requested Documents">
-            <h3>Frequently Requested Documents</h3>
-            <p>Commonly requested documents such as permissions, syllabus packs, teaching guides, and consent templates.</p>
-          </a>
-        </div>
-      </section>
-
-      <section aria-labelledby="notes">
-        <h2 id="notes">Notes & Guidance</h2>
-        <p class="lead">Resources are provided as tools to support practice and research. Always consult primary sources and licensed clinicians before making therapeutic decisions.</p>
-        <div class="list-inline">
-          <span style="color:rgba(243,228,189,0.9);font-size:13px;">Formats:</span>
-          <span class="tier-pill tier-1">PDF</span>
-          <span class="tier-pill tier-2">Video</span>
-          <span class="tier-pill tier-3">Dataset</span>
-        </div>
-      </section>
-
-      <footer style="margin-top:28px;">
-        <p style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-          <a class="btn" href="/" aria-label="Return home">Return Home</a>
-        </p>
-      </footer>
-    </main>
-  </div>
-</body>
-</html>
+    .buy-book-button {
+      display: inline-block;
+      padding: 12px 22px;
+      background: var(--gold-accent);
+      color: var(--bg-color);
+      border: 1px solid var(--gold-accent);
+      border-radius: 999px;
+      text-decoration: none
