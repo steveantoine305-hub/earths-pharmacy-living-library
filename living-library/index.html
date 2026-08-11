@@ -1,964 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width,initial-scale=1"
-  />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>
-    Living Evidence Library | The Earth’s Pharmacy
-  </title>
+  <title>The Earth’s Pharmacy AI | Living Library</title>
 
   <meta
     name="description"
-    content="The Living Evidence Library is the evolving digital companion to the stable published edition of The Earth’s Pharmacy, providing botanical discovery, evidence updates, source verification, and safety information."
-  />
-
-  <link rel="stylesheet" href="/assets/styles.css" />
+    content="Ask The Earth’s Pharmacy AI — the interactive Living Evidence Library for botanical knowledge, traditional use, research evidence, evidence classification, and safety information."
+  >
 
   <style>
-    .search-container {
-      margin: 40px 0;
-      background: rgba(212, 168, 79, 0.05);
-      padding: 32px;
-      border-radius: 8px;
-      border: 1px solid var(--border-color);
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #06140c;
+      color: #f5f0df;
+      font-family: Georgia, "Times New Roman", serif;
     }
 
-    .search-box {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 18px;
+    * {
+      box-sizing: border-box;
     }
 
-    .search-box input {
-      flex: 1;
-      padding: 14px 20px;
-      border-radius: 4px;
-      border: 1px solid var(--border-color);
-      background: rgba(0, 0, 0, 0.2);
-      color: var(--text-color);
-      font-size: 16px;
+    .ai-wrap {
+      width: 100%;
+      min-height: 100vh;
+      padding: 40px 16px;
+      background: #06140c;
     }
 
-    .search-box input:focus {
-      outline: none;
-      border-color: var(--gold-accent);
+    .ai-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
     }
 
-    .search-box button {
-      padding: 12px 18px;
-      border-radius: 4px;
-      border: 1px solid var(--gold-accent);
-      background: transparent;
-      color: var(--gold-accent);
-      cursor: pointer;
+    .home-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #d8b85a;
+      text-decoration: none;
+      border: 1px solid #b99a4b;
+      padding: 10px 16px;
+      border-radius: 999px;
     }
 
-    .search-box button:hover {
-      background: var(--gold-accent);
-      color: var(--bg-color);
+    h1 {
+      color: #d8b85a;
+      font-size: clamp(32px, 5vw, 52px);
+      margin: 0 0 12px;
     }
 
-    .discovery-note {
-      margin-bottom: 22px;
-      font-size: 14px;
-      opacity: 0.85;
+    .intro {
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 0 auto 24px;
+      max-width: 760px;
     }
 
-    .alphabet-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: center;
-      margin-bottom: 28px;
+    .frame {
+      width: 100%;
+      overflow: hidden;
+      border: 1px solid #b99a4b;
+      border-radius: 22px;
+      background: #041009;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
     }
 
-    .letter-btn {
-      padding: 7px 11px;
-      min-width: 34px;
-      border-radius: 4px;
-      border: 1px solid var(--border-color);
-      background: transparent;
-      color: var(--text-color);
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .letter-btn:hover,
-    .letter-btn.active {
-      background: var(--gold-accent);
-      color: var(--bg-color);
-      border-color: var(--gold-accent);
-    }
-
-    .results-summary {
-      margin-bottom: 18px;
-      font-size: 14px;
-      opacity: 0.8;
-    }
-
-    .results-grid {
-      display: grid;
-      grid-template-columns:
-        repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .botanical-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 24px;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-      min-height: 250px;
-    }
-
-    .botanical-card.public-record {
-      transition:
-        transform 0.2s,
-        border-color 0.2s;
-    }
-
-    .botanical-card.public-record:hover {
-      transform: translateY(-4px);
-      border-color: var(--gold-accent);
-    }
-
-    .botanical-card h3 {
-      color: var(--gold-accent);
-      margin: 0 0 8px 0;
-      font-size: 21px;
-    }
-
-    .botanical-card .sci-name {
-      font-style: italic;
-      opacity: 0.85;
-      font-size: 14px;
-      margin-bottom: 6px;
+    iframe {
+      width: 100%;
+      height: 900px;
+      border: 0;
       display: block;
+      background: #041009;
     }
 
-    .botanical-card .other-names {
+    .note {
+      color: #b8b3a5;
       font-size: 13px;
-      opacity: 0.72;
-      margin-bottom: 14px;
+      line-height: 1.5;
+      margin-top: 18px;
     }
 
-    .botanical-card .origin {
-      font-size: 13px;
-      margin-bottom: 12px;
-    }
-
-    .botanical-card .evidence {
-      font-size: 14px;
-      line-height: 1.55;
-      margin-bottom: 14px;
-    }
-
-    .botanical-card .safety-flag {
-      font-size: 13px;
-      padding: 10px;
-      margin-top: 4px;
-      border-radius: 4px;
-      background: rgba(255, 80, 80, 0.04);
-      border: 1px solid rgba(255, 80, 80, 0.08);
-    }
-
-    .botanical-card .meta {
-      font-size: 12px;
-      margin-top: auto;
-      padding-top: 16px;
-      border-top: 1px solid var(--border-color);
-      display: flex;
-      gap: 8px;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .status-tag {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 3px 7px;
-      border-radius: 4px;
-      background: rgba(212, 168, 79, 0.1);
-      color: var(--gold-accent);
-    }
-
-    .draft-note {
-      margin-top: 12px;
-      font-size: 12px;
-      opacity: 0.7;
-      font-style: italic;
-    }
-
-    .empty-state,
-    .error-state {
-      padding: 24px;
-      border-radius: 8px;
-      border: 1px solid var(--border-color);
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .error-state {
-      border-color: rgba(255, 80, 80, 0.2);
-    }
-
-    .scope-grid {
-      display: grid;
-      grid-template-columns:
-        repeat(auto-fit, minmax(210px, 1fr));
-      gap: 14px;
-      margin-top: 20px;
-    }
-
-    .scope-item {
-      padding: 16px;
-      border-radius: 6px;
-      background: rgba(212, 168, 79, 0.03);
-      border: 1px solid rgba(212, 168, 79, 0.06);
-    }
-
-    .boundary-note {
-      padding: 18px;
-      margin-top: 20px;
-      border-left: 3px solid var(--gold-accent);
-      background: rgba(212, 168, 79, 0.04);
-    }
-
-    @media (max-width: 700px) {
-      .search-container {
-        padding: 20px;
+    @media (max-width: 768px) {
+      .ai-wrap {
+        padding: 24px 10px;
       }
 
-      .search-box {
-        flex-direction: column;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
+      iframe {
+        height: 820px;
       }
     }
   </style>
 </head>
 
 <body>
-
-  <nav role="navigation">
-    <div class="container">
-      <ul class="nav-links">
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/living-library/">
-            Living Evidence Library
-          </a>
-        </li>
-        <li>
-          <a href="/monographs/">
-            Botanical Monographs
-          </a>
-        </li>
-        <li>
-          <a href="/safety/">Safety</a>
-        </li>
-        <li>
-          <a href="/about/">About</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <div class="container">
-
-    <header class="hero" role="banner">
-
-      <div class="hero-copy">
-
-        <h1>
-          Living Evidence Library
-        </h1>
-
-        <p class="lead">
-          The Living Evidence Library is the evolving digital
-          companion to the stable published edition of
-          The Earth’s Pharmacy. It supports botanical discovery,
-          continuing evidence review, source verification,
-          safety updates, and expanded scholarship.
-        </p>
-
-        <div class="cta-row">
-
-          <a
-            class="btn"
-            href="/founders-edition/"
-          >
-            Founder’s Edition
-          </a>
-
-          <a
-            class="btn secondary"
-            href="/monographs/"
-          >
-            Botanical Monographs
-          </a>
-
-          <a
-            class="btn ghost"
-            href="/"
-          >
-            Return to Home
-          </a>
-
-        </div>
-      </div>
-
-      <div class="cover">
-
-        <img
-          src="/Earths_Pharmacy_Homepage_Refined_Professional_Approved.png"
-          alt="The Earth’s Pharmacy botanical library artwork"
-        />
-
-      </div>
-
-    </header>
-
-    <main>
-
-      <section id="discovery">
-
-        <h2>
-          Botanical Discovery
-        </h2>
-
-        <p>
-          Search the public discovery metadata by common name,
-          scientific identity, alternate name, botanical type,
-          or geographic origin.
-        </p>
-
-        <div class="search-container">
-
-          <div class="search-box">
-
-            <input
-              type="search"
-              id="botanical-search"
-              placeholder="Search Ginger, Moringa, Zingiber officinale..."
-              aria-label="Search botanical discovery records"
-              autocomplete="off"
-            />
-
-            <button
-              type="button"
-              id="clear-search"
-            >
-              Clear
-            </button>
-
-          </div>
-
-          <div class="discovery-note">
-            Discovery records may appear while a complete monograph
-            remains under internal review. A discovery record does
-            not mean the full monograph has been released publicly.
-          </div>
-
-          <div
-            class="alphabet-nav"
-            id="alphabet-nav"
-            aria-label="Filter botanicals alphabetically"
-          >
-          </div>
-
-          <div
-            class="results-summary"
-            id="results-summary"
-            aria-live="polite"
-          >
-            Loading botanical records...
-          </div>
-
-          <div
-            class="results-grid"
-            id="results-grid"
-          >
-          </div>
-
-        </div>
-
-      </section>
-
-      <section id="library-scope">
-
-        <h2>
-          Scope of the Library
-        </h2>
-
-        <p>
-          The Living Evidence Library may document:
-        </p>
-
-        <div class="scope-grid">
-
-          <div class="scope-item">
-            New Clinical Research
-          </div>
-
-          <div class="scope-item">
-            Source Verification
-          </div>
-
-          <div class="scope-item">
-            Citation Corrections
-          </div>
-
-          <div class="scope-item">
-            Safety Advisories
-          </div>
-
-          <div class="scope-item">
-            Regulatory Updates
-          </div>
-
-          <div class="scope-item">
-            Botanical Identity Corrections
-          </div>
-
-          <div class="scope-item">
-            Claim-Level Evidence Changes
-          </div>
-
-          <div class="scope-item">
-            Expanded Scholarship
-          </div>
-
-        </div>
-
-      </section>
-
-      <section id="publication-boundary">
-
-        <h2>
-          Public Discovery and Internal Review
-        </h2>
-
-        <p>
-          Public discovery metadata and complete botanical monographs
-          are separate layers of the Living Evidence Library.
-        </p>
-
-        <div class="boundary-note">
-          DRAFT and internal monograph source files remain outside
-          the public deployment artifact until the applicable
-          verification, review, and release controls are satisfied.
-        </div>
-
-      </section>
-
-      <section id="evidence-principle">
-
-        <h2>
-          Evidence Classification Principle
-        </h2>
-
-        <p>
-          Evidence tiers apply to individual therapeutic claims,
-          not to an entire plant as a single blanket rating.
-          Different claims associated with the same botanical may
-          carry different levels of evidence.
-        </p>
-
-      </section>
-
-      <section id="safety-principle">
-
-        <h2>
-          Safety Principle
-        </h2>
-
-        <p>
-          Natural origin does not guarantee safety. Safety review is
-          maintained separately from evidence of therapeutic benefit
-          and may include contraindications, medication interactions,
-          special populations, preparation risks, sourcing concerns,
-          contamination, dose, and duration.
-        </p>
-
-      </section>
-
-      <section id="publication-separation">
-
-        <h2>
-          Living Website and Published Edition
-        </h2>
-
-        <p>
-          The Living Evidence Library may continue to evolve as new
-          evidence is reviewed. Website revisions do not alter the
-          Founder Frozen publication edition.
-        </p>
-
-      </section>
-
-    </main>
-
-    <footer>
-
-      <div class="footer-links">
-
-        <a href="/">
-          Home
-        </a>
-
-        <a href="/living-library/">
-          Living Evidence Library
-        </a>
-
-        <a href="/monographs/">
-          Botanical Monographs
-        </a>
-
-        <a href="/safety/">
-          Safety
-        </a>
-
-        <a href="/about/">
-          About
-        </a>
-
-      </div>
-
-      <p>
-        &copy; 2026 The Earth’s Pharmacy.
-        By The Grandmaster Architect.
+  <main class="ai-wrap">
+    <div class="ai-inner">
+
+      <a class="home-link" href="/">
+        ← Return to The Earth’s Pharmacy
+      </a>
+
+      <h1>
+        Ask The Earth’s Pharmacy AI
+      </h1>
+
+      <p class="intro">
+        Search The Earth’s Pharmacy Living Evidence Library for botanical knowledge,
+        traditional use, research evidence, evidence classification, and safety information.
       </p>
 
-    </footer>
-
-  </div>
-
-  <script>
-    const searchInput =
-      document.getElementById("botanical-search");
-
-    const clearButton =
-      document.getElementById("clear-search");
-
-    const alphabetNav =
-      document.getElementById("alphabet-nav");
-
-    const resultsGrid =
-      document.getElementById("results-grid");
-
-    const resultsSummary =
-      document.getElementById("results-summary");
-
-    let botanicalRecords = [];
-    let activeLetter = "";
-
-    function normalize(value) {
-      return String(value || "")
-        .trim()
-        .toLowerCase();
-    }
-
-    function createAlphabet() {
-      const allButton =
-        document.createElement("button");
-
-      allButton.type = "button";
-      allButton.className = "letter-btn active";
-      allButton.textContent = "All";
-      allButton.dataset.letter = "";
-
-      alphabetNav.appendChild(allButton);
-
-      for (
-        let code = 65;
-        code <= 90;
-        code += 1
-      ) {
-        const letter =
-          String.fromCharCode(code);
-
-        const button =
-          document.createElement("button");
-
-        button.type = "button";
-        button.className = "letter-btn";
-        button.textContent = letter;
-        button.dataset.letter = letter;
-
-        alphabetNav.appendChild(button);
-      }
-    }
-
-    function setActiveLetter(letter) {
-      activeLetter = letter;
-
-      const buttons =
-        alphabetNav.querySelectorAll(
-          ".letter-btn"
-        );
-
-      buttons.forEach((button) => {
-        button.classList.toggle(
-          "active",
-          button.dataset.letter === letter
-        );
-      });
-    }
-
-    function recordMatchesSearch(
-      record,
-      query
-    ) {
-      if (!query) {
-        return true;
-      }
-
-      const searchable = [
-        record.common_name,
-        record.identity,
-        record.other_names,
-        record.type,
-        record.short_origin,
-        record.short_evidence
-      ]
-        .map(normalize)
-        .join(" ");
-
-      return searchable.includes(query);
-    }
-
-    function recordMatchesLetter(
-      record,
-      letter
-    ) {
-      if (!letter) {
-        return true;
-      }
-
-      return String(
-        record.common_name || ""
-      )
-        .toUpperCase()
-        .startsWith(letter);
-    }
-
-    function createTextElement(
-      tag,
-      className,
-      text
-    ) {
-      const element =
-        document.createElement(tag);
-
-      if (className) {
-        element.className = className;
-      }
-
-      element.textContent = text || "";
-
-      return element;
-    }
-
-    function isPublicMonograph(record) {
-      const status =
-        normalize(record.lifecycle_status);
-
-      const access =
-        normalize(record.access_level);
-
-      return (
-        access === "public" &&
-        (
-          status === "published" ||
-          status === "public" ||
-          status === "released"
-        ) &&
-        Boolean(record.public_url)
-      );
-    }
-
-    function createCard(record) {
-      const publicMonograph =
-        isPublicMonograph(record);
-
-      const card =
-        document.createElement(
-          publicMonograph ? "a" : "article"
-        );
-
-      card.className = "botanical-card";
-
-      if (publicMonograph) {
-        card.classList.add(
-          "public-record"
-        );
-
-        card.href =
-          record.public_url;
-      }
-
-      card.appendChild(
-        createTextElement(
-          "h3",
-          "",
-          record.common_name
-        )
-      );
-
-      card.appendChild(
-        createTextElement(
-          "span",
-          "sci-name",
-          record.identity
-        )
-      );
-
-      if (
-        record.other_names &&
-        normalize(record.other_names) !==
-          "pending"
-      ) {
-        card.appendChild(
-          createTextElement(
-            "div",
-            "other-names",
-            "Other names: " +
-              record.other_names
-          )
-        );
-      }
-
-      if (record.short_origin) {
-        card.appendChild(
-          createTextElement(
-            "div",
-            "origin",
-            "Origin: " +
-              record.short_origin
-          )
-        );
-      }
-
-      if (record.short_evidence) {
-        card.appendChild(
-          createTextElement(
-            "p",
-            "evidence",
-            record.short_evidence
-          )
-        );
-      }
-
-      if (record.safety_flag) {
-        card.appendChild(
-          createTextElement(
-            "div",
-            "safety-flag",
-            "Safety: " +
-              record.safety_flag
-          )
-        );
-      }
-
-      if (!publicMonograph) {
-        card.appendChild(
-          createTextElement(
-            "div",
-            "draft-note",
-            "Discovery record only. Complete monograph is not publicly released."
-          )
-        );
-      }
-
-      const meta =
-        document.createElement("div");
-
-      meta.className = "meta";
-
-      const reviewed =
-        createTextElement(
-          "span",
-          "",
-          record.last_reviewed
-            ? "Reviewed: " +
-                record.last_reviewed
-            : "Review date pending"
-        );
-
-      const status =
-        createTextElement(
-          "span",
-          "status-tag",
-          record.lifecycle_status ||
-            "Review"
-        );
-
-      meta.appendChild(reviewed);
-      meta.appendChild(status);
-
-      card.appendChild(meta);
-
-      return card;
-    }
-
-    function renderRecords() {
-      const query =
-        normalize(searchInput.value);
-
-      const filtered =
-        botanicalRecords
-          .filter((record) =>
-            recordMatchesSearch(
-              record,
-              query
-            )
-          )
-          .filter((record) =>
-            recordMatchesLetter(
-              record,
-              activeLetter
-            )
-          )
-          .sort((a, b) =>
-            String(
-              a.common_name || ""
-            ).localeCompare(
-              String(
-                b.common_name || ""
-              )
-            )
-          );
-
-      resultsGrid.innerHTML = "";
-
-      if (filtered.length === 0) {
-        const empty =
-          document.createElement("div");
-
-        empty.className =
-          "empty-state";
-
-        empty.textContent =
-          "No botanical discovery records match this search.";
-
-        resultsGrid.appendChild(empty);
-      } else {
-        filtered.forEach((record) => {
-          resultsGrid.appendChild(
-            createCard(record)
-          );
-        });
-      }
-
-      resultsSummary.textContent =
-        filtered.length +
-        (
-          filtered.length === 1
-            ? " botanical record shown"
-            : " botanical records shown"
-        );
-    }
-
-    async function loadRecords() {
-      try {
-        const response =
-          await fetch(
-            "/data/library/metadata.json",
-            {
-              cache: "no-store"
-            }
-          );
-
-        if (!response.ok) {
-          throw new Error(
-            "Metadata request failed."
-          );
-        }
-
-        const data =
-          await response.json();
-
-        botanicalRecords =
-          Array.isArray(data.records)
-            ? data.records
-            : [];
-
-        renderRecords();
-      } catch (error) {
-        resultsGrid.innerHTML = "";
-
-        const errorBox =
-          document.createElement("div");
-
-        errorBox.className =
-          "error-state";
-
-        errorBox.textContent =
-          "Botanical discovery records are temporarily unavailable.";
-
-        resultsGrid.appendChild(
-          errorBox
-        );
-
-        resultsSummary.textContent =
-          "Discovery data could not be loaded.";
-
-        console.error(error);
-      }
-    }
-
-    alphabetNav.addEventListener(
-      "click",
-      (event) => {
-        const button =
-          event.target.closest(
-            ".letter-btn"
-          );
-
-        if (!button) {
-          return;
-        }
-
-        setActiveLetter(
-          button.dataset.letter
-        );
-
-        renderRecords();
-      }
-    );
-
-    searchInput.addEventListener(
-      "input",
-      renderRecords
-    );
-
-    clearButton.addEventListener(
-      "click",
-      () => {
-        searchInput.value = "";
-        setActiveLetter("");
-        renderRecords();
-        searchInput.focus();
-      }
-    );
-
-    createAlphabet();
-    loadRecords();
-  </script>
-
+      <div class="frame">
+        <iframe
+          src="https://earths-pharmacy-earths-pharmacy-ai.static.hf.space"
+          title="The Earth’s Pharmacy AI"
+          loading="lazy"
+          allow="clipboard-write"
+        ></iframe>
+      </div>
+
+      <p class="note">
+        Educational botanical reference. Not a substitute for individualized medical care.
+      </p>
+
+    </div>
+  </main>
 </body>
 </html>
