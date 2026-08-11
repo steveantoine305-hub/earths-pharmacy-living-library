@@ -1,384 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+<!-- EARTH'S PHARMACY AI -->
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  >
+<section id="earths-pharmacy-ai" style="
+  width:100%;
+  padding:40px 16px;
+  background:#06140c;
+  box-sizing:border-box;
+">
 
-  <title>The Earth’s Pharmacy</title>
+  <div style="
+    max-width:1100px;
+    margin:0 auto;
+    text-align:center;
+  ">
 
-  <meta
-    name="description"
-    content="The Earth’s Pharmacy Living Evidence Library — evidence-based botanical knowledge, safety information, monographs, and educational resources."
-  >
+    <h2 style="
+      color:#d8b85a;
+      font-family:Georgia,'Times New Roman',serif;
+      font-size:clamp(32px,5vw,52px);
+      margin:0 0 12px;
+    ">
+      Ask The Earth's Pharmacy AI
+    </h2>
 
-  <style>
-    /*
-      EARTH'S PHARMACY HOMEPAGE
-      The approved homepage artwork contains the visible navigation
-      and homepage design. Transparent links are placed over the
-      appropriate areas of the artwork.
+    <p style="
+      color:#f5f0df;
+      font-family:Georgia,'Times New Roman',serif;
+      font-size:18px;
+      line-height:1.6;
+      margin:0 auto 24px;
+      max-width:760px;
+    ">
+      Search The Earth's Pharmacy Living Evidence Library for botanical knowledge,
+      traditional use, research evidence, evidence classification, and safety information.
+    </p>
 
-      This prevents duplicate blue links from appearing over the image.
-    */
+    <div style="
+      width:100%;
+      overflow:hidden;
+      border:1px solid #b99a4b;
+      border-radius:22px;
+      background:#041009;
+      box-shadow:0 20px 50px rgba(0,0,0,.35);
+    ">
 
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    html {
-      width: 100%;
-      min-height: 100%;
-      margin: 0;
-      padding: 0;
-      background: #06180f;
-      -webkit-text-size-adjust: 100%;
-    }
-
-    body {
-      width: 100%;
-      min-height: 100%;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      background: #06180f;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .homepage {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-    }
-
-    .homepage-wrapper {
-      position: relative;
-      width: 100%;
-      max-width: 1536px;
-      margin: 0 auto;
-      padding: 0;
-      background: #06180f;
-    }
-
-    .homepage-design {
-      display: block;
-      width: 100%;
-      max-width: 1536px;
-      height: auto;
-      margin: 0;
-      padding: 0;
-      border: 0;
-    }
-
-    /*
-      Transparent clickable areas.
-      They remain invisible but make the navigation shown inside
-      the approved homepage image functional.
-    */
-
-    .hotspot {
-      position: absolute;
-      display: block;
-      z-index: 20;
-      background: transparent;
-      border: 0;
-      color: transparent;
-      text-decoration: none;
-      cursor: pointer;
-      touch-action: manipulation;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .hotspot:focus {
-      outline: none;
-    }
-
-    .hotspot:focus-visible {
-      outline: 3px solid #d6b45f;
-      outline-offset: 2px;
-      background: rgba(214, 180, 95, 0.12);
-    }
-
-    /*
-      TOP NAVIGATION HOTSPOTS
-
-      These links sit over the navigation that is already printed
-      inside the approved homepage artwork.
-    */
-
-    .nav-home {
-      top: 2.1%;
-      left: 28.1%;
-      width: 5.5%;
-      height: 4.6%;
-    }
-
-    .nav-about {
-      top: 2.1%;
-      left: 34%;
-      width: 5.7%;
-      height: 4.6%;
-    }
-
-    .nav-library {
-      top: 2.1%;
-      left: 40%;
-      width: 11.1%;
-      height: 4.6%;
-    }
-
-    .nav-monographs {
-      top: 2.1%;
-      left: 51.3%;
-      width: 9.7%;
-      height: 4.6%;
-    }
-
-    .nav-safety {
-      top: 2.1%;
-      left: 61.2%;
-      width: 6.2%;
-      height: 4.6%;
-    }
-
-    .nav-resources {
-      top: 2.1%;
-      left: 67.6%;
-      width: 7.7%;
-      height: 4.6%;
-    }
-
-    .nav-contact {
-      top: 2.1%;
-      left: 75.6%;
-      width: 6.3%;
-      height: 4.6%;
-    }
-
-    .nav-book {
-      top: 1.6%;
-      left: 83%;
-      width: 10.5%;
-      height: 5.5%;
-    }
-
-    /*
-      THREE MAIN HOMEPAGE PATHWAYS
-    */
-
-    .pathway-library {
-      top: 43%;
-      left: 4%;
-      width: 29%;
-      height: 33%;
-    }
-
-    .pathway-monographs {
-      top: 43%;
-      left: 35.5%;
-      width: 29%;
-      height: 33%;
-    }
-
-    .pathway-founders {
-      top: 43%;
-      left: 67%;
-      width: 29%;
-      height: 33%;
-    }
-
-    /*
-      Additional lower navigation icons shown in the artwork.
-    */
-
-    .lower-resources {
-      top: 78%;
-      left: 4%;
-      width: 21%;
-      height: 12%;
-    }
-
-    .lower-safety {
-      top: 78%;
-      left: 27%;
-      width: 21%;
-      height: 12%;
-    }
-
-    .lower-practice {
-      top: 78%;
-      left: 51%;
-      width: 21%;
-      height: 12%;
-    }
-
-    .lower-wellness {
-      top: 78%;
-      left: 75%;
-      width: 21%;
-      height: 12%;
-    }
-
-    /*
-      Prevent an unwanted blank page below the artwork.
-    */
-
-    footer,
-    .site-nav,
-    .duplicate-navigation,
-    .mobile-navigation {
-      display: none !important;
-    }
-
-    /*
-      Mobile adjustments.
-    */
-
-    @media (max-width: 768px) {
-      html,
-      body {
-        min-height: 100%;
-      }
-
-      .homepage-wrapper,
-      .homepage-design {
-        width: 100%;
-        max-width: none;
-      }
-
-      .hotspot:focus-visible {
-        outline-width: 2px;
-      }
-    }
-
-    /*
-      Respect accessibility preferences.
-    */
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        transition: none !important;
-        animation: none !important;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <main class="homepage">
-    <div class="homepage-wrapper">
-
-      <img
-        class="homepage-design"
-        src="./Earths_Pharmacy_Homepage_Refined_Professional_Approved.png"
-        alt="The Earth’s Pharmacy Living Evidence Library homepage"
-      >
-
-      <!-- Navigation shown inside the approved artwork -->
-
-      <a
-        class="hotspot nav-home"
-        href="/"
-        aria-label="Home"
-      ></a>
-
-      <a
-        class="hotspot nav-about"
-        href="/about/"
-        aria-label="About The Earth’s Pharmacy"
-      ></a>
-
-      <a
-        class="hotspot nav-library"
-        href="/living-library/"
-        aria-label="Living Evidence Library"
-      ></a>
-
-      <a
-        class="hotspot nav-monographs"
-        href="/monographs/"
-        aria-label="Botanical Monographs"
-      ></a>
-
-      <a
-        class="hotspot nav-safety"
-        href="/safety/"
-        aria-label="Safety Center"
-      ></a>
-
-      <a
-        class="hotspot nav-resources"
-        href="/resources/"
-        aria-label="Resources Center"
-      ></a>
-
-      <a
-        class="hotspot nav-contact"
-        href="/contact/"
-        aria-label="Contact"
-      ></a>
-
-      <a
-        class="hotspot nav-book"
-        href="/founders-edition/"
-        aria-label="View the Founder’s Edition"
-      ></a>
-
-      <!-- Main homepage pathways -->
-
-      <a
-        class="hotspot pathway-library"
-        href="/living-library/"
-        aria-label="Enter the Living Evidence Library"
-      ></a>
-
-      <a
-        class="hotspot pathway-monographs"
-        href="/monographs/"
-        aria-label="Explore the botanical monographs"
-      ></a>
-
-      <a
-        class="hotspot pathway-founders"
-        href="/founders-edition/"
-        aria-label="View the Founder’s Edition"
-      ></a>
-
-      <!-- Lower informational pathways -->
-
-      <a
-        class="hotspot lower-resources"
-        href="/resources/"
-        aria-label="Evidence-based resources"
-      ></a>
-
-      <a
-        class="hotspot lower-safety"
-        href="/safety/"
-        aria-label="Safety information"
-      ></a>
-
-      <a
-        class="hotspot lower-practice"
-        href="/monographs/"
-        aria-label="Practical botanical guidance"
-      ></a>
-
-      <a
-        class="hotspot lower-wellness"
-        href="/living-library/"
-        aria-label="Whole-person wellness information"
-      ></a>
+      <iframe
+        src="https://earths-pharmacy-earths-pharmacy-ai.hf.space"
+        title="The Earth's Pharmacy AI"
+        style="
+          width:100%;
+          height:900px;
+          border:0;
+          display:block;
+          background:#041009;
+        "
+        loading="lazy"
+        allow="clipboard-write"
+      ></iframe>
 
     </div>
-  </main>
-</body>
-</html>
+
+    <p style="
+      color:#b8b3a5;
+      font-size:13px;
+      line-height:1.5;
+      margin-top:18px;
+    ">
+      Educational botanical reference. Not a substitute for individualized medical care.
+    </p>
+
+  </div>
+
+</section>
