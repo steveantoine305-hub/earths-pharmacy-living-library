@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Safety Center | The Earth’s Pharmacy</title>
-  <meta name="description" content="The Earth’s Pharmacy Safety Center: evidence-based guidance on botanical safety, drug interactions, and contraindications." />
-  <link rel="stylesheet" href="/assets/styles.css">
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  >
+
+  <title>
+    Safety Center | The Earth’s Pharmacy
+  </title>
+
+  <meta
+    name="description"
+    content="The Earth’s Pharmacy Safety Center: evidence-based guidance on botanical safety, drug interactions, and contraindications."
+  >
+
+  <link
+    rel="stylesheet"
+    href="/assets/styles.css"
+  >
+
   <style>
-    /* Design Language: Deep botanical green, gold accents, parchment typography */
     :root {
       --bg-color: #06180f;
       --text-color: #f3e4bd;
@@ -17,19 +32,31 @@
       --font-serif: Georgia, "Times New Roman", serif;
     }
 
-    /* Core Layout */
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--font-serif);
+    }
+
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* Navigation */
     nav {
       padding: 24px 0;
       border-bottom: 1px solid var(--border-color);
-      margin-bottom: 40px;
+      margin-bottom: 26px;
     }
+
     .nav-links {
       display: flex;
       justify-content: center;
@@ -39,6 +66,7 @@
       padding: 0;
       margin: 0;
     }
+
     .nav-links a {
       color: var(--text-color);
       text-decoration: none;
@@ -47,17 +75,54 @@
       letter-spacing: 0.1em;
       transition: color 0.3s;
     }
+
     .nav-links a:hover {
       color: var(--gold-accent);
     }
 
-    /* Safety Header */
+    .top-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 0 0 34px;
+    }
+
+    .home-button {
+      display: inline-block;
+      color: var(--gold-accent);
+      text-decoration: none;
+      border: 1px solid var(--gold-accent);
+      border-radius: 999px;
+      padding: 11px 18px;
+    }
+
+    .buy-book-button {
+      display: inline-block;
+      padding: 12px 22px;
+      background: var(--gold-accent);
+      color: var(--bg-color);
+      border: 1px solid var(--gold-accent);
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+      transition: all 0.2s ease;
+    }
+
+    .buy-book-button:hover {
+      background: #e5c66d;
+      transform: translateY(-1px);
+    }
+
     .safety-hero {
-      padding: 40px 0 60px;
+      padding: 30px 0 60px;
       text-align: center;
       border-bottom: 1px solid var(--border-color);
       margin-bottom: 60px;
     }
+
     .safety-hero h1 {
       font-size: 48px;
       color: var(--gold-accent);
@@ -65,6 +130,7 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
+
     .safety-hero p.lead {
       font-size: 20px;
       max-width: 800px;
@@ -72,10 +138,22 @@
       opacity: 0.9;
     }
 
-    /* Safety Sections */
+    .sales-note {
+      max-width: 820px;
+      margin: 24px auto 0;
+      padding: 14px 18px;
+      text-align: center;
+      border: 1px solid rgba(212, 168, 79, 0.45);
+      border-radius: 14px;
+      background: rgba(212, 168, 79, 0.05);
+      line-height: 1.55;
+      font-size: 15px;
+    }
+
     section {
       padding-bottom: 80px;
     }
+
     h2 {
       color: var(--gold-accent);
       font-size: 28px;
@@ -87,7 +165,6 @@
       padding-left: 16px;
     }
 
-    /* Safety Panel */
     .safety-panel {
       background: rgba(212, 168, 79, 0.05);
       padding: 48px;
@@ -96,6 +173,7 @@
       margin-bottom: 60px;
       text-align: center;
     }
+
     .safety-principle {
       font-size: 32px;
       color: var(--gold-accent);
@@ -103,6 +181,7 @@
       margin-bottom: 24px;
       line-height: 1.2;
     }
+
     .educational-notice {
       font-size: 18px;
       max-width: 800px;
@@ -110,13 +189,14 @@
       line-height: 1.6;
     }
 
-    /* Factors Grid */
     .factors-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      grid-template-columns:
+        repeat(auto-fill, minmax(220px, 1fr));
       gap: 16px;
       margin-top: 24px;
     }
+
     .factor-item {
       background: var(--card-bg);
       padding: 12px 16px;
@@ -125,7 +205,6 @@
       font-size: 15px;
     }
 
-    /* Red Flags */
     .red-flags {
       background: rgba(255, 80, 80, 0.05);
       border: 1px solid rgba(255, 80, 80, 0.2);
@@ -133,111 +212,327 @@
       border-radius: 8px;
       margin-top: 24px;
     }
+
     .red-flags h3 {
       color: #ff9999;
       margin-top: 0;
       font-size: 20px;
       text-transform: uppercase;
     }
+
     .red-flags p {
       margin-bottom: 0;
     }
 
-    /* Footer */
+    .bottom-buy {
+      text-align: center;
+      margin: 0 0 60px;
+    }
+
+    .bottom-buy .buy-book-button {
+      font-size: 18px;
+      padding: 14px 28px;
+    }
+
     footer {
       padding: 60px 0 40px;
       text-align: center;
       border-top: 1px solid var(--border-color);
     }
+
     .footer-links {
       margin-bottom: 24px;
     }
+
     .footer-links a {
       color: var(--text-color);
       margin: 0 12px;
       text-decoration: none;
     }
 
-    /* Responsive */
     @media (max-width: 780px) {
-      .safety-hero h1 { font-size: 36px; }
-      .safety-panel { padding: 32px 24px; }
-      .safety-principle { font-size: 24px; }
+      .safety-hero h1 {
+        font-size: 36px;
+      }
+
+      .safety-panel {
+        padding: 32px 24px;
+      }
+
+      .safety-principle {
+        font-size: 24px;
+      }
+
+      .home-button,
+      .buy-book-button {
+        width: 100%;
+        max-width: 360px;
+        text-align: center;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <nav role="navigation">
     <div class="container">
+
       <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/living-library/">Living Evidence Library</a></li>
-        <li><a href="/monographs/">Botanical Monographs</a></li>
-        <li><a href="/safety/">Safety</a></li>
-        <li><a href="/about/">About</a></li>
+
+        <li>
+          <a href="/">Home</a>
+        </li>
+
+        <li>
+          <a href="/living-library/">
+            Living Evidence Library
+          </a>
+        </li>
+
+        <li>
+          <a href="/monographs/">
+            Botanical Monographs
+          </a>
+        </li>
+
+        <li>
+          <a href="/safety/">
+            Safety
+          </a>
+        </li>
+
+        <li>
+          <a href="/about/">
+            About
+          </a>
+        </li>
+
       </ul>
+
     </div>
   </nav>
 
   <div class="container">
-    <header class="safety-hero" role="banner">
-      <h1>Safety Center</h1>
-      <p class="lead">Evidence-based botanical knowledge begins with an understanding of risk, preparation, and individual context.</p>
+
+    <div class="top-actions">
+
+      <a
+        class="home-button"
+        href="/"
+      >
+        ← Return to The Earth’s Pharmacy
+      </a>
+
+      <a
+        href="https://payhip.com/b/9TKBH"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="buy-book-button"
+      >
+        Buy The Earth’s Pharmacy
+      </a>
+
+    </div>
+
+    <header
+      class="safety-hero"
+      role="banner"
+    >
+
+      <h1>
+        Safety Center
+      </h1>
+
+      <p class="lead">
+        Evidence-based botanical knowledge begins with an understanding
+        of risk, preparation, and individual context.
+      </p>
+
+      <div class="sales-note">
+        Want the complete reference in one place?
+        Purchase The Earth’s Pharmacy directly from the author.
+      </div>
+
     </header>
 
     <main>
+
       <div class="safety-panel">
-        <div class="safety-principle">Natural origin does not guarantee safety.</div>
-        <div class="educational-notice">
-          The Earth’s Pharmacy is educational reference material and is not individualized medical advice, diagnosis, prescribing, or treatment. It is not a substitute for care from a qualified health professional.
+
+        <div class="safety-principle">
+          Natural origin does not guarantee safety.
         </div>
+
+        <div class="educational-notice">
+          The Earth’s Pharmacy is educational reference material and is
+          not individualized medical advice, diagnosis, prescribing, or
+          treatment. It is not a substitute for care from a qualified
+          health professional.
+        </div>
+
       </div>
 
       <section id="determinants">
-        <h2>Determinants of Safety</h2>
-        <p>Botanical effects and risks are not universal; they depend on a complex intersection of factors related to both the plant material and the individual user:</p>
+
+        <h2>
+          Determinants of Safety
+        </h2>
+
+        <p>
+          Botanical effects and risks are not universal; they depend on a
+          complex intersection of factors related to both the plant material
+          and the individual user:
+        </p>
+
         <div class="factors-grid">
-          <div class="factor-item">Species & Chemotype</div>
-          <div class="factor-item">Plant Part Used</div>
-          <div class="factor-item">Preparation Method</div>
-          <div class="factor-item">Concentration</div>
-          <div class="factor-item">Route of Administration</div>
-          <div class="factor-item">Dose & Frequency</div>
-          <div class="factor-item">Duration of Use</div>
-          <div class="factor-item">Age & Life Stage</div>
-          <div class="factor-item">Pregnancy & Lactation</div>
-          <div class="factor-item">Existing Medical Conditions</div>
-          <div class="factor-item">Concurrent Medication Use</div>
-          <div class="factor-item">Product Identity & Quality</div>
+
+          <div class="factor-item">
+            Species &amp; Chemotype
+          </div>
+
+          <div class="factor-item">
+            Plant Part Used
+          </div>
+
+          <div class="factor-item">
+            Preparation Method
+          </div>
+
+          <div class="factor-item">
+            Concentration
+          </div>
+
+          <div class="factor-item">
+            Route of Administration
+          </div>
+
+          <div class="factor-item">
+            Dose &amp; Frequency
+          </div>
+
+          <div class="factor-item">
+            Duration of Use
+          </div>
+
+          <div class="factor-item">
+            Age &amp; Life Stage
+          </div>
+
+          <div class="factor-item">
+            Pregnancy &amp; Lactation
+          </div>
+
+          <div class="factor-item">
+            Existing Medical Conditions
+          </div>
+
+          <div class="factor-item">
+            Concurrent Medication Use
+          </div>
+
+          <div class="factor-item">
+            Product Identity &amp; Quality
+          </div>
+
         </div>
+
       </section>
 
       <section id="interactions">
-        <h2>Interactions & Contraindications</h2>
-        <p>Many botanicals can impact metabolic enzymes (such as Cytochrome P450) or have additive effects with pharmaceuticals. Individual monographs in the Living Evidence Library provide specific details on known interactions and conditions where use is contraindicated.</p>
+
+        <h2>
+          Interactions &amp; Contraindications
+        </h2>
+
+        <p>
+          Many botanicals can impact metabolic enzymes such as Cytochrome
+          P450 or have additive effects with pharmaceuticals. Individual
+          monographs in the Living Evidence Library provide specific details
+          on known interactions and conditions where use is contraindicated.
+        </p>
+
         <div class="red-flags">
-          <h3>Emergency Warning Signs</h3>
-          <p>Seek urgent medical evaluation if you experience: difficulty breathing, facial or throat swelling, severe abdominal pain, jaundice (yellowing of eyes/skin), persistent vomiting, sudden severe headache, confusion, or loss of consciousness.</p>
+
+          <h3>
+            Emergency Warning Signs
+          </h3>
+
+          <p>
+            Seek urgent medical evaluation if you experience difficulty
+            breathing, facial or throat swelling, severe abdominal pain,
+            jaundice, persistent vomiting, sudden severe headache,
+            confusion, or loss of consciousness.
+          </p>
+
         </div>
+
       </section>
 
       <section id="evidence">
-        <h2>Safety vs. Efficacy</h2>
-        <p>In The Earth’s Pharmacy framework, safety is evaluated separately from efficacy. A botanical claim may have Tier 1 evidence for effectiveness while simultaneously carrying significant safety warnings or contraindications. Both must be reviewed to form a complete understanding of a botanical's profile.</p>
+
+        <h2>
+          Safety vs. Efficacy
+        </h2>
+
+        <p>
+          In The Earth’s Pharmacy framework, safety is evaluated separately
+          from efficacy. A botanical claim may have Tier 1 evidence for
+          effectiveness while simultaneously carrying significant safety
+          warnings or contraindications. Both must be reviewed to form a
+          complete understanding of a botanical's profile.
+        </p>
+
       </section>
+
+      <div class="bottom-buy">
+
+        <a
+          href="https://payhip.com/b/9TKBH"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="buy-book-button"
+        >
+          Buy The Earth’s Pharmacy
+        </a>
+
+      </div>
+
     </main>
 
     <footer>
+
       <div class="footer-links">
-        <a href="/">Home</a>
-        <a href="/living-library/">Living Evidence Library</a>
-        <a href="/monographs/">Botanical Monographs</a>
-        <a href="/safety/">Safety</a>
-        <a href="/about/">About</a>
+
+        <a href="/">
+          Home
+        </a>
+
+        <a href="/living-library/">
+          Living Evidence Library
+        </a>
+
+        <a href="/monographs/">
+          Botanical Monographs
+        </a>
+
+        <a href="/safety/">
+          Safety
+        </a>
+
+        <a href="/about/">
+          About
+        </a>
+
       </div>
-      <p>&copy; 2026 The Earth’s Pharmacy. By The Grandmaster Architect.</p>
+
+      <p>
+        &copy; 2026 The Earth’s Pharmacy.
+        By The Grandmaster Architect.
+      </p>
+
     </footer>
+
   </div>
 
 </body>
