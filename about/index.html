@@ -1,115 +1,525 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About | The Earth’s Pharmacy</title>
-  <meta name="description" content="About The Earth’s Pharmacy — mission, editorial principles, evidence tiers, and how to contribute to the Living Library." />
-  <link rel="stylesheet" href="/assets/styles.css">
-  <style>
-    /* Page-specific refinements while relying on shared stylesheet */
-    .lead { font-size:18px; max-width:72ch; }
-    .two-col { display:grid; grid-template-columns: 1fr 420px; gap:28px; align-items:start; }
-    .principles { display:grid; grid-template-columns: repeat(2,1fr); gap:12px; margin-top:12px; }
-    .principle { background: rgba(255,255,255,0.02); padding:12px; border-radius:8px; border:1px solid rgba(212,168,79,0.04); }
-    .tiers { display:flex; gap:12px; margin-top:12px; flex-wrap:wrap; }
-    .tier-pill { padding:10px 14px; border-radius:8px; background:rgba(212,168,79,0.06); font-weight:700; }
-    .faq { margin-top:18px; }
-    .faq dt { font-weight:700; margin-top:12px; }
-    .faq dd { margin:0 0 12px 0; }
+  <meta charset="utf-8">
 
-    @media (max-width:900px) { .two-col { grid-template-columns: 1fr; } .principles { grid-template-columns: 1fr; } }
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  >
+
+  <title>
+    About | The Earth’s Pharmacy
+  </title>
+
+  <meta
+    name="description"
+    content="About The Earth’s Pharmacy — mission, editorial principles, evidence tiers, and how to contribute to the Living Library."
+  >
+
+  <link
+    rel="stylesheet"
+    href="/assets/styles.css"
+  >
+
+  <style>
+    :root {
+      --bg-color: #06180f;
+      --text-color: #f3e4bd;
+      --gold-accent: #d4a84f;
+      --border-color: rgba(212, 168, 79, 0.15);
+      --card-bg: rgba(255, 255, 255, 0.03);
+    }
+
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    .site {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+    }
+
+    .top-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 28px 0 20px;
+    }
+
+    .home-button {
+      display: inline-block;
+      color: var(--gold-accent);
+      text-decoration: none;
+      border: 1px solid var(--gold-accent);
+      border-radius: 999px;
+      padding: 11px 18px;
+    }
+
+    .buy-book-button {
+      display: inline-block;
+      padding: 12px 22px;
+      background: var(--gold-accent);
+      color: var(--bg-color);
+      border: 1px solid var(--gold-accent);
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: Georgia, "Times New Roman", serif;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+      transition: all 0.2s ease;
+    }
+
+    .buy-book-button:hover {
+      background: #e5c66d;
+      transform: translateY(-1px);
+    }
+
+    .lead {
+      font-size: 18px;
+      max-width: 72ch;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .principle {
+      background: var(--card-bg);
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
+    .tiers {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .tier-pill {
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: rgba(212, 168, 79, 0.06);
+      font-weight: 700;
+    }
+
+    .faq {
+      margin-top: 18px;
+    }
+
+    .faq dt {
+      font-weight: 700;
+      margin-top: 12px;
+    }
+
+    .faq dd {
+      margin: 0 0 12px 0;
+    }
+
+    .sales-note {
+      max-width: 820px;
+      margin: 20px auto 0;
+      padding: 14px 18px;
+      text-align: center;
+      border: 1px solid rgba(212, 168, 79, 0.45);
+      border-radius: 14px;
+      background: rgba(212, 168, 79, 0.05);
+      line-height: 1.55;
+      font-size: 15px;
+    }
+
+    .bottom-buy {
+      text-align: center;
+      margin-top: 36px;
+    }
+
+    .bottom-buy .buy-book-button {
+      font-size: 18px;
+      padding: 14px 28px;
+    }
+
+    @media (max-width: 900px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .principles {
+        grid-template-columns: 1fr;
+      }
+
+      .home-button,
+      .buy-book-button {
+        width: 100%;
+        max-width: 360px;
+        text-align: center;
+      }
+    }
   </style>
 </head>
+
 <body>
+
   <div class="site">
-    <header class="hero" role="banner" aria-labelledby="about-title">
+
+    <div class="top-actions">
+
+      <a
+        class="home-button"
+        href="/"
+      >
+        ← Return to The Earth’s Pharmacy
+      </a>
+
+      <a
+        href="https://payhip.com/b/9TKBH"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="buy-book-button"
+      >
+        Buy The Earth’s Pharmacy
+      </a>
+
+    </div>
+
+    <header
+      class="hero"
+      role="banner"
+      aria-labelledby="about-title"
+    >
+
       <div class="hero-copy">
-        <h1 id="about-title">About The Earth’s Pharmacy</h1>
-        <p class="lead">The Earth’s Pharmacy curates and preserves knowledge on medicinal plants worldwide. Our work combines historical materials, contemporary scholarship, and living evidence so practitioners and readers can access reliable, up-to-date information.</p>
 
-        <div class="cta-row" style="margin-top:18px;">
-          <a class="btn" href="/resources/" aria-label="Resources">Resources</a>
-          <a class="btn ghost" href="/" aria-label="Return Home">Return Home</a>
+        <h1 id="about-title">
+          About The Earth’s Pharmacy
+        </h1>
+
+        <p class="lead">
+          The Earth’s Pharmacy curates and preserves knowledge on medicinal
+          plants worldwide. Our work combines historical materials,
+          contemporary scholarship, and living evidence so practitioners
+          and readers can access reliable, up-to-date information.
+        </p>
+
+        <div
+          class="cta-row"
+          style="margin-top:18px;"
+        >
+
+          <a
+            class="btn"
+            href="/resources/"
+            aria-label="Resources"
+          >
+            Resources
+          </a>
+
+          <a
+            class="btn ghost"
+            href="/"
+            aria-label="Return Home"
+          >
+            Return Home
+          </a>
+
         </div>
+
+        <div class="sales-note">
+          Want the complete reference in one place?
+          Purchase The Earth’s Pharmacy directly from the author.
+        </div>
+
       </div>
 
-      <div class="cover" aria-hidden="true">
-        <img src="/Earths_Pharmacy_Homepage_Refined_Professional_Approved.png" alt="The Earth’s Pharmacy" />
+      <div
+        class="cover"
+        aria-hidden="true"
+      >
+
+        <img
+          src="/Earths_Pharmacy_Homepage_Refined_Professional_Approved.png"
+          alt="The Earth’s Pharmacy"
+        >
+
       </div>
+
     </header>
 
     <main>
-      <section aria-labelledby="mission">
-        <h2 id="mission">Our Mission</h2>
-        <div class="two-col">
-          <div>
-            <p>The Earth’s Pharmacy exists to preserve, organize, and continuously improve evidence-based knowledge about medicinal plants from around the world. We combine conservation-quality reproduction of botanical art with rigorous editorial standards and living updates so the work remains useful and accurate over time.</p>
 
-            <p>We prioritize clarity for clinicians and accessibility for readers while ensuring editorial transparency and traceability of sources.</p>
+      <section aria-labelledby="mission">
+
+        <h2 id="mission">
+          Our Mission
+        </h2>
+
+        <div class="two-col">
+
+          <div>
+
+            <p>
+              The Earth’s Pharmacy exists to preserve, organize, and
+              continuously improve evidence-based knowledge about medicinal
+              plants from around the world. We combine conservation-quality
+              reproduction of botanical art with rigorous editorial standards
+              and living updates so the work remains useful and accurate over
+              time.
+            </p>
+
+            <p>
+              We prioritize clarity for clinicians and accessibility for
+              readers while ensuring editorial transparency and traceability
+              of sources.
+            </p>
+
           </div>
 
-          <aside class="principle" aria-labelledby="mission-quote">
-            <strong id="mission-quote">Preserve • Organize • Improve</strong>
-            <p style="margin-top:8px;">A living reference that respects tradition and centers contemporary evidence — maintained by scholars, clinicians, and conservators.</p>
+          <aside
+            class="principle"
+            aria-labelledby="mission-quote"
+          >
+
+            <strong id="mission-quote">
+              Preserve • Organize • Improve
+            </strong>
+
+            <p style="margin-top:8px;">
+              A living reference that respects tradition and centers
+              contemporary evidence — maintained by scholars, clinicians,
+              and conservators.
+            </p>
+
           </aside>
+
         </div>
+
       </section>
 
       <section aria-labelledby="library">
-        <h2 id="library">The Living Library</h2>
-        <p>The Living Library is a digital companion to the printed work. Unlike a static book, it evolves: new research, corrections, safety notices, and expanded monographs are added continuously. QR codes in the Founder’s Edition and subsequent printings link directly to these live entries so readers always access the latest evidence.</p>
+
+        <h2 id="library">
+          The Living Library
+        </h2>
+
+        <p>
+          The Living Library is a digital companion to the printed work.
+          Unlike a static book, it evolves: new research, corrections,
+          safety notices, and expanded monographs are added continuously.
+          QR codes in the Founder’s Edition and subsequent printings link
+          directly to these live entries so readers always access the latest
+          evidence.
+        </p>
+
       </section>
 
       <section aria-labelledby="principles">
-        <h2 id="principles">Our Editorial Principles</h2>
-        <p>Our editorial process is grounded in principles that guide how content is selected, reviewed, and published.</p>
+
+        <h2 id="principles">
+          Our Editorial Principles
+        </h2>
+
+        <p>
+          Our editorial process is grounded in principles that guide how
+          content is selected, reviewed, and published.
+        </p>
 
         <div class="principles">
-          <div class="principle"><strong>Evidence-based</strong><p>We prioritize peer-reviewed studies and high-quality clinical data when available.</p></div>
-          <div class="principle"><strong>Transparent sourcing</strong><p>All assertions link to primary sources and are documented for verification.</p></div>
-          <div class="principle"><strong>Safety first</strong><p>Safety notices and contraindications are prominently displayed and updated as new data emerges.</p></div>
-          <div class="principle"><strong>Respect for traditional knowledge</strong><p>We honor and cite traditional sources, working with communities to contextualize cultural practice.</p></div>
-          <div class="principle" style="grid-column: span 2;"><strong>Continuous updates</strong><p>Entries are revised as new evidence becomes available; errata and changes are logged for transparency.</p></div>
+
+          <div class="principle">
+            <strong>Evidence-based</strong>
+            <p>
+              We prioritize peer-reviewed studies and high-quality clinical
+              data when available.
+            </p>
+          </div>
+
+          <div class="principle">
+            <strong>Transparent sourcing</strong>
+            <p>
+              All assertions link to primary sources and are documented for
+              verification.
+            </p>
+          </div>
+
+          <div class="principle">
+            <strong>Safety first</strong>
+            <p>
+              Safety notices and contraindications are prominently displayed
+              and updated as new data emerges.
+            </p>
+          </div>
+
+          <div class="principle">
+            <strong>Respect for traditional knowledge</strong>
+            <p>
+              We honor and cite traditional sources, working with communities
+              to contextualize cultural practice.
+            </p>
+          </div>
+
+          <div
+            class="principle"
+            style="grid-column: span 2;"
+          >
+            <strong>Continuous updates</strong>
+            <p>
+              Entries are revised as new evidence becomes available; errata
+              and changes are logged for transparency.
+            </p>
+          </div>
+
         </div>
+
       </section>
 
       <section aria-labelledby="tiers">
-        <h2 id="tiers">Evidence Tiers</h2>
-        <p>We classify evidence to help readers interpret the strength of data behind claims and recommendations.</p>
+
+        <h2 id="tiers">
+          Evidence Tiers
+        </h2>
+
+        <p>
+          We classify evidence to help readers interpret the strength of data
+          behind claims and recommendations.
+        </p>
+
         <div class="tiers">
-          <div class="tier-pill">Tier 1 — Research-Supported (Strong human evidence)</div>
-          <div class="tier-pill">Tier 2 — Promising (Supportive clinical or mechanistic data)</div>
-          <div class="tier-pill">Tier 3 — Traditional Use (Documented historical or traditional use)</div>
+
+          <div class="tier-pill">
+            Tier 1 — Research-Supported
+            (Strong human evidence)
+          </div>
+
+          <div class="tier-pill">
+            Tier 2 — Promising
+            (Supportive clinical or mechanistic data)
+          </div>
+
+          <div class="tier-pill">
+            Tier 3 — Traditional Use
+            (Documented historical or traditional use)
+          </div>
+
         </div>
+
       </section>
 
       <section aria-labelledby="contribute">
-        <h2 id="contribute">Contribute</h2>
-        <p>We welcome submissions from researchers, physicians, herbalists, botanists, pharmacists, and institutions. Contributions may include primary research, corrections, safety reports, or source materials. Submitted evidence is reviewed by the editorial board before incorporation; contributors are credited where appropriate.</p>
-        <p>To contribute, email the editorial team or use the contact form in the Living Library (contact details and submission guidelines are provided in the Resources Center).</p>
+
+        <h2 id="contribute">
+          Contribute
+        </h2>
+
+        <p>
+          We welcome submissions from researchers, physicians, herbalists,
+          botanists, pharmacists, and institutions. Contributions may include
+          primary research, corrections, safety reports, or source materials.
+          Submitted evidence is reviewed by the editorial board before
+          incorporation; contributors are credited where appropriate.
+        </p>
+
+        <p>
+          To contribute, email the editorial team or use the contact form in
+          the Living Library. Contact details and submission guidelines are
+          provided in the Resources Center.
+        </p>
+
       </section>
 
       <section aria-labelledby="faq">
-        <h2 id="faq">Frequently Asked Questions</h2>
+
+        <h2 id="faq">
+          Frequently Asked Questions
+        </h2>
+
         <dl class="faq">
-          <dt>How is the Living Library updated?</dt>
-          <dd>The editorial team monitors the literature and receives community submissions. Updates are curated, reviewed, and published with changelogs and references.</dd>
 
-          <dt>Can I cite the Living Library in academic work?</dt>
-          <dd>Yes — we provide suggested citation formats for each entry that include versioning and access dates to ensure reproducibility.</dd>
+          <dt>
+            How is the Living Library updated?
+          </dt>
 
-          <dt>Who manages editorial decisions?</dt>
-          <dd>An editorial board of clinicians, botanists, and subject-matter experts oversees content selection and review.</dd>
+          <dd>
+            The editorial team monitors the literature and receives community
+            submissions. Updates are curated, reviewed, and published with
+            changelogs and references.
+          </dd>
+
+          <dt>
+            Can I cite the Living Library in academic work?
+          </dt>
+
+          <dd>
+            Yes — we provide suggested citation formats for each entry that
+            include versioning and access dates to ensure reproducibility.
+          </dd>
+
+          <dt>
+            Who manages editorial decisions?
+          </dt>
+
+          <dd>
+            An editorial board of clinicians, botanists, and subject-matter
+            experts oversees content selection and review.
+          </dd>
+
         </dl>
+
       </section>
 
+      <div class="bottom-buy">
+
+        <a
+          href="https://payhip.com/b/9TKBH"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="buy-book-button"
+        >
+          Buy The Earth’s Pharmacy
+        </a>
+
+      </div>
+
       <footer style="margin-top:28px;">
-        <p style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-          <a class="btn" href="/" aria-label="Return Home">Return Home</a>
+
+        <p
+          style="
+            display:flex;
+            gap:12px;
+            justify-content:center;
+            flex-wrap:wrap;
+          "
+        >
+
+          <a
+            class="btn"
+            href="/"
+            aria-label="Return Home"
+          >
+            Return Home
+          </a>
+
         </p>
+
       </footer>
+
     </main>
+
   </div>
+
 </body>
 </html>
