@@ -1,8 +1,9 @@
 {
   "project": "The Earth's Pharmacy",
   "deployment_policy": "allowlist",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "approved_public_paths": [
+    "CNAME",
     "index.html",
     "founders-edition/index.html",
     "living-library/index.html",
